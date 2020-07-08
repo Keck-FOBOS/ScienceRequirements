@@ -42,7 +42,7 @@
 \usepackage{natbib}
 
 %% Additional Pacakages, not yet in sty
-\usepackage{paralist}
+%\usepackage{paralist}
 \usepackage{amsmath}
 \usepackage{amssymb}
 
@@ -137,7 +137,7 @@ FOBOS addresses these goals by achieving high multiplex while optimizing for sen
 \item What is the nature of the assembly histories of the Milky Way, M31, and Local Group dwarfs?  {\em (Section \ref{sec:LocalGroup})}
 \item What are the key processes driving the late-time evolution of galaxies from $z\sim 1$ to the present day? {\em (Section \ref{sec:galaxies})}
 \item How is the baryonic environment at $z \sim 2$--3 influenced by forming galaxies and how does it drive their formation? {\em (Section \ref{sec:galaxies})}
- \item What is the nature of Dark Energy and the growth of cosmic structure at high redshift? {\em (Section \ref{sec:cosmology})}
+\item What is the nature of Dark Energy and the growth of cosmic structure at high redshift? {\em (Section \ref{sec:cosmology})}
 \end{enumerate}
 
 The ability to address these questions depends both on the FOBOS instrument design and the design of possible observing programs to be carried out within each science area.  This Science Requirements Document seeks to outline possible key science programs whose goals can flow down to specific instrument requirements.
@@ -175,22 +175,20 @@ These measures utilize angular correlations of galaxy positions, their gravitati
 
 \subsection{Science Requirements for Redshift Training Samples}
 
-\begin{description}
+\begin{sciencerequirement}
+\reqitem Redshift precision of 150 \kms{} or better. Stage IV cosmology experiments need to constrain the mean redshift of shear bins to $\lesssim0.2\%$. Redshift samples used for calibration must achieve at least this level of precision per source, which sets this requirement. 
 %
-\item[S1.1] Redshift precision of 150 \kms{} or better. Stage IV cosmology experiments need to constrain the mean redshift of shear bins to $\lesssim0.2\%$. Redshift samples used for calibration must achieve at least this level of precision per source, which sets this requirement. 
+\reqitem Redshift success rate of 75\% measured in a magnitude bin of width 0.5 mag up to the magnitude limit.  Explanation...
 %
-\item[S1.2]  Redshift success rate of 75\% measured in a magnitude bin of width 0.5 mag up to the magnitude limit.  Explanation...
+\reqitem Magnitude limit of $i_{\rm AB} = 25.3$.  This limit corresponds to the expected depth of LSST lensing samples (REF).
 %
-\item[S1.3] Magnitude limit of $i_{\rm AB} = 25.3$.  This limit corresponds to the expected depth of LSST lensing samples (REF).
+\reqitem Minimum sample size of 15,000, required for sufficient coverage of the photometric color space and for training statistics (REF).
 %
-\item[S1.4] Minimum sample size of 15,000, required for sufficient coverage of the photometric color space and for training statistics (REF).
+\reqitem 10 independent fields of minimum 20\arcmin{} diameter in order to average over systematics in the galaxy population owing to sample variance.
 %
-\item[S1.5] 10 independent fields of minimum 20\arcmin{} diameter in order to average over systematics in the galaxy population owing to sample variance.
+\reqitem Redshift range of $z = $[0.1, 3.5], spanning the distribution of LSST and WFIRST cosmology samples (REF).
 %
-\item[S1.6] Redshift range of $z = $[0.1, 3.5], spanning the distribution of LSST and WFIRST cosmology samples (REF).
-%
-\end{description}
-
+\end{sciencerequirement}
 
 \section{Redshift Distributions of CMB Lensing Cross-Correlation Photometric Samples}
 
@@ -198,21 +196,21 @@ High-S/N CMB maps from next-generation CMB observatories (e.g., Simons Observato
 
 \subsection{Science Requirements for CMB Lensing Calibration}
 
-\begin{description}
+\begin{sciencerequirement}
 %
-\item[S2.1] Redshift precision of 150 \kms{} or better.  Explanation...
+\reqitem Redshift precision of 150 \kms{} or better.  Explanation...
 %
-\item[S2.]  Redshift success rate of 75\% measured in a magnitude bin of width 0.5 mag up to the magnitude limit.  Explanation...
+\reqitem Redshift success rate of 75\% measured in a magnitude bin of width 0.5 mag up to the magnitude limit.  Explanation...
 %
-\item[S2.2] Photometric selections of various LBG samples...
+\reqitem Photometric selections of various LBG samples...
 %
-\item[S2.2] Minimum sample size of 
+\reqitem Minimum sample size of 
 %
-\item[S2.3] 10 independent fields of minimum 20\arcmin{} diameter in order to average over systematics in the galaxy population owing to sample variance.
+\reqitem 10 independent fields of minimum 20\arcmin{} diameter in order to average over systematics in the galaxy population owing to sample variance.
 %
-\item[S2.4] Redshift range of $z = $[2, 5], spanning the peak power of the CMB lensing kernel.
+\reqitem Redshift range of $z = $[2, 5], spanning the peak power of the CMB lensing kernel.
 %
-\end{description}
+\end{sciencerequirement}
 %-----------------------------------------------------------------------
 
 \newpage
@@ -231,15 +229,15 @@ Apply deep-learning algorithms to infer physical properties of galaxies at $z$$\
 
 \subsection{Science Requirements for the 1B Galaxy Sample}
 
-\begin{description}
+\begin{sciencerequirement}
 
-\item[S3.1] Light-weighted stellar ages and metallicities with precision of 0.1 dex in appropriate bins of color space.
+\reqitem Light-weighted stellar ages and metallicities with precision of 0.1 dex in appropriate bins of color space.
 
-\item[S3.1] Star formation rate uncertainties from strong emission lines of 0.1 dex in appropriate bins of color space.
+\reqitem Star formation rate uncertainties from strong emission lines of 0.1 dex in appropriate bins of color space.
 
-\item[S3.1] Redshift precision of at least 30 \kms{} to allow for accurate stacked spectra in specific color bins.
+\reqitem Redshift precision of at least 30 \kms{} to allow for accurate stacked spectra in specific color bins.
 
-\end{description}
+\end{sciencerequirement}
 
 
 \section{The Galaxy Environment and Ecosystem}
@@ -251,19 +249,17 @@ At later times, as IGM material becomes more confined to galaxies and their dark
 
 \subsection{Science Requirements for the Galaxy Ecosystem}
 
-\begin{description}
+\begin{sciencerequirement}
 
-\item[S4.1] Detection of key IGM/ISM lines like... probing what densities.
+\reqitem Detection of key IGM/ISM lines like... probing what densities.
 
-\item[S4.2] Redshift precision of at least 300 \kms{} to enable satellite membership
+\reqitem Redshift precision of at least 300 \kms{} to enable satellite membership
 
+\reqitem Errors on the measured outflow velocity of less than 20~km~s$^{-1}$.  Outflows speeds of $\sim100 -- 200$~km~s$^{-1}$ are expected in most star forming galaxies where interstellar Na~I can be detected in absorption (Chen et al.~2010). 
 
-\item[S4.] Errors on the measured outflow velocity of less than 20~km~s$^{-1}$.  Outflows speeds of $\sim100 -- 200$~km~s$^{-1}$ are expected in most star forming galaxies where interstellar Na~I can be detected in absorption (Chen et al.~2010). 
+\reqitem ...
 
-\item[S4.?] ...
-
-
-\end{description}
+\end{sciencerequirement}
 
 
 \section{Internal Structure of Galaxies}
@@ -283,40 +279,40 @@ FOBOS's wide spectral range (3500--10,000~\AA) captures a large range of absorpt
 
 \subsection{Science Requirements: Galaxy Structure with IFUs}
 
-\begin{description}
+\begin{sciencerequirement}
 
-\item[S5.1] Gas ionization diagnostics ([N II]/H$\alpha$ vs.\ [O III]/H$\beta$) to separate gas that is photoionized from gas that is shocked or ionized by an AGN. The required precision in the log of the line ratios is $\pm$0.2 dex to minimize classification uncertainty.
+\reqitem Gas ionization diagnostics ([N II]/H$\alpha$ vs.\ [O III]/H$\beta$) to separate gas that is photoionized from gas that is shocked or ionized by an AGN. The required precision in the log of the line ratios is $\pm$0.2 dex to minimize classification uncertainty.
 
-\item[S5.2] Spatial resolution of better than XXX kpc for a large fraction of the central galaxies in the sample in order to spatially resolve?
+\reqitem Spatial resolution of better than XXX kpc for a large fraction of the central galaxies in the sample in order to spatially resolve?
 
-\item[S5.?] Per-fiber S/N limits for dwarf galaxies, both compact and ultra-diffuse (UDGs), in the field and in nearby clusters like Coma and Virgo.
+\reqitem Per-fiber S/N limits for dwarf galaxies, both compact and ultra-diffuse (UDGs), in the field and in nearby clusters like Coma and Virgo.
 
-\item [S?] A spectral resolution $\rm R=\lambda/\Delta \lambda$ of at least 1,500 is needed to properly subtract the H$\beta$ stellar absorption from the corresponding nebular emission, to fully resolve the [NII] doublet from H$\alpha$, and to resolve the [SII] doublet.
+\reqitem A spectral resolution $\rm R=\lambda/\Delta \lambda$ of at least 1,500 is needed to properly subtract the H$\beta$ stellar absorption from the corresponding nebular emission, to fully resolve the [NII] doublet from H$\alpha$, and to resolve the [SII] doublet.
 
-\item [S] Stellar continuum $S/N > 7$ per pixel near \Hbeta\ per spatial resolution element so that we can constrain E(B-V) to 0.2 and achieve a ${\rm \Sigma_{SFR}}$ estimate of 0.2 dex. In the current baseline sample design and observing strategy, we can achieve this in half of the Primary sample. We expect that in most star forming galaxies, the H$\beta$ strength will be stronger than 70\% of the continuum at 1.5\Reff.Therefore, more than half of the galaxies will have ${\rm \Sigma_{SFR}}$ constrained to better than 0.2 dex per spatial resolution element.
+\reqitem Stellar continuum $S/N > 7$ per pixel near \Hbeta\ per spatial resolution element so that we can constrain E(B-V) to 0.2 and achieve a ${\rm \Sigma_{SFR}}$ estimate of 0.2 dex. In the current baseline sample design and observing strategy, we can achieve this in half of the Primary sample. We expect that in most star forming galaxies, the H$\beta$ strength will be stronger than 70\% of the continuum at 1.5\Reff.Therefore, more than half of the galaxies will have ${\rm \Sigma_{SFR}}$ constrained to better than 0.2 dex per spatial resolution element.
 
-\item [S] An A/N of $>7$ on the key nebular lines [O~II], H$\beta$, and [O~III] is needed to measure the gas metallicity with an accuracy better than 0.05~dex per elliptical annulus at 1.5\Reff. This translates to a continuum $S/N > 10$ per pixel near \Hbeta. An A/N of $>10$ on [N~II] is needed to locate galaxy sub-regions on the diagnostic diagrams with an accuracy better than 0.1 dex. Such S/N on [N~II] will also allow the determination of the [N/O] abundance ratio with an accuracy better than 0.1 dex.  % Individual fibers!
+\reqitem An A/N of $>7$ on the key nebular lines [O~II], H$\beta$, and [O~III] is needed to measure the gas metallicity with an accuracy better than 0.05~dex per elliptical annulus at 1.5\Reff. This translates to a continuum $S/N > 10$ per pixel near \Hbeta. An A/N of $>10$ on [N~II] is needed to locate galaxy sub-regions on the diagnostic diagrams with an accuracy better than 0.1 dex. Such S/N on [N~II] will also allow the determination of the [N/O] abundance ratio with an accuracy better than 0.1 dex.  % Individual fibers!
 
 %Note that this requirement
 %  on H$\beta$ is weaker than the requirement of measuring the
 %  dust extinction (E(B-V)) with an accuracy better than 0.2 per spatial resolution element. 
 
-\item[S] Galaxies should be sampled by a minimum of 2.5 fibers per 1.5\Reff\ to enable measurements of metallicity gradients 
+\reqitem Galaxies should be sampled by a minimum of 2.5 fibers per 1.5\Reff\ to enable measurements of metallicity gradients 
 
-\item[S5.3] Spectral stacking?
+\reqitem Spectral stacking?
 
-\item[S5.2] For tracer studies, determine the dark matter fraction within 1.5\Reff\ and 2.5\Reff\ to 10\% (?)
+\reqitem For tracer studies, determine the dark matter fraction within 1.5\Reff\ and 2.5\Reff\ to 10\% (?)
 
 
-\item [S4.5] (\emph{From MaNGA, how close do we get to this with FOBOS?}) Resolve the bulk of the baryons by having at least 2 spatial resolution elements across the half-light radius.
+\reqitem (\emph{From MaNGA, how close do we get to this with FOBOS?}) Resolve the bulk of the baryons by having at least 2 spatial resolution elements across the half-light radius.
 
-\item[S]  Gas kinematics will use standard tracers such as the Balmer lines (\Hbeta, \Halpha), [OI], [OII], [OIII], [NII] and [SII], sometimes fitted simultaneously. 
+\reqitem  Gas kinematics will use standard tracers such as the Balmer lines (\Hbeta, \Halpha), [OI], [OII], [OIII], [NII] and [SII], sometimes fitted simultaneously. 
 
-\item[S]  Emission-line tracers will be continuum corrected to account for associated absorption lines, the kinematics of which will derived independently from absorption lines that are not heavily contaminated by emission.
+\reqitem  Emission-line tracers will be continuum corrected to account for associated absorption lines, the kinematics of which will derived independently from absorption lines that are not heavily contaminated by emission.
 
-\item[S] Gas velocity accuracy of 6-10~km/s and dispersion to ~30 km/s for lines with peak S/N $>$10.  Equivalently, $k_1$ (the kinemetric first moment) from emission-line tracers, will be determined to an accuracy of $<$ 5~km/s for amplitude-over-noise $A/N>5$ and $<$ 10~km/s for $A/N<5$. This applies only to galaxies with line-emission, that are rotation dominated, and have at least 5 spatial resolution elements across the major axis. 
+\reqitem Gas velocity accuracy of 6-10~km/s and dispersion to ~30 km/s for lines with peak S/N $>$10.  Equivalently, $k_1$ (the kinemetric first moment) from emission-line tracers, will be determined to an accuracy of $<$ 5~km/s for amplitude-over-noise $A/N>5$ and $<$ 10~km/s for $A/N<5$. This applies only to galaxies with line-emission, that are rotation dominated, and have at least 5 spatial resolution elements across the major axis. 
 
-\end{description}
+\end{sciencerequirement}
 %-----------------------------------------------------------------------
 
 \newpage
@@ -334,22 +330,21 @@ Of particular interest is the ability of future imaging surveys to increase the 
 
 \subsection{Science Requirements: Assembly and Evolution of Andromeda's Disk and Satellite Galaxies}
 
-\begin{description}
+\begin{sciencerequirement}
 
-\item[S4] Radial velocities to $\lesssim$1 km/s.
-\item[R4] Spectral resolution of $R>XXXX$
-\item[R4] $\text{S/N}>XX$
-\item[S4] [Fe/H] and [$\alpha$/Fe] measured to $\lesssim$0.1 dex.
-\item[S4] Individual elemental abundances measured to $\lesssim$0.2 dex.
-\item[R4] Spectral coverage from XXXX-XXXX \AA.
-\item[R4] Spectral resolution of $R>XXXX$
-\item[R4] $\text{S/N}>XX$
-\item[S4] Stellar ages from CN absorption features to $\lesssim$ XX Gyr.
-\item[R4] Spectral resolution of $R>XXXX$
-\item[R4] Spectral coverage from XXXX-XXXX \AA.
-\item[R4] $\text{S/N}>XX$
+\reqitem Radial velocities to $\lesssim$1 km/s.
+\reqitem [Fe/H] and [$\alpha$/Fe] measured to $\lesssim$0.1 dex.
+\reqitem Individual elemental abundances measured to $\lesssim$0.2 dex.
+\reqitem Stellar ages from CN absorption features to $\lesssim$ XX Gyr.
 
-\end{description}
+\end{sciencerequirement}
+
+\begin{requirement}
+\reqitem Spectral resolution of $R>XXXX$
+\reqitem Spectral coverage from XXXX-XXXX \AA.
+\reqitem $\text{S/N}>XX$
+
+\end{requirement}
 
 \section{Globular Clusters?}
 
@@ -373,15 +368,15 @@ Of particular interest is the ability of future imaging surveys to increase the 
 There are at least two Cosmology programs: a \photoz{} training program a la \citet{newman15} and \citet{hemmati18} and a LBG dN/d$z$ program motivated by \citet{wilson19}.  We should have defined their top-level requirements in Section \ref{sci:cosmology}, but can we combine the observing needs into a single program here with multiple target classes?  Or do we break them out?}
 
 
-\begin{description}
+\begin{programrequirement}
 
-\item[P1.] Sample size
-\item[P1.] Selection 
-\item[P1.] Instrument configuration 
-\item[P1.] Exposure time
-\item[P1.] Duration
+\reqitem Sample size
+\reqitem Selection 
+\reqitem Instrument configuration 
+\reqitem Exposure time
+\reqitem Duration
 
-\end{description}
+\end{programrequirement}
 
 \section{Cosmology Survey Success Metric and Completeness Metrics}
 
@@ -400,54 +395,54 @@ What are they?
 
 \edit{Text here right now is stolen from MaNGA...  Need to think about GLAO.}
 
-\begin{description}
+\begin{requirement}
 
-\item[R2.2] A median S/N of $>33$ per pixel in the r-band continuum (spatially binned, if necessary) to achieve the required mean stellar age ($\pm0.12$~dex), metallicity ($\pm0.1$~dex), and abundance constraints ($\pm0.1$~dex) in quiescent galaxies. This S/N constraint comes from the analysis of absorption indices in SDSS-I spectra presented by \cite{johansson12} and from the analysis of the test-run data (L. Coccato).  It is conceivable that this S/N threshold is conservative. Preliminary results from full spectral fitting suggests we could achieve $0.1$ dex in stellar age and abundance with a S/N per pixel of 10-20 (Choi \& Conroy, in prep).
+\reqitem A median S/N of $>33$ per pixel in the r-band continuum (spatially binned, if necessary) to achieve the required mean stellar age ($\pm0.12$~dex), metallicity ($\pm0.1$~dex), and abundance constraints ($\pm0.1$~dex) in quiescent galaxies. This S/N constraint comes from the analysis of absorption indices in SDSS-I spectra presented by \cite{johansson12} and from the analysis of the test-run data (L. Coccato).  It is conceivable that this S/N threshold is conservative. Preliminary results from full spectral fitting suggests we could achieve $0.1$ dex in stellar age and abundance with a S/N per pixel of 10-20 (Choi \& Conroy, in prep).
    
   % (Note, higher S/N would not greatly
   % improve the errors on the stellar population parameters due to
   % age-metallicity degeneracy effects.)
 
-\item[R2.3] For star-forming galaxies and newly quenched galaxies, a median S/N of $>10$ per pixel is required to constrain mean stellar ages to better than 0.1 dex using the 4000~\AA\ break and Balmer indices \citep{kauffmann03a}.  For populations older than 1~Gyr, age-metallicity degeneracies will increase the age uncertainty to 0.2 dex with this method.
+\reqitem For star-forming galaxies and newly quenched galaxies, a median S/N of $>10$ per pixel is required to constrain mean stellar ages to better than 0.1 dex using the 4000~\AA\ break and Balmer indices \citep{kauffmann03a}.  For populations older than 1~Gyr, age-metallicity degeneracies will increase the age uncertainty to 0.2 dex with this method.
 
-\item[R2.4] To explore trends with galaxy physical parameters, the majority of the sample should reach the above S/N threshold (R1.2 for quiescent galaxies and R1.3 for star-forming galaxies) in the co-added spectra in at least three radial bins.
+\reqitem To explore trends with galaxy physical parameters, the majority of the sample should reach the above S/N threshold (R1.2 for quiescent galaxies and R1.3 for star-forming galaxies) in the co-added spectra in at least three radial bins.
 
-\item[R2.5] A median S/N of $>400$ in radially binned stacked spectra is required in order to probe IMF variations \citep{ferreras2013}. This will necessitate co-adding the radially binned spectra of 50 to 100 galaxies.  Thus, a total sample size of several thousand is desired for this analysis.
+\reqitem A median S/N of $>400$ in radially binned stacked spectra is required in order to probe IMF variations \citep{ferreras2013}. This will necessitate co-adding the radially binned spectra of 50 to 100 galaxies.  Thus, a total sample size of several thousand is desired for this analysis.
 
-\end{description}
-
-
-\begin{description}
-
-\item[P2.] Sample size
-\item[P2.] Selection 
-\item[P2.] Instrument configuration 
-\item[P2.] Exposure time
-\item[P2.] Duration
-
-\item[P2.] Poisson-limited sky subtraction, especially in the 8,000-10,000\AA\ range, in order to stack hundreds of galaxies together to analyze the weak IMF-sensitive stellar absorption features.
-
-\item[R1.7] Relative spectrophotometry accurate to better than 7\% from [O~II]~$\lambda3727$ to H$\alpha$ and to better than 2.4\% between H$\beta$ and H$\alpha$ to ensure that calibration errors do not dominate the error budget on galaxy SFRs and nebular metallicities.
+\reqitem Relative spectrophotometry accurate to better than 7\% from [O~II]~$\lambda3727$ to H$\alpha$ and to better than 2.4\% between H$\beta$ and H$\alpha$ to ensure that calibration errors do not dominate the error budget on galaxy SFRs and nebular metallicities.
   
-\end{description}
+\end{requirement}
+
+
+\begin{programrequirement}
+
+\reqitem Sample size
+\reqitem Selection 
+\reqitem Instrument configuration 
+\reqitem Exposure time
+\reqitem Duration
+
+\reqitem Poisson-limited sky subtraction, especially in the 8,000-10,000\AA\ range, in order to stack hundreds of galaxies together to analyze the weak IMF-sensitive stellar absorption features.
+
+\end{programrequirement}
 
 \medskip
 
 \noindent To meet these PSF requirements, while maintaining adequate S/N and coverage, requirements are placed on observing strategy, the IFU regularity, and the fiber fill-factor:
 
-\begin{itemize}
+\begin{requirement}
 
-\item The individual observations shall be dithered by $\sim$1\arcsec\ offsets.
+\reqitem The individual observations shall be dithered by $\sim$1\arcsec\ offsets.
 
-\item Fiber placement shall conform to a regular grid within a hexagonal ferrule.  
+\reqitem Fiber placement shall conform to a regular grid within a hexagonal ferrule.  
 
-\item The tolerance of this spacing must be within 3 microns rms (and known to within 2 microns).
+\reqitem The tolerance of this spacing must be within 3 microns rms (and known to within 2 microns).
 
-\item There shall be no non-functional fibers in the bundles, where non-functional is defined as having throughput less than 85\% when fed with a filled $f/5$ beam and measured through an $f/4$ aperture stop.
+\reqitem There shall be no non-functional fibers in the bundles, where non-functional is defined as having throughput less than 85\% when fed with a filled $f/5$ beam and measured through an $f/4$ aperture stop.
 
-\item Bundle fill factor of live cores shall not be less than 50\%.
+\reqitem Bundle fill factor of live cores shall not be less than 50\%.
 
-\end{itemize}
+\end{requirement}
 
 
 \subsection{IFU Program Science Justification}
@@ -468,21 +463,21 @@ At what S/N do we define success? First, our focus on the stellar continuum does
 
 The two most stringent continuum S/N requirements both require a {\em median} $r$-band S/N per pixel of 33 to be achieved in annular spectral stacks in the outer regions of the Primary+ sample:
 
-\begin{itemize}
+\begin{requirement}
 
-\item [R2.2] Stacked stellar continuum S/N of 33 per pixel in the outer annular ring between 1 \Reff\ and 1.5 \Reff\ to measure stellar age/metallicity gradients for quiescent galaxies.
+\reqitem Stacked stellar continuum S/N of 33 per pixel in the outer annular ring between 1 \Reff\ and 1.5 \Reff\ to measure stellar age/metallicity gradients for quiescent galaxies.
     
-\item [R3.1] Stacked stellar continuum S/N of 17 per pixel in one quadrant of the outer annular ring between 1\Reff\ and 1.5 \Reff, corresponding to 33 across the complete outer annulus.
+\reqitem Stacked stellar continuum S/N of 17 per pixel in one quadrant of the outer annular ring between 1\Reff\ and 1.5 \Reff, corresponding to 33 across the complete outer annulus.
 
-\end{itemize}
+\end{requirement}
 
 \noindent The continuum requirement on star-forming galaxies and newly quenched galaxies is lower: 
 
-\begin{itemize}
+\begin{requirement}
 
-\item[R2.3] Stacked stellar continuum S/N of 10 per pixel in the outer annular ring between 1\Reff\ and 1.5\Reff\ to measure stellar age to better than 0.1 dex in star-forming and newly-quenched galaxies. 
+\reqitem Stacked stellar continuum S/N of 10 per pixel in the outer annular ring between 1\Reff\ and 1.5\Reff\ to measure stellar age to better than 0.1 dex in star-forming and newly-quenched galaxies. 
 
-\end{itemize}
+\end{requirement}
 
 With 2.25 hour exposure time (3 sets of 3 dithered exposures), 70\% of the primary+ sample will achieve the S/N requirement above. Among ``blue'' primary+ galaxies that are centrally star-forming or newly-quenched ($D_n(4000) < 1.8$), 61\% will reach a stacked S/N of more than 10 per pxiel (R2.3).  In total, 92\% of the sample comfortably satisfy at least one of these two requirements.
 
@@ -490,13 +485,13 @@ Using the empirical relation between S/N measured in raw spectra and that of fib
 
 %The above metric translates to the following plate completeness metric to be used in survey operation.
 
-\begin{itemize}
+\begin{requirement}
 
-\item For galactic-extinction-corrected i-band fiber magnitude of 21, the summed $(S/N)^2$ in the i-band should be greater than 36.
+\reqitem For galactic-extinction-corrected i-band fiber magnitude of 21, the summed $(S/N)^2$ in the i-band should be greater than 36.
     
-\item For galactic-extinction-corrected g-band fiber magnitude of 22, the summed $(S/N)^2$ in the g-band should be greater than 19.
+\reqitem For galactic-extinction-corrected g-band fiber magnitude of 22, the summed $(S/N)^2$ in the g-band should be greater than 19.
 
-\end{itemize}
+\end{requirement}
 
 Both metric have to be satisfied before a plate is considered done. With this metric, the majority of the plates will be finished with 9 exposures taken in good conditions, with a small fraction needing 12 or 15 good exposures. 
 
@@ -515,24 +510,24 @@ Both metric have to be satisfied before a plate is considered done. With this me
 %-----------------------------------------------------------------------
 \chapter{Key Program: Andromeda and the Local Group}\label{prog:localgroup}
 
-\begin{description}
+\begin{programrequirement}
 
-\item[P3.] Sample size (M31 Disk): 100,000 RGB stars and 500 young star clusters
-\item[P3.] Sample size (M33 Disk): 10,000 RGB stars
-\item[P3.] Sample size (M31 Satellites): 9,000 RGB stars
+\reqitem Sample size (M31 Disk): 100,000 RGB stars and 500 young star clusters
+\reqitem Sample size (M33 Disk): 10,000 RGB stars
+\reqitem Sample size (M31 Satellites): 9,000 RGB stars
 
-\item[P3.] Selection (M31 Disk): 6 disk pointings in the PHAT region between 5-20 kpc, each visited 10 times. 2 disk pointings beyond 20 kpc, each visited once. Every visit will target a unique set of stars with $\sim$95\% completeness.
-\item[P3.] Selection (M33 Disk): 3 disk pointings, each visited twice. Each visit will target a unique set of stars with $\sim$95\% completeness.
-\item[P3.] Selection (M31 Satellites): 3 pointings in the region of NGC 147, NGC 185, and And II, each visited once. 1 pointing for NGC 205, visited twice. Each visit will target a unique set of stars with $\sim$95\% completeness.
+\reqitem Selection (M31 Disk): 6 disk pointings in the PHAT region between 5-20 kpc, each visited 10 times. 2 disk pointings beyond 20 kpc, each visited once. Every visit will target a unique set of stars with $\sim$95\% completeness.
+\reqitem Selection (M33 Disk): 3 disk pointings, each visited twice. Each visit will target a unique set of stars with $\sim$95\% completeness.
+\reqitem Selection (M31 Satellites): 3 pointings in the region of NGC 147, NGC 185, and And II, each visited once. 1 pointing for NGC 205, visited twice. Each visit will target a unique set of stars with $\sim$95\% completeness.
 
-\item[P3.] Instrument configuration (M31 Disk): $>$70\% MOS fibers and $<$30\% IFU fiber bundles ($\sim$5.6" diameter)
-\item[P3.] Instrument configuration (M33 Disk): 100\% MOS fibers.
-\item[P3.] Instrument configuration (M31 Satellites): 100\% MOS fibers.
+\reqitem Instrument configuration (M31 Disk): $>$70\% MOS fibers and $<$30\% IFU fiber bundles ($\sim$5.6" diameter)
+\reqitem Instrument configuration (M33 Disk): 100\% MOS fibers.
+\reqitem Instrument configuration (M31 Satellites): 100\% MOS fibers.
 
-\item[P3.] Exposure time: 10 hours of integration per visit.
-\item[P3.] Duration: 19 nights per year over 5 years for a total of 95 nights (84 for the M31 disk, 6 for the M33 disk, and 5 for M31 satellites).
+\reqitem Exposure time: 10 hours of integration per visit.
+\reqitem Duration: 19 nights per year over 5 years for a total of 95 nights (84 for the M31 disk, 6 for the M33 disk, and 5 for M31 satellites).
 
-\end{description}
+\end{programrequirement}
 
 \section{Local Group Survey}
 
@@ -610,19 +605,19 @@ To be populated from Wiki Tables: \url{https://uco.atlassian.net/wiki/spaces/FOB
 \noindent The main requirement on spatial resolution is that the delivered effective PSF shall not be degraded by more than 60\% from typical site conditions at all wavelengths:
 
 
-\begin{itemize}
+\begin{requirement}
 
-\item The shape of the IFUs will be hexagonal as a best approximation of a circular aperture with natural fiber-packing and regular perimeter for mechanical mounting.
+\reqitem The shape of the IFUs will be hexagonal as a best approximation of a circular aperture with natural fiber-packing and regular perimeter for mechanical mounting.
 
-\item The size and number of IFUs shall be determined by ...
+\reqitem The size and number of IFUs shall be determined by ...
 
-\item The FWHM of unresolved (stellar) objects in the reconstructed data cubes shall be 2.5\arcsec\ or less at $\lambda = 5400$ \AA\ in median observing conditions (1.5\arcsec\ seeing).
+\reqitem The FWHM of unresolved (stellar) objects in the reconstructed data cubes shall be 2.5\arcsec\ or less at $\lambda = 5400$ \AA\ in median observing conditions (1.5\arcsec\ seeing).
 
-\item The observational PSF of the reconstructed data cube must be circular at all locations to a tolerance of $b/a > 0.85$, with $b/a$ the observed axis ratio.
+\reqitem The observational PSF of the reconstructed data cube must be circular at all locations to a tolerance of $b/a > 0.85$, with $b/a$ the observed axis ratio.
 
-\item The angular resolution of any spatial element within the reconstructed data cube shall not vary by more than 10\% from the average at any given wavelength, i.e., the effects of differential atmospheric refraction on the sampling must be wavelength-independent at this level.
+\reqitem The angular resolution of any spatial element within the reconstructed data cube shall not vary by more than 10\% from the average at any given wavelength, i.e., the effects of differential atmospheric refraction on the sampling must be wavelength-independent at this level.
 
-\end{itemize}
+\end{requirement}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Spectrophotometry
@@ -633,13 +628,13 @@ To be populated from Wiki Tables: \url{https://uco.atlassian.net/wiki/spaces/FOB
 
 The science requirements for spectrophotometry are driven by two considerations: (1) the need to derive accurate physical parameters from the widely-spaced nebular emission lines, e.g., SFR, dust attenuation, metallicity; (2) the need to derive accurate physical parameters from the stellar continuum through stellar population synthesis. This translates into the following requirements:
 
-\begin{itemize}
+\begin{requirement}
 
-\item Relative spectrophotometry to 2.5\% between \Halpha\ and \Hbeta.
+\reqitem Relative spectrophotometry to 2.5\% between \Halpha\ and \Hbeta.
     
-\item Relative spectrophotometry to 7\% between [OII]$\lambda3727{\rm \AA}$ and [NII]$\lambda6584{\rm \AA}$. 
+\reqitem Relative spectrophotometry to 7\% between [OII]$\lambda3727{\rm \AA}$ and [NII]$\lambda6584{\rm \AA}$. 
     
-\end{itemize}
+\end{requirement}
 
 \section{Science Justification}
 
@@ -656,13 +651,13 @@ An important scientific goal is to measure nebular metallicity gradients. These 
 
 The high-level requirement is that guide errors should not dominate the positional error and image quality degradation of the target galaxies within the bundles. This leads to two specific requirements:
 
-\begin{itemize}
+\begin{requirement}
 
-\item Guiding accuracy should be no worse than 0.2\arcsec.
+\reqitem Guiding accuracy should be no worse than 0.2\arcsec.
     
-\item Knowledge of the PSF across the plate should be no worse than 0.2\arcsec.
+\reqitem Knowledge of the PSF across the plate should be no worse than 0.2\arcsec.
     
-\end{itemize}
+\end{requirement}
 
 \section{Science Justification}
 
@@ -682,23 +677,23 @@ The FOBOS data reduction pipeline will deliver science-quality reduced data in v
 
 The pipeline shall perform the following tasks:
 
-\begin{itemize}
+\begin{datarequirement}
 
-\item Extract one-dimensional (1D) spectra from the detector using optimal extraction techniques. This should include methods of reducing crosstalk. In a further stage, it is desirable but not a requirement to implement ``spectro-perfectionism'' extraction.
+\reqitem Extract one-dimensional (1D) spectra from the detector using optimal extraction techniques. This should include methods of reducing crosstalk. In a further stage, it is desirable but not a requirement to implement ``spectro-perfectionism'' extraction.
 
-\item Reject cosmic rays and other detector artifacts.
+\reqitem Reject cosmic rays and other detector artifacts.
 
-\item Perform sky subtraction on individual extracted spectra
+\reqitem Perform sky subtraction on individual extracted spectra
 
-\item Perform flux calibration on extracted spectra for relevant programs as defined in Section~\ref{sec:spectrophotometry}.
+\reqitem Perform flux calibration on extracted spectra for relevant programs as defined in Section~\ref{sec:spectrophotometry}.
 
-\item In IFU mode, produce a data cube based on co-added spectra for each source that accounts for dither offsets, atmospheric refraction, etc, fulfilling the requirements presented in Section~\ref{sec:spatial_sampling}.
+\reqitem In IFU mode, produce a data cube based on co-added spectra for each source that accounts for dither offsets, atmospheric refraction, etc, fulfilling the requirements presented in Section~\ref{sec:spatial_sampling}.
 
-\item This data cube shall be properly rectified; i.e., rectilinearly gridded with pixel $i,j$ tracing the same physical region of a galaxy at each wavelength through the cube.
+\reqitem This data cube shall be properly rectified; i.e., rectilinearly gridded with pixel $i,j$ tracing the same physical region of a galaxy at each wavelength through the cube.
 
-\item Provide both linear and $\log \lambda$ sampling in wavelength.
+\reqitem Provide both linear and $\log \lambda$ sampling in wavelength.
 
-\end{itemize}
+\end{datarequirement}
 
 \medskip
 
@@ -709,17 +704,17 @@ The pipeline shall perform the following tasks:
 
 We divide the data products into four categories:
 
-\begin{itemize}
+\begin{datarequirement}
 
-\item low-level products, or datacubes without any interpolation or corrections applied,
+\reqitem low-level products, or datacubes without any interpolation or corrections applied,
     
-\item mid-level products, or datacubes that have been interpolated, corrected and binned,
+\reqitem mid-level products, or datacubes that have been interpolated, corrected and binned,
     
-\item high-level products, or measurements of quantities such as kinematics, emission lines, and stellar population properties,
+\reqitem high-level products, or measurements of quantities such as kinematics, emission lines, and stellar population properties,
     
-\item model-derived products, or modeled quantities based upon high-level products.
+\reqitem model-derived products, or modeled quantities based upon high-level products.
     
-\end{itemize}
+\end{datarequirement}
 
 \noindent We describe these different categories and their requirements below.
 
@@ -727,27 +722,27 @@ We divide the data products into four categories:
 
 Low-level products will be used predominantly by users to interpret the observed spectra themselves. We will therefore offer:
 
-\begin{itemize}
+\begin{datarequirement}
 
-\item Raw fiber spectra of every exposure
+\reqitem Raw fiber spectra of every exposure
     
-\item if sky subtraction is applied, sky-subtracted spectra shall reference the sky spectrum that was subtracted; and
+\reqitem if sky subtraction is applied, sky-subtracted spectra shall reference the sky spectrum that was subtracted; and
     
-\item if flux calibration is applied, flux-calibrated spectra shall reference the flux calibration vector that was applied.
+\reqitem if flux calibration is applied, flux-calibrated spectra shall reference the flux calibration vector that was applied.
     
-\end{itemize} 
+\end{datarequirement}
 
 \subsection{Mid-Level Products} \label{sec:mid_level_products}
 
 Mid-level products are meant for those users who prefer to measure quantities from the 1D reduced spectra or datacubes themselves, or who are interested in quantities that we do not provide directly. These products will be: 
 
-\begin{itemize}
+\begin{datarequirement}
 
-\item Interpolated 1D spectra and data cubes with errors;
-\item For IFUs: spatially integrated spectra; and
-\item radially-binned spectra.
+\reqitem Interpolated 1D spectra and data cubes with errors;
+\reqitem For IFUs: spatially integrated spectra; and
+\reqitem radially-binned spectra.
 
-\end{itemize}
+\end{datarequirement}
 
 
 \subsection{High-Level Products} \label{sec:high_level_products}
@@ -758,13 +753,13 @@ High-level products contain quantities measured directly from the 1D spectra and
 
 \noindent Stellar and ionized-gas-phase composition measurements will include these measures from individual 1D spectra, datacubes, radially-binned (azimuthally averaged) and integrated IFU datacubes:
 
-\begin{itemize}
+\begin{datarequirement}
 
-\item Systemic redshifts and errors via both emission line and continuum fitting
-\item Emission and absorption line strengths and equivalent widths
-\item Lick index measurements (where possible)
+\reqitem Systemic redshifts and errors via both emission line and continuum fitting
+\reqitem Emission and absorption line strengths and equivalent widths
+\reqitem Lick index measurements (where possible)
 
-\end{itemize}
+\end{datarequirement}
 
 \chapter{Documentation}
 

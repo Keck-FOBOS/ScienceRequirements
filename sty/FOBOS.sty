@@ -119,6 +119,62 @@
 \newcommand{\tus}{\textunderscore}
 
 
+%% Requirement lists
+% Thanks to:
+%
+% https://tex.stackexchange.com/questions/28593/how-to-create-a-custom-list-and-item-element
+
+\usepackage{paralist}   % load paralist BEFORE enumitem
+\usepackage{enumitem}
+\usepackage{keyval}
+
+\makeatletter
+\define@key{vort3xlist}{prefix}{\def\reqprefix{#1}}
+\define@key{vort3xlist}{start}{\setcounter{reqcnt}{#1}}
+\makeatother
+
+\newcounter{reqcnt}
+
+\newlist{requirement*}{enumerate}{1}
+\setlist[requirement*]{label={\bfseries \reqprefix~\reqopt.\arabic{reqcnt}}:~,
+                  ref={\bfseries \reqprefix~\reqopt.\arabic{reqcnt}}}
+\makeatletter
+\let\reqopt\relax
+\newcommand\reqitem[1][]{%
+  \refstepcounter{reqcnt}%
+  \if\relax\detokenize{#1}\relax
+    \def\reqopt{\thechapter}%
+  \else
+    \def\reqopt{#1}%
+  \fi
+    \item\relax}
+\makeatother
+
+\newenvironment{requirement}[1][]
+  {\setkeys{vort3xlist}{prefix=R}%change here your default prefix
+   \setkeys{vort3xlist}{#1}%
+   \begin{requirement*}}
+  {\end{requirement*}}
+
+\newenvironment{sciencerequirement}[1][]
+  {\setkeys{vort3xlist}{prefix=S}%change here your default prefix
+   \setkeys{vort3xlist}{#1}%
+   \begin{requirement*}}
+  {\end{requirement*}}
+
+\newenvironment{datarequirement}[1][]
+  {\setkeys{vort3xlist}{prefix=D}%change here your default prefix
+   \setkeys{vort3xlist}{#1}%
+   \begin{requirement*}}
+  {\end{requirement*}}
+
+\newenvironment{programrequirement}[1][]
+  {\setkeys{vort3xlist}{prefix=P}%change here your default prefix
+   \setkeys{vort3xlist}{#1}%
+   \begin{requirement*}}
+  {\end{requirement*}}
+
+
 
 % Pulled from
 %
@@ -127,7 +183,7 @@
 % on 8 July 2020.
 %
 % Changed all "renewcommand" calls to "newcommand".
-
+\makeatletter
 \let\jnl@style=\rmfamily 
 \def\ref@jnl#1{{\jnl@style#1}}% 
 \newcommand\aj{\ref@jnl{AJ}}%        % Astronomical Journal 
@@ -194,7 +250,7 @@
 \let\apjlett=\apjl 
 \let\apjsupp=\apjs 
 \let\applopt=\ao 
-
+\makeatother
 
 
 
