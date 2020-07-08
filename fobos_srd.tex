@@ -1,105 +1,119 @@
-\documentclass[preprint,11pt]{aastex}
+%\RequirePackage[l2tabu, orthodox]{nag}
+%! program = pdflatex
 
+\documentclass[11pt,a4paper,twoside,onecolumn,openany,final,oldfontcommands]{memoir}
+\usepackage{sty/FOBOS}  % FOBOS SDN style file
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Things you need to edit:
+%   - Document name, numbering, and date; edit the newcommands below.
+%   - Authors list; see authors.tex
+%   - The contact information for the corresponding author; see corresponding.tex
+%   - Any (additional) tex aliases you would like to include; see aliases.tex
+%   - BibTex references are included using ref.bib
+%   - Main body of the document
+%   - Add a line to the revision history
+
+\newcommand{\doclongname}{Long Document Name}
+\newcommand{\docshortname}{Document abbreviation; e.g., LDN}
+
+\newcommand{\project}{FOBOS}
+\newcommand{\wbs}{WBS}
+\newcommand{\doctype}{DOC}
+\newcommand{\docnumber}{001}
+
+% Pre-release versions are 0A - ZZ; Release versions should be 01-99
+\newcommand{\docversion}{0A}
+\newcommand{\docreleaseDate}{2020-07-08}  % Please use ISO-8601 YYYY-MM-DD format.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Document Designation Number
+\newcommand{\docsysnum}{{\project}.{\wbs}.{\doctype}.{\docnumber}.V{\docversion}}
+
+%% Set footers to use document info
+%% ================================
+\makeoddfoot{Ruled}{\docsysnum}{}{\thepage\ / \thelastpage}
+\makeevenfoot{Ruled}{\thepage\ / \thelastpage}{}{\docsysnum}
+
+%% BIB
 \usepackage{natbib}
-%\usepackage[dvipdfm]{hyperref}
-\usepackage[raggedright]{titlesec}
-\usepackage{enumerate}
-\usepackage{epsfig, pdfpages, longtable, booktabs, pbox, pdflscape, minitoc, afterpage}
-%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\usepackage{psfig,color}
-\usepackage{graphicx}
 
-\textwidth=6.5in
-\textheight = 9in
-\oddsidemargin=0.0in
-\evensidemargin=0.0in
-\topmargin = -\topskip
-\advance\topmargin by -\headsep
-\footskip 0.5in
-\marginparwidth .75in \marginparsep 7pt
-%\advance\textheight by \topskip
-\parindent=20pt
-\parskip=4pt
+%% Additional Pacakages, not yet in sty
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-
-\long\def\symbolfootnote[#1]#2{\begingroup%
-\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
-
-\newcommand{\etal}{\textit{et al.}}
-\newcommand{\msun}{M$_{\odot}$}
-\newcommand{\Msun}{{\rm M}_{\odot}}
-\newcommand{\Hz}{{\rm Hz}}
-\newcommand{\erg}{{\rm erg}}
-\newcommand{\yr}{{\rm yr}}
-\newcommand{\cm}{{\rm cm}}
-\newcommand{\kms}{{\rm km s$^{-1}$}}
-\newcommand{\s}{{\rm s}}
-\newcommand{\Mpc}{{\rm Mpc}}
-\newcommand{\Halpha}{{H$\alpha$}}
-\newcommand{\Hbeta}{{H$\beta$}}
-%\newcommand{\Mgb}{{Mg$_{\rm b}$}}
-\newcommand{\Mgb}{Mg{\it b}}
-\newcommand{\Reff}{{R$_{e}$}}
-\newcommand{\HI}{{\sc H\,i}}
-\newcommand{\HII}{{\sc H\,ii}}
-\newcommand{\photoz}{photo-$z$}
+%%% Packages for TESTING
+\usepackage{lipsum}
+\listfiles
 
 % Some fancy commenting
 \definecolor{todo}{RGB}{200,0,0}
 \newcommand{\edit}[2][todo]{{\color{#1}[[{\bf #2}]]}}
 
-% Enable mini table of contents
-%\dominitoc
+%% GRAPHICS
+% Each SDN can carry graphics. Place the pathname of your SDN here. It helps to keep your SDN self-contained, so that this doc is the top-level one. Any sub-dirs (subfolders for Windows users) should be referenced relative to the top level.
+% Additionally, for large (>5 MB) graphics, please resize so that they are suitable for printing (120 dpi preferred) without being too large.
+% You can have multiple (unused) graphics directories with the Originals, Resized, etc.
+%\graphicspath{
+%{./Figures/}, % base filepath is Figures
+%{./Figures/Logo/}, % Logo filepath
+%{./Figures/Resized/} % Figures used in this SDN should live here
+%}
 
+%% ALIASES
+\input{aliases}
 
-\textheight = 9in
-\oddsidemargin=0.0in
-\evensidemargin=0.0in
-\topmargin = -\topskip
-\advance\topmargin by -\headsep
-\footskip 0in
-\marginparwidth .75in \marginparsep 7pt
-\parindent=20pt
-\parskip=4pt
+%% ABSTRACT Page values
+%\renewcommand\abstractname{Executive Summary}
+%\renewcommand\abstractnamefont{\normalfont\large\bfseries}
+%\renewcommand\abstracttextfont{\normalfont}
 
-\title{The Keck Fiber-Optic Broadband Optical Spectrograph (Keck-FOBOS): \\ Science Requirements Document}
-
-\author{\Large FOBOS Science Team}
-
+%%%% BEGIN DOCUMENT
 \begin{document}
+%\bibliographystyle{authordate1}
+%\bibliographystyle{plainnat}
+\bibliographystyle{sty/aasjournal}
 
-\maketitle
+%%% FRONTMATTER
+\frontmatter
+\input{title}
+\thispagestyle{empty}  % Title page has no page number shown.
 
-%\minitoc
+\clearpage
+\setupmaintoc
+\tableofcontents 
 
-\bigskip
-\bigskip
-\bigskip
-\bigskip
+\clearpage
+\listoffigures
 
-\begin{table}[!h]
-    \centering
-    \begin{tabular}{|c|l|l|}
-    \hline
-    Version & Date & Comments \\
-    \hline
-        0.1 & 27 Sep 2019 & Initial concept \\
-        0.2 & 02 Jun 2020 & Toward CoDR \\
-    \hline
-    \end{tabular}
-\end{table}
+%: PREFACE
+\chapter{Corresponding Author}
+%
+\input{corresponding}
 
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The rest of the document editing begins here
 
-\setcounter{tocdepth}{3}
-%\setcounter{minitocdepth}{3}
-\setcounter{secnumdepth}{3}
-\tableofcontents
+%-----------------------------------------------------------------------
+% Executive Summary
+\chapter{Executive Summary}
 
-\newpage
+This is the template for FOBOS design documents.
 
-\section{Introduction}
-\label{srd:intro}
+%-----------------------------------------------------------------------
+
+
+%-----------------------------------------------------------------------
+% Main document body
+\mainmatter
+
+% Introduction
+\chapter{Introduction}
 
 High-multiplex and deep spectroscopic follow-up of upcoming panoramic deep-imaging surveys like LSST, Euclid, and WFIRST is a widely recognized and increasingly urgent necessity. No current or planned facility at a U.S.~observatory meets the sensitivity, multiplex, and rapid-response time needed to exploit these future datasets. FOBOS, the Fiber-Optic Broadband Optical Spectrograph, is a near-term fiber-based facility that addresses these spectroscopic needs by optimizing depth over area and exploiting the aperture advantage of the existing 10m Keck II Telescope. The result is an instrument with a uniquely blue-sensitive wavelength range (0.31--1.0 $\mu$m) at $R \sim 3500$, high-multiplex (1800 fibers), and a factor 1.7 greater survey speed and order-of-magnitude greater sampling density than Subaru's Prime Focus Spectrograph (PFS). In the era of panoramic deep imaging, FOBOS will excel at building the deep, spectroscopic reference data sets needed to interpret vast imaging data. At the same time, its flexible focal plane, including a mode with 25 deployable integral-field units (IFUs) across a 20 arcmin diameter field, enables an expansive range of scientific investigations. Its key programmatic areas include (1) nested stellar-parameter training sets that enable studies of the Milky Way and M31 halo sub-structure, as well as local group dwarf galaxies, (2) a comprehensive picture of galaxy formation thanks to detailed mapping of the baryonic environment at $z \sim 2$ and statistical linking of evolving populations to the present day, and (3) dramatic enhancements in cosmological constraints via precise photometric redshifts and determined redshift distributions.  In combination with Keck I instrumentation, FOBOS also provides instant access to medium-resolution spectroscopy for transient sources with full coverage from the UV to the K-band.
 
@@ -117,37 +131,37 @@ High-multiplex and deep spectroscopic follow-up of upcoming panoramic deep-imagi
 
 FOBOS addresses these goals by achieving high multiplex while optimizing for sensitivity over area.  Future imaging data will routinely reach $i_{\rm AB} = 25$, yielding target densities of 42 arcmin$^{-2}$.  FOBOS achieves a single-pass on-sky sampling density of 6 arcmin$^{-2}$ on average, and close packing would allow a maximum target density of $\sim$30 arcmin$^{-2}$.  These capabilities allow FOBOS to collect large samples of very faint sources with highly efficient observing strategies. 
 
-\noindent{\bf FOBOS's Key Science Questions:}
+\paragraph{FOBOS's Key Science Questions:}
 
-\begin {enumerate} 
-
-\item What is the nature of the assembly histories of the Milky Way, M31, and Local Group dwarfs?  {\em (Section \ref{sec:LocalGroup})}.
-
+\begin{enumerate} 
+\item What is the nature of the assembly histories of the Milky Way, M31, and Local Group dwarfs?  {\em (Section \ref{sec:LocalGroup})}
 \item What are the key processes driving the late-time evolution of galaxies from $z\sim 1$ to the present day? {\em (Section \ref{sec:galaxies})}
-
-\item How is the baryonic environment at $z \sim 2$--3 influenced by forming galaxies and how does it drive their formation {\em (Section \ref{sec:galaxies})}
-
-\item What is the nature of Dark Energy and the growth of cosmic structure at high redshift? {\em (Section \ref{sec:cosmology})}
-
-\end {enumerate}
+\item How is the baryonic environment at $z \sim 2$--3 influenced by forming galaxies and how does it drive their formation? {\em (Section \ref{sec:galaxies})}
+ \item What is the nature of Dark Energy and the growth of cosmic structure at high redshift? {\em (Section \ref{sec:cosmology})}
+\end{enumerate}
 
 The ability to address these questions depends both on the FOBOS instrument design and the design of possible observing programs to be carried out within each science area.  This Science Requirements Document seeks to outline possible key science programs whose goals can flow down to specific instrument requirements.
+
 
 Throughout this document, we adopt a consistent signal-to-noise (S/N) definition for the stellar continuum, which is the median S/N per pixel in the logarithmic wavelength grid with $\Delta \log \lambda = 10^{-4}$ across the SDSS r-band (the linear pixel size is approximately 1.4\AA). This can be directly measured from the raw fiber spectrum and we have historical BOSS data to link this S/N to surface brightness on the sky. This allows us to estimate the S/N we can obtain in our target galaxy to check if they can meet the science requirements.
 
 In discussing the science requirements, we would also like to separate `precision' from `accuracy'. All of our quantitative requirements focus on measurement precision, which includes only uncertainty propagated from raw measurement uncertainties under a specific set of model assumptions. They do not include systematic uncertainty due to incorrect model assumptions. Because there could be a large number of different model assumptions and the truth may be even beyond current knowledge, it is often a nearly impossible task to assess how accurate a physical property can be measured to its true value. Nonetheless, that is the ultimate goal of this whole enterprise. By limiting the measurement uncertainty and measuring same physical property from different methodologies, we can gain important insight about the accuracy and fidelity of the measurement. Here, we only consider measurement precision in our science requirements and do not discuss accuracy.
 
-
 In what follows, we collect the high-level science requirements for each of the key science questions in Section~\ref{sec:key_science} and present the flow-down into underlying requirements in terms of direct observables (Section~\ref{sec:key_observables}), the program definition (Section~\ref{sec:programs}), spectro-photometric calibration (Section~\ref{sec:spectrophotometry}), guiding and PSF metrology (Section~\ref{sec:guiding}), data reduction (Section~\ref{sec:data_reduction_pipeline}), the FOBOS data products (Section~\ref{sec:data_products}).
 
 
-%% ----------------------------------------------------------------------------------------
-%% Cosmology Program
-%% ----------------------------------------------------------------------------------------
 \newpage
-\section{Science Drivers: Cosmology} \label{sci:cosmology}
 
-\subsection{Photometric Redshift Training for Dark Energy Surveys}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Science Drivers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------------
+% Cosmology
+%-----------------------------------------------------------------------
+\chapter{Science Drivers: Cosmology} \label{sci:cosmology}
+
+\section{Photometric Redshift Training for Dark Energy Surveys}
 \label{sci:photoz}
 
 See DESC Google Doc of Desiridata: \url{https://docs.google.com/document/d/1SgST0eiQC2WmVFWyu6HUBpFN7EERZhC5t\_7OXrwRMJg/edit\#heading=h.olp0r1g70nxf}
@@ -159,64 +173,63 @@ These measures utilize angular correlations of galaxy positions, their gravitati
 \emph{From DESC Collaboration}: resolve the [OII] 3727 angstrom doublet (R > 4000), on a large-aperture telescope (>6m if at all possible), with modestly large field of view (>20 arcmin diameter) preferred
 
 
-\subsubsection{Science Requirements for Redshift Training Samples}
+\subsection{Science Requirements for Redshift Training Samples}
 
 \begin{description}
-
+%
 \item[S1.1] Redshift precision of 150 \kms{} or better. Stage IV cosmology experiments need to constrain the mean redshift of shear bins to $\lesssim0.2\%$. Redshift samples used for calibration must achieve at least this level of precision per source, which sets this requirement. 
-
+%
 \item[S1.2]  Redshift success rate of 75\% measured in a magnitude bin of width 0.5 mag up to the magnitude limit.  Explanation...
-
+%
 \item[S1.3] Magnitude limit of $i_{\rm AB} = 25.3$.  This limit corresponds to the expected depth of LSST lensing samples (REF).
-
+%
 \item[S1.4] Minimum sample size of 15,000, required for sufficient coverage of the photometric color space and for training statistics (REF).
-
+%
 \item[S1.5] 10 independent fields of minimum 20\arcmin{} diameter in order to average over systematics in the galaxy population owing to sample variance.
-
+%
 \item[S1.6] Redshift range of $z = $[0.1, 3.5], spanning the distribution of LSST and WFIRST cosmology samples (REF).
-
+%
 \end{description}
 
 
-
-\subsection{Redshift Distributions of CMB Lensing Cross-Correlation Photometric Samples}
+\section{Redshift Distributions of CMB Lensing Cross-Correlation Photometric Samples}
 
 High-S/N CMB maps from next-generation CMB observatories (e.g., Simons Observatory and CMB-S4) will provide a cosmic ``reference background'' for measurements of gravitational lensing induced by matter along the line of sight.  After cross-correlating with Lyman Break Galaxy (LBG) samples, a relatively flat lensing ``kernel'' with power at $z = 2$--5 enables powerful constraints on the Inflation-sensitive matter power spectrum, Horizon-scale General Relativity, cosmic curvature and neutrino masses, and early Dark Energy \citep{ferraro19}.  \citet{wilson19} explore these constraints in detail and highlight the need for spectroscopic determination of accurate redshift distributions for the employed LBG samples. FOBOS would address this need in two ways.  First, several deep-drilling fields targeting $\sim$1000 LBGs BX, $u$, $g$, and $r$ drop-out candidates per pointing ($\sim$10,000 deg$^{-2}$) would establish the interloper rate and intrinsic redshift distribution of LBG samples to sufficient precision (this program would likely overlap with the photo-$z$ program described above).  Second, $\sim$200 LBGs per pointing (2000 deg$^{-2}$) could be included as a background program when FOBOS observes other sources across the sky, eventually building a 50-100 deg$^2$ data set of sparse high-$z$ spectroscopy for LBG dN/d$z$ calibration via clustering redshifts \citep[see][]{wilson19}. 
 
-\subsubsection{Science Requirements for CMB Lensing Calibration}
+\subsection{Science Requirements for CMB Lensing Calibration}
 
 \begin{description}
-
+%
 \item[S2.1] Redshift precision of 150 \kms{} or better.  Explanation...
-
+%
 \item[S2.]  Redshift success rate of 75\% measured in a magnitude bin of width 0.5 mag up to the magnitude limit.  Explanation...
-
+%
 \item[S2.2] Photometric selections of various LBG samples...
-
+%
 \item[S2.2] Minimum sample size of 
-
+%
 \item[S2.3] 10 independent fields of minimum 20\arcmin{} diameter in order to average over systematics in the galaxy population owing to sample variance.
-
+%
 \item[S2.4] Redshift range of $z = $[2, 5], spanning the peak power of the CMB lensing kernel.
-
+%
 \end{description}
+%-----------------------------------------------------------------------
 
-
-
-%% ----------------------------------------------------------------------------------------
-%% Galaxy Evolution Program
-%% ----------------------------------------------------------------------------------------
 \newpage
-\section{Science Drivers: Galaxy Evolution} \label{sci:galaxies}
+
+%-----------------------------------------------------------------------
+% Galaxy Evolution
+%-----------------------------------------------------------------------
+\chapter{Science Drivers: Galaxy Evolution} \label{sci:galaxies}
 
 With both single-fiber and multiplexed IFU observations, FOBOS will produce rich and comprehensive data sets at faint source magnitudes.  Its blue sensitivity affords UV absorption studies down to $z \sim 1.5$, enabling detailed mapping of the baryonic environment at the peak formation epoch.  Samples at $z=1$--$2$ will not only characterize how this environment and its impact on galaxies evolves but will also provide large training sets that can be used to extract spectroscopic-like information from the billion-plus galaxy samples observed in all-sky surveys.  These data will be used in concert with large samples of spatially-resolved FOBOS observations (in IFU mode) to set the context for highly-detailed studies of targeted samples with James Webb Space Telescope and the U.S.~Extremely Large Telescopes.  Finally, FOBOS can tie evolutionary behavior seen at early times to the present day by observing faint sub-structure and dynamical tracers in nearby galaxies.
 
-\subsection{1B Galaxy Samples from Spectroscopic Training}
+\section{1B Galaxy Samples from Spectroscopic Training}
 \label{sci:1Bgalaxies}
 
 Apply deep-learning algorithms to infer physical properties of galaxies at $z$$\sim$2 using using photometry. The range of observed spectral types is well-constrained by broad-band imaging, suggesting a far greater potential for imaging data to reveal physical properties with sufficient training than conventional modeling of spectral energy distributions (SEDs) would suggest.  Machine learning techniques will require training sets with well measured star-formation histories, stellar-population properties, dust content, inflow/outflow properties, and stellar masses --- and determine design parameters for future training sets that will enable such inferences for millions of imaged galaxies at $z$$\sim$2. 
 
-\subsubsection{Science Requirements for the 1B Galaxy Sample}
+\subsection{Science Requirements for the 1B Galaxy Sample}
 
 \begin{description}
 
@@ -229,14 +242,14 @@ Apply deep-learning algorithms to infer physical properties of galaxies at $z$$\
 \end{description}
 
 
-\subsection{The Galaxy Environment and Ecosystem}
+\section{The Galaxy Environment and Ecosystem}
 \label{sci:ecosystem}
 
 With publicly-accessible surveys like MOSDEF \citep{kriek15}, the Keck MOSFIRE instrument has provided powerful new insights into early galaxies at the $z$$\sim$2 peak-formation epoch \citep[also see KBSS,][]{steidel14}. However, a complete picture of the galaxy ``ecosystem'' at this key epoch must also consider the gas-filled environments. Using Ly$\alpha$ absorption in background galaxies, a tomographic map of the intergalactic medium (IGM) in regions surveyed by MOSDEF and KBSS is a key first step. The promise of this approach, demonstrated at Keck by \citet{lee14}, motivates FOBOS's UV sensitivity, target flexibility, and multiplex for tomographic mapping of large-scale structure, including protoclusters \citep{lee16,kartaltepe19}, voids \citep{krolewski18}, and filaments \citep{horowitz19}. \citet{2018arXiv181005156S} take IGM tomography in a new direction, demonstrating with simulated observations that quasar ``light echoes'' --- spatial signatures of the expanding ionization front of a newly activated quasar --- can be detected and used to infer opening angles and deconstruct the quasar's accretion history (see Fig \ref{fig:LightEcho}). The required FOBOS spectra can simultaneously constrain the CIV mass density (via $\lambda\lambda$1548,1550 \AA) and patterns of CIV enrichment on both IGM and circumgalactic scales, revealing the imprint of galaxy fueling and feedback processes \citep[e.g.,][]{tumlinson17}.
 
 At later times, as IGM material becomes more confined to galaxies and their dark matter halos, these halos increasingly merge to form larger structures.  FOBOS will be particularly important for mapping out environmental effects at $z=1$--$2$ on galaxy evolution at the group scale ($\mathcal{M_\ast/M_\odot} \lesssim 10^{13}$) and statistically linking galaxies to their host dark matter halos \citep{behroozi19}.  Tens of thousands of satellites down to sub-L$^*$ luminosities will be mapped and characterized. Thanks to deep, wide-field imaging surveys, like LSST, a 1M-object environmental survey at $z=1$--$2$ may then be possible using improved photo-$z$s, strong priors on spectral types, and new machine-learning techniques to deliver {\it spectroscopic} redshifts (with $\lesssim$300 km/s accuracy) at the lowest signal-to-noise possible (exposure times reduced by factors of 4--5).
 
-\subsubsection{Science Requirements for the Galaxy Ecosystem}
+\subsection{Science Requirements for the Galaxy Ecosystem}
 
 \begin{description}
 
@@ -253,7 +266,7 @@ At later times, as IGM material becomes more confined to galaxies and their dark
 \end{description}
 
 
-\subsection{Internal Structure of Galaxies}
+\section{Internal Structure of Galaxies}
 \label{sci:internal}
 
 MaNGA \citep{bundy15} and other large IFU surveys are defining the $z=0$ benchmark for how internal structure is organized across the galaxy population. To understand and test ideas for how this internal structure emerged, we require spatially-resolved observations at $z = 1$--2, just after the peak formation epoch. Indeed, Keck has helped pioneer such observations \citep[e.g.,][]{erb04, miller11,law09}. With only one galaxy observed at a time, samples have so far been limited to a few hundred sources; however, FOBOS will obtain resolved spectroscopy for thousands of galaxies using its IFU-mode with a 25 deployed IFUs. Bright optical emission-line tracers for this unprecedented sample of galaxies will reveal their gas-phase and kinematic structure. Stacking restframe $\lambda \approx 4500$ spectra will enable radial stellar population analyses to constrain how stellar components formed and assembled. Although initially limited to coarse spatial scales, ground-layer adaptive optics (GLAO) in combination with FOBOS would be transformative for this science. A corrected FWHM of 0.2-0.3 arcsec would enable fine-sampling IFUs to probe smaller galaxies and study sub-structure on 1--2 kpc scales.
@@ -268,7 +281,7 @@ The stellar populations in a galaxy represent a record of the galaxy's star form
 
 FOBOS's wide spectral range (3500--10,000~\AA) captures a large range of absorption features, from blue indices such as D4000, Ca H$+$K, and higher-order Balmer lines, through classical optical absorption features such as \Hbeta, Mg{\it b}, and Fe5270/Fe5335, to red, gravity-sensitive features such as the Ca triplet at $8600$~\AA. These features encode a great deal of information about star formation histories and the IMF, and can be used to measure element abundance ratios like [Mg/Fe], [N/Fe], [C/Fe] and [Ca/Fe].
 
-\subsubsection{Science Requirements: Galaxy Structure with IFUs}
+\subsection{Science Requirements: Galaxy Structure with IFUs}
 
 \begin{description}
 
@@ -304,51 +317,56 @@ FOBOS's wide spectral range (3500--10,000~\AA) captures a large range of absorpt
 \item[S] Gas velocity accuracy of 6-10~km/s and dispersion to ~30 km/s for lines with peak S/N $>$10.  Equivalently, $k_1$ (the kinemetric first moment) from emission-line tracers, will be determined to an accuracy of $<$ 5~km/s for amplitude-over-noise $A/N>5$ and $<$ 10~km/s for $A/N<5$. This applies only to galaxies with line-emission, that are rotation dominated, and have at least 5 spatial resolution elements across the major axis. 
 
 \end{description}
+%-----------------------------------------------------------------------
 
-
-
-
-%% ----------------------------------------------------------------------------------------
-%% Local Group Program
-%% ----------------------------------------------------------------------------------------
 \newpage
-\section{Science Drivers: Milky Way and Local Group} \label{sci:localgroup}
 
-\subsection{Halo Assembly in the Milky Way and M31}
+%-----------------------------------------------------------------------
+% Local Group
+%-----------------------------------------------------------------------
+\chapter{Science Drivers: Milky Way and Local Group} \label{sci:localgroup}
+
+\section{Halo Assembly in the Milky Way and M31}
 
 Studies of individual stars in the Milky Way (MW), Magellanic Clouds, Andromeda (M31), Triangulum galaxy (M33), and numerous dwarf satellites provide an exquisitely detailed look at specific examples of galaxy assembly and evolution. While Gaia provides on-sky motions and photometry for 1.7 billion stars in the MW, fewer than 10\%, 0.3\%, and 0.1\% of stars will have a full complement of astrometrics and kinematics, basic stellar parameters, and chemical abundances, respectively.  Moreover, Gaia distance errors increase quadratically with distance.  Spectroscopy with APOGEE, the Milky Way Mapper, and WEAVE provide supporting wide-field data sets but accounting for fainter stars requires FOBOS-like sensitivity \citep[see][]{dey19,sanderson19}.  By carefully exploiting the overlap in these data sets, FOBOS can link high-resolution and robust stellar information from brighter targets to stars that can only be characterized by photometry.  This would enable data-driven models capable of providing photometric estimates of stellar parameters (temperature, surface gravity, metallicity, and alpha-element abundance) for {\it all} stars in the Gaia dataset  \citep[see][]{2015ApJ...808...16N, 2018arXiv180401530T, 2018arXiv180803278T}. 
 
 Of particular interest is the ability of future imaging surveys to increase the census of stellar streams and other substructure by a hundredfold.  The stars in these structures are faint, however, and easily confused with background galaxies in ground-based photometry.  With spectrocopic reference samples from FOBOS, the goal is to photometrically reconstruct the star-formation histories of disrupted satellites and compare them with dynamical models to constrain assembly histories and enclosed mass constraints \citep[e.g.,][]{2017ApJ...836..234S}.
 
-\subsubsection{Science Requirements: Assembly and Evolution of Andromeda's Disk and Satellite Galaxies}
+\subsection{Science Requirements: Assembly and Evolution of Andromeda's Disk and Satellite Galaxies}
 
 \begin{description}
 
-\item[S4] Radial velocities to $\lessim$1 km/s.
+\item[S4] Radial velocities to $\lesssim$1 km/s.
 \item[R4] Spectral resolution of $R>XXXX$
 \item[R4] $\text{S/N}>XX$
-\item[S4] [Fe/H] and [$\alpha$/Fe] measured to $\lessim$0.1 dex.
-\item[S4] Individual elemental abundances measured to $\lessim$0.2 dex.
+\item[S4] [Fe/H] and [$\alpha$/Fe] measured to $\lesssim$0.1 dex.
+\item[S4] Individual elemental abundances measured to $\lesssim$0.2 dex.
 \item[R4] Spectral coverage from XXXX-XXXX \AA.
 \item[R4] Spectral resolution of $R>XXXX$
 \item[R4] $\text{S/N}>XX$
-\item[S4] Stellar ages from CN absorption features to $\lessim$ XX Gyr.
+\item[S4] Stellar ages from CN absorption features to $\lesssim$ XX Gyr.
 \item[R4] Spectral resolution of $R>XXXX$
 \item[R4] Spectral coverage from XXXX-XXXX \AA.
 \item[R4] $\text{S/N}>XX$
 
 \end{description}
 
+\section{Globular Clusters?}
 
-\subsection{Globular Clusters?}
+\section{Massive Stars?}
+%-----------------------------------------------------------------------
 
-\subsection{Massive Stars?}
+\newpage
 
-%% ----------------------------------------------------------------------------------------------------
-%%   FOBOS Key Programs
-%% ----------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Key Programs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Key Program: Cosmology}\label{prog:cosmology}
+%-----------------------------------------------------------------------
+% Cosmology
+%-----------------------------------------------------------------------
+
+\chapter{Key Program: Cosmology}\label{prog:cosmology}
 
 \edit{In the description of straw-man observing programs, we don't have to follow the same thematic structure as we did in the science requirements.  For example, the \photoz{} survey and the 1B galaxy sample may be very similar and can be combined here.  So we could change the title of this key program to a more general ``The 1B Galaxy Inferrence'' or something...
 
@@ -365,31 +383,39 @@ There are at least two Cosmology programs: a \photoz{} training program a la \ci
 
 \end{description}
 
-\subsection{Cosmology Survey Success Metric and Completeness Metrics}
+\section{Cosmology Survey Success Metric and Completeness Metrics}
 
 What are they?
+%-----------------------------------------------------------------------
 
-\section{Key Program: Galaxy Evolution}\label{prog:galaxies}
+\newpage
 
-\subsection{IFU Program}\label{prog:galaxies-IFU}
+%-----------------------------------------------------------------------
+% Galaxy Evolution
+%-----------------------------------------------------------------------
+
+\chapter{Key Program: Galaxy Evolution}\label{prog:galaxies}
+
+\section{IFU Program}\label{prog:galaxies-IFU}
 
 \edit{Text here right now is stolen from MaNGA...  Need to think about GLAO.}
 
 \begin{description}
 
- \item[R2.2] A median S/N of $>33$ per pixel in the r-band continuum (spatially binned, if necessary) to achieve the required mean stellar age ($\pm0.12$~dex), metallicity ($\pm0.1$~dex), and abundance constraints ($\pm0.1$~dex) in quiescent galaxies. This S/N constraint comes from the analysis of absorption indices in SDSS-I spectra presented by \cite{johansson12} and from the analysis of the test-run data (L. Coccato).  It is conceivable that this S/N threshold is conservative. Preliminary results from full spectral fitting suggests we could achieve $0.1$ dex in stellar age and abundance with a S/N per pixel of 10-20 (Choi \& Conroy, in prep).
+\item[R2.2] A median S/N of $>33$ per pixel in the r-band continuum (spatially binned, if necessary) to achieve the required mean stellar age ($\pm0.12$~dex), metallicity ($\pm0.1$~dex), and abundance constraints ($\pm0.1$~dex) in quiescent galaxies. This S/N constraint comes from the analysis of absorption indices in SDSS-I spectra presented by \cite{johansson12} and from the analysis of the test-run data (L. Coccato).  It is conceivable that this S/N threshold is conservative. Preliminary results from full spectral fitting suggests we could achieve $0.1$ dex in stellar age and abundance with a S/N per pixel of 10-20 (Choi \& Conroy, in prep).
    
   % (Note, higher S/N would not greatly
   % improve the errors on the stellar population parameters due to
   % age-metallicity degeneracy effects.)
 
- \item[R2.3] For star-forming galaxies and newly quenched galaxies, a median S/N of $>10$ per pixel is required to constrain mean stellar ages to better than 0.1 dex using the 4000~\AA\ break and Balmer indices \citep{kauffmann03a}.  For populations older than 1~Gyr, age-metallicity degeneracies will increase the age uncertainty to 0.2 dex with this method.
+\item[R2.3] For star-forming galaxies and newly quenched galaxies, a median S/N of $>10$ per pixel is required to constrain mean stellar ages to better than 0.1 dex using the 4000~\AA\ break and Balmer indices \citep{kauffmann03a}.  For populations older than 1~Gyr, age-metallicity degeneracies will increase the age uncertainty to 0.2 dex with this method.
 
- \item[R2.4] To explore trends with galaxy physical parameters, the majority of the sample should reach the above S/N threshold (R1.2 for quiescent galaxies and R1.3 for star-forming galaxies) in the co-added spectra in at least three radial bins.
+\item[R2.4] To explore trends with galaxy physical parameters, the majority of the sample should reach the above S/N threshold (R1.2 for quiescent galaxies and R1.3 for star-forming galaxies) in the co-added spectra in at least three radial bins.
 
- \item[R2.5] A median S/N of $>400$ in radially binned stacked spectra is required in order to probe IMF variations \citep{ferreras2013}. This will necessitate co-adding the radially binned spectra of 50 to 100 galaxies.  Thus, a total sample size of several thousand is desired for this analysis.
+\item[R2.5] A median S/N of $>400$ in radially binned stacked spectra is required in order to probe IMF variations \citep{ferreras2013}. This will necessitate co-adding the radially binned spectra of 50 to 100 galaxies.  Thus, a total sample size of several thousand is desired for this analysis.
 
 \end{description}
+
 
 \begin{description}
 
@@ -424,7 +450,7 @@ What are they?
 \end{itemize}
 
 
-\subsubsection{IFU Program Science Justification}
+\subsection{IFU Program Science Justification}
 
 In typical observing conditions (seeing $\leq$ 2\arcsec), the image quality of the data cube is governed primarily by the fiber diameter and spacing. Observing efficiency (time to reach target S/N) is driven by the fill fraction of live fiber cores. 2-\arcsec\ fibers is a sweet spot, given by the characteristic seeing, the sample size, the desired spectral resolution and radial coverage, the desired S/N and the available detector space.  Better spatial and spectral resolution would be highly advantageous for our science goals, but decreasing fiber size provides little gain and several significant losses.  The gains for spatial resolution with small fibers is marginal because of seeing limits; the gains for spectral resolution is marginal because 2-\arcsec\ fibers are just critically exampled.  Further, smaller fibers would degrade S/N per unit exposure time and reduce the radial coverage limited by the available detector space. Larger fibers would degrade spatial resolution to be unusable for kinematics, and would require larger targets with surface densities not well matched to the Sloan 2.5m telescope 7 deg$^2$ field-of-view.
 
@@ -432,7 +458,7 @@ In order to achieve kpc-scale resolution or better at $z\leq0.02$ (i.e., compara
 
 Dead and/or broken fibers impinge significantly on the fidelity with which image reconstruction can be performed. We will not accept any dead fibers in our IFUs. While we initially considered allowing up to 1 dead fiber in our larger IFUs outside of the central 37-fiber core, proto-type development indicates the failure-rate for fibers during IFU fabrication is negligible, and our vendor (CTech) has accepted our requirement.
 
-\subsubsection{IFU Survey Success Metric and Completeness Metrics}
+\subsection{IFU Survey Success Metric and Completeness Metrics}
 
 To define a survey success metric, we concentrate on requirements relating to the {\em continuum} S/N distribution achieved for some number of galaxies.  Sample size arguments are presented in Section \ref{sec:sample_selection} where we motivate a {\em minimally} useful sub-sample size of 3000 galaxies and an {\em acceptable} size of 6000, where the sub-samples refer to the Primary (1.5\Reff) and Secondary (2.5 \Reff) samples.  An absolute minimum requirement on sample size that ensures MaNGA is worthwhile is therefore a total of 6000 galaxies, 3000 from each sub-sample. However, {\bf success is defined by meeting the acceptable level of 6000 galaxies for the Primary sample, and the minimal level of 3000 for the Secondary sample}.  It should be stressed that the two samples are tightly coupled scientifically.  A significant loss to the Secondary sample would greatly degrade our understanding of the Primary sample simply because of the lack of information at radii beyond 1.5 \Reff.
 
@@ -475,11 +501,19 @@ Using the empirical relation between S/N measured in raw spectra and that of fib
 Both metric have to be satisfied before a plate is considered done. With this metric, the majority of the plates will be finished with 9 exposures taken in good conditions, with a small fraction needing 12 or 15 good exposures. 
 
 
-\subsection{Galaxy Ecosystem Program}\label{prog:ecosystem}
+\section{Galaxy Ecosystem Program}\label{prog:ecosystem}
 
 \edit{This program could combine IGM tomography and $z \sim 1$--2 1M galaxy environment survey.}
 
-\section{Key Program: Andromeda and the Local Group}\label{prog:localgroup}
+
+%-----------------------------------------------------------------------
+
+\newpage
+
+%-----------------------------------------------------------------------
+% Local Group
+%-----------------------------------------------------------------------
+\chapter{Key Program: Andromeda and the Local Group}\label{prog:localgroup}
 
 \begin{description}
 
@@ -500,24 +534,35 @@ Both metric have to be satisfied before a plate is considered done. With this me
 
 \end{description}
 
-\subsubsection{Local Group Survey Success Metric and Completeness Metrics}
+\section{Local Group Survey}
+
+\subsection{Local Group Survey Success Metric and Completeness Metrics}
 
 What are they?
 
-\subsection{Program Overlap and Synergies}
+\newpage
 
+%-----------------------------------------------------------------------
+% Overlap
+%-----------------------------------------------------------------------
 
-%% ----------------------------------------------------------------------------------------------------
-%%   FOBOS Technical Requirements
-%% ----------------------------------------------------------------------------------------------------
+\chapter{Program Overlap and Synergies}
 
-\section{Instrument Requirements}
+%-----------------------------------------------------------------------
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Technical Requirements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Instrument Requirements}
 
 Summaries of Science and Program requirements and how they flow down to technical requirements.
 
 To be populated from Wiki Tables: \url{https://uco.atlassian.net/wiki/spaces/FOB/pages/15990810/Requirements}
 
-\subsection{FOBOS.TOP: Top-Level Instrument Requirements}
+\section{FOBOS.TOP: Top-Level Instrument Requirements}
 
 \begin{description}
 
@@ -543,23 +588,23 @@ To be populated from Wiki Tables: \url{https://uco.atlassian.net/wiki/spaces/FOB
 
 \end{description}
 
-\subsection{FOBOS.ADC: Atmospheric Dispersion Corrector Requirements}
+\section{FOBOS.ADC: Atmospheric Dispersion Corrector Requirements}
 
-\subsection{FOBOS.AGS: Acquisition and Guiding System Requirements}
+\section{FOBOS.AGS: Acquisition and Guiding System Requirements}
 
-\subsection{FOBOS.FPM: Focal Plane Motion System Requirements}
+\section{FOBOS.FPM: Focal Plane Motion System Requirements}
 
-\subsection{FOBOS.FFP: Fiber Positioning System Requirements}
+\section{FOBOS.FFP: Fiber Positioning System Requirements}
 
-\subsection{FOBOS.FBR: Fiber System Optics Requirements}
+\section{FOBOS.FBR: Fiber System Optics Requirements}
 
-\subsection{FOBOS.SPEC: Spectrograph Requirements}
-\subsection{FOBOS.SUPT: Support Systems Requirements}
-\subsection{FOBOS.CAL: Calibration System Requirements}
-\subsection{FOBOS.DMS: Spectrograph Requirements}
-\subsection{FOBOS.OPS: Operations Requirements}
+\section{FOBOS.SPEC: Spectrograph Requirements}
+\section{FOBOS.SUPT: Support Systems Requirements}
+\section{FOBOS.CAL: Calibration System Requirements}
+\section{FOBOS.DMS: Spectrograph Requirements}
+\section{FOBOS.OPS: Operations Requirements}
 
-\subsection{Spatial Sampling}
+\section{Spatial Sampling}
 
 \medskip
 \noindent The main requirement on spatial resolution is that the delivered effective PSF shall not be degraded by more than 60\% from typical site conditions at all wavelengths:
@@ -579,12 +624,12 @@ To be populated from Wiki Tables: \url{https://uco.atlassian.net/wiki/spaces/FOB
 
 \end{itemize}
 
-%% ----------------------------------------------------------------------------------------------------
-%%   Spectrophotometry
-%% ----------------------------------------------------------------------------------------------------
-\section{Spectrophotometry} \label{sec:spectrophotometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Spectrophotometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Spectrophotometry} \label{sec:spectrophotometry}
 
-\subsection{Requirements}
+\section{Requirements}
 
 The science requirements for spectrophotometry are driven by two considerations: (1) the need to derive accurate physical parameters from the widely-spaced nebular emission lines, e.g., SFR, dust attenuation, metallicity; (2) the need to derive accurate physical parameters from the stellar continuum through stellar population synthesis. This translates into the following requirements:
 
@@ -596,18 +641,18 @@ The science requirements for spectrophotometry are driven by two considerations:
     
 \end{itemize}
 
-\subsection{Science Justification}
+\section{Science Justification}
 
 Following \citet{kennicutt1998} and \citet{calzetti01}, to achieve 5\% errors on the SFR from \Halpha\ we require a maximum 2.5\% error on the Balmer decrement. This ensures we are never dominated by spectrophotometric errors.
 
 An important scientific goal is to measure nebular metallicity gradients. These are typically quite shallow, of order $\sim0.04$~dex/kpc \citep{vanzee1996}. It is thus desirable to have our spectrophotometry errors contribute no more than 0.01 dex to the error budget. The [N~II]6584~/~[O~II]3727 line ratio is one of the best lines for metallicity measurement in moderately metal-rich nebulae ($12 + \log(\mathrm{O/H}) > 8.5)$ due to its independence on the ionization parameter \citep{kewley02}. We can achieve a $\sim0.01$~dex error in metallicity with a less than 7\% error in the relative spectrophotometry between [OII] and [NII].
 
-%% ----------------------------------------------------------------------------------------------------
-%%   Guiding
-%% ----------------------------------------------------------------------------------------------------
-\section{Guiding and PSF Metrology} \label{sec:guiding}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Guiding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Guiding and PSF Metrology} \label{sec:guiding}
 
-\subsection{Requirements}
+\section{Requirements}
 
 The high-level requirement is that guide errors should not dominate the positional error and image quality degradation of the target galaxies within the bundles. This leads to two specific requirements:
 
@@ -619,15 +664,18 @@ The high-level requirement is that guide errors should not dominate the position
     
 \end{itemize}
 
-\subsection{Science Justification}
+\section{Science Justification}
 
 The stack-up of mechanical tolerances in the ferrules, holes, and the plugging process, the plate shape errors, and the alignment of the bundles w.r.t.\ the chief ray leads to a guide accuracy requirement of 0.2\arcsec.
 
 PSF metrology across the field is crucial for optimal data cube extraction. With our nominal 3-point dither pattern, the reconstructed PSF uniformity across a bundle is $\sim 0.15$\arcsec\ RMS. Mechanical tolerances in ferrule alignment and  the shape of the focal plane cause variations of the PSF of the order of 0.2\arcsec. Hence, for data quality to not be limited by PSF kernel mismatch (used in the extraction),  we require knowledge of the PSF across the field to a similar level.
 
-%% ----------------------------------------------------------------------------------------------------
-%%   MaNGA Data Reduction Pipeline
-%% ----------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Data Requirements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{FOBOS Data Management Systems}
+
 \section{FOBOS Data Reduction Pipeline} \label{sec:data_reduction_pipeline}
 
 The FOBOS data reduction pipeline will deliver science-quality reduced data in various formats, including meta data that can be made available to the public and that will be the input-level materials for higher-level data products. 
@@ -657,9 +705,6 @@ The pipeline shall perform the following tasks:
 \noindent The data reduction pipeline shall operate with minimal human intervention. To aid propagation of covariance matrices, independent steps which require interpolation shall be minimized.
 
 
-%% ----------------------------------------------------------------------------------------------------
-%%   MaNGA Dataset
-%% ----------------------------------------------------------------------------------------------------
 \section{FOBOS Data Products} \label{sec:data_products}
 
 We divide the data products into four categories:
@@ -721,8 +766,9 @@ High-level products contain quantities measured directly from the 1D spectra and
 
 \end{itemize}
 
+\chapter{Documentation}
 
-\subsection{Documentation Plan} \label{sec:documentation}
+\section{Documentation Plan} \label{sec:documentation}
 
 %  A brief description of requirements for web documentation
 % and technical papers seems necessary. I can imagine requirements on
@@ -731,20 +777,37 @@ High-level products contain quantities measured directly from the 1D spectra and
 
 Documentation of FOBOS data products and the methodology applied in producing them is an important requirement for ensuring successful scientific exploitation of the FOBOS data.  Documentation falls into several categories: 1) ``technical'' publications, 2) wiki pages and the Technical Reference Manual, 3) website content associated with public data releases, 4) online user guides and tutorials for interfacing with the data, 5) versioned and repository located source code with substantial and clear internal commenting.  
 
-\subsubsection{FOBOS Wiki}
+\section{FOBOS Wiki}
 
 The FOBOS wiki provides the most up-to-date documentation on project activities and is the primary point of contact for team members desiring information and collaborating on scientific analyses.  The management team will ensure that the wiki remains transparent with a clear hierarchical structure.
 
 The software team shall maintain a ``Technical Reference Manual'' (TRM) that describes the FOBOS software framework, including metadata and targeting information.  The TRM will also describe the processing steps and data model for the Data Reduction Pipeline (DRP) and the Data Analysis Pipeline (DAP).  
 
 
-\subsubsection{Source Code}
+\section{Source Code}
 
 All software used in the design, execution, and processing of FOBOS data will be version controlled and hosted on an accessible repository.  All source code will be substantially commented, thus providing an exact record of processing steps undertaken when carrying out the survey.  Software will eventually become publicly available during data releases.  Whenever possible, we will use automatic documentation-generating software (e.g., Sphinx) to provide explanatory materials along with code. 
 
+\newpage
 
-\bibliographystyle{apj}
-\bibliography{references}
+%% Chapter
+\chapter*{Revision History}
+\addcontentsline{toc}{chapter}{Revision History}
 
+\begin{table}[hp]{%
+\begin{tabular}{l | l | l |  p{22pc}} \toprule
+{\bf Version} & {\bf Date} & {\bf Editor} & {\bf Comments} \\ \midrule
+% Insert your own version number with the date, your name, and a short
+% description of this version of the document.
+0A & 2020-07-08 & Kyle Westfall & Initial version; migrated format \\ \bottomrule
+\end{tabular}}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{ref}
 
 \end{document}
+
+
