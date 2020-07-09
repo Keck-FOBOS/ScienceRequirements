@@ -129,19 +129,19 @@
 \usepackage{keyval}
 
 \makeatletter
-\define@key{vort3xlist}{prefix}{\def\reqprefix{#1}}
-\define@key{vort3xlist}{start}{\setcounter{reqcnt}{#1}}
+\define@key{fobosreq}{prefix}{\def\reqprefix{#1}}
+\define@key{fobosreq}{start}{\setcounter{thiscnt}{#1}}
 \makeatother
 
-\newcounter{reqcnt}
+\newcounter{thiscnt}
 
 \newlist{requirement*}{enumerate}{1}
-\setlist[requirement*]{label={\bfseries \reqprefix~\reqopt.\arabic{reqcnt}}:~,
-                  ref={\bfseries \reqprefix~\reqopt.\arabic{reqcnt}}}
+\setlist[requirement*]{label={\bfseries \reqprefix~\reqopt.\arabic{thiscnt}}:~,
+                       ref={\bfseries \reqprefix~\reqopt.\arabic{thiscnt}}}
 \makeatletter
 \let\reqopt\relax
 \newcommand\reqitem[1][]{%
-  \refstepcounter{reqcnt}%
+  \refstepcounter{thiscnt}%
   \if\relax\detokenize{#1}\relax
     \def\reqopt{\thechapter}%
   \else
@@ -150,29 +150,37 @@
     \item\relax}
 \makeatother
 
+\newcounter{reqcnt}
 \newenvironment{requirement}[1][]
-  {\setkeys{vort3xlist}{prefix=R}%change here your default prefix
-   \setkeys{vort3xlist}{#1}%
+  {\setkeys{fobosreq}{start=\arabic{reqcnt},prefix=R}%change here your default prefix
+   \setkeys{fobosreq}{#1}%
    \begin{requirement*}}
-  {\end{requirement*}}
+  {\setcounter{reqcnt}{\arabic{thiscnt}}%
+   \end{requirement*}}
 
+\newcounter{scicnt}
 \newenvironment{sciencerequirement}[1][]
-  {\setkeys{vort3xlist}{prefix=S}%change here your default prefix
-   \setkeys{vort3xlist}{#1}%
+  {\setkeys{fobosreq}{start=\arabic{scicnt},prefix=S}%change here your default prefix
+   \setkeys{fobosreq}{#1}%
    \begin{requirement*}}
-  {\end{requirement*}}
+  {\setcounter{scicnt}{\arabic{thiscnt}}%
+   \end{requirement*}}
 
+\newcounter{datcnt}
 \newenvironment{datarequirement}[1][]
-  {\setkeys{vort3xlist}{prefix=D}%change here your default prefix
-   \setkeys{vort3xlist}{#1}%
+  {\setkeys{fobosreq}{start=\arabic{datcnt},prefix=D}%change here your default prefix
+   \setkeys{fobosreq}{#1}%
    \begin{requirement*}}
-  {\end{requirement*}}
+  {\setcounter{datcnt}{\arabic{thiscnt}}%
+   \end{requirement*}}
 
+\newcounter{procnt}
 \newenvironment{programrequirement}[1][]
-  {\setkeys{vort3xlist}{prefix=P}%change here your default prefix
-   \setkeys{vort3xlist}{#1}%
+  {\setkeys{fobosreq}{start=\arabic{procnt},prefix=P}%change here your default prefix
+   \setkeys{fobosreq}{#1}%
    \begin{requirement*}}
-  {\end{requirement*}}
+  {\setcounter{procnt}{\arabic{thiscnt}}%
+   \end{requirement*}}
 
 
 
