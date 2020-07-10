@@ -72,9 +72,9 @@
 %\renewcommand\abstractnamefont{\normalfont\large\bfseries}
 %\renewcommand\abstracttextfont{\normalfont}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Requirement counters
-\newcounter{scireq}
+% Change the name of the figure/table list
+\renewcommand{\listfigurename}{Figures}
+\renewcommand{\listtablename}{Tables}
 
 %%%% BEGIN DOCUMENT
 \begin{document}
@@ -94,6 +94,9 @@
 \clearpage
 \listoffigures
 
+\clearpage
+\listoftables
+
 %: PREFACE
 \chapter{Corresponding Author}
 %
@@ -107,7 +110,7 @@
 % Executive Summary
 \chapter{Executive Summary}
 
-This is the FOBOS science-requirements document.
+\edit{This is the FOBOS science-requirements document.}
 
 %-----------------------------------------------------------------------
 
@@ -116,10 +119,40 @@ This is the FOBOS science-requirements document.
 % Main document body
 \mainmatter
 
-% Introduction
 \chapter{Introduction}
 
-High-multiplex and deep spectroscopic follow-up of upcoming panoramic deep-imaging surveys like LSST, Euclid, and WFIRST is a widely recognized and increasingly urgent necessity. No current or planned facility at a U.S.~observatory meets the sensitivity, multiplex, and rapid-response time needed to exploit these future datasets. FOBOS, the Fiber-Optic Broadband Optical Spectrograph, is a near-term fiber-based facility that addresses these spectroscopic needs by optimizing depth over area and exploiting the aperture advantage of the existing 10m Keck II Telescope. The result is an instrument with a uniquely blue-sensitive wavelength range (0.31--1.0 $\mu$m) at $R \sim 3500$, high-multiplex (1800 fibers), and a factor 1.7 greater survey speed and order-of-magnitude greater sampling density than Subaru's Prime Focus Spectrograph (PFS). In the era of panoramic deep imaging, FOBOS will excel at building the deep, spectroscopic reference data sets needed to interpret vast imaging data. At the same time, its flexible focal plane, including a mode with 25 deployable integral-field units (IFUs) across a 20 arcmin diameter field, enables an expansive range of scientific investigations. Its key programmatic areas include (1) nested stellar-parameter training sets that enable studies of the Milky Way and M31 halo sub-structure, as well as local group dwarf galaxies, (2) a comprehensive picture of galaxy formation thanks to detailed mapping of the baryonic environment at $z \sim 2$ and statistical linking of evolving populations to the present day, and (3) dramatic enhancements in cosmological constraints via precise photometric redshifts and determined redshift distributions.  In combination with Keck I instrumentation, FOBOS also provides instant access to medium-resolution spectroscopy for transient sources with full coverage from the UV to the K-band.
+\section{Motivation}
+
+Led by the Vera C.~Rubin Observatory Legacy Survey of Space and Time (LSST)\footnote{For the first ten years of operation, Vera C.~Rubin Observatory will perform the Rubin Observatory Legacy Survey of Space and Time (LSST). The National Science Foundation (NSF) and the US Department of Energy (DOE) are joint partners in the Rubin Observatory Project and Operations.} and NASA-supported missions like Euclid\footnote{Euclid is led by the European Space Agency with significant NASA involvement and will launch in 2022. Its primary mission is a 15,000 deg$^2$ imaging and grism survey in optical and near-IR wavebands.} and the Nancy Grace Roman Space Telescope,\footnote{The Nancy Grace Roman Space Telescope is expected to launch in the mid 2020's.} astronomy is entering a new era of unprecedented deep-imaging campaigns that will survey huge volumes of the universe. From the emergence of the earliest galaxies from a baryonic ``primordial soup,'' through the epoch of cosmic expansion, to the evolved structure of present-day galaxies in our own Local Group and the promise of time-domain discoveries, images from these surveys will provide unprecedented insights into key epochs of cosmic history. As such, these surveys were ranked as top priorities in the Astro2010 decadal survey, resulting in a significant investment of U.S.\ funding agencies in their success.
+
+The need for spectroscopic follow-up of these vast imaging campaigns is obvious.  Indeed, the success of the Sloan Digital Sky Survey (SDSS) and anticipated for the Dark Energy Spectroscopic Instrument (DESI) has made clear the scientific value of coupling panoramic imaging with intensive spectroscopic follow-up, both in terms of new discoveries and in dramatically improving our statistical understanding of the cosmos.  However, at the end of the next decade, these facilities will deliver photometric data across vast areas at a depth that is 1,000 times below SDSS imaging, and {\it no current U.S.~facility is capable of obtaining spectroscopic follow-up at these depths} at the level required to capitalize on the $\approx$\$4B U.S.\ investment in these projects. In fact, an SDSS-like spectroscopic study of 1 million galaxies at LSST depths would require 300 years of observing on the largest telescopes with current instrumentation!
+
+It has long been recognized that a new spectroscopic facility is needed to meet the challenge presented by this era of deep, panchromatic imaging. For example, the National Research Council's 2015 report, ``Optimizing the U.S. Ground-Based Optical and Infrared Astronomy System'' \citep{NAP21722} states:
+%
+\noindent\begin{center}\mbox{\parbox{0.95\linewidth}{
+%
+The National Science Foundation should support the development of a wide-field, highly multiplexed spectroscopic capability on a medium- or large-aperture telescope in the Southern Hemisphere to enable a wide variety of science, including follow-up spectroscopy of Large Synoptic Survey Telescope\footnote{Now renamed to be the Rubin Observatory Legacy Survey of Space and Time, as noted previously.} targets. Examples of enabled science are studies of cosmology, galaxy evolution, quasars, and the Milky Way.
+%
+}}\end{center}
+%
+Additionally, workshops organized by the National Optical Astronomy Observatory (NOAO) in 2013 and 2016, the latter at request of the NSF, reported specific spectroscopic needs for follow-up of LSST sources in all science areas.  In particular, the 2016 report notes that a critical resource in need of prompt development is to ``Develop or obtain access to a highly multiplexed, wide-field optical multi-object spectroscopic capability on an 8m-class telescope.''
+
+Particularly for the U.~S.\ astronomical community, the twin 10m telescopes of the W.~M.~Keck Observatory (WMKO) represent a compelling avenue to meet this need.  While its location in the northern hemisphere is somewhat limiting, more than 60\% of the LSST footprint and three of its deep-drilling fields (COSMOS, XMM-LSS, and E-CDFS) are within the WMKO visibility window.  \edit{More on overlap with Roman, Euclid, $+$.}  Additionally, WMKO provides the only {\it existing} telescope infrastructure with a 10-m aperture, and, given its site and mirror coatings, is uniquely sensitive toward the atmospheric limit in the UV.  The limited multiplex capacity and sensitivity (compared to more modern equivalents) of its current instruments for optical spectroscopy motivates the need for a much more capable instrument.  Moreover, it is significantly more cost effective to invest in a new instrument for an existing facility than it would be to build an entirely new 10m-telescope$+$spectroscopic facility in the southern hemisphere.
+
+Supporting spectroscopic follow-up of large-scale survey missions is already in lockstep with WMKO's strategic goals.  Specifically, the 2016 WMKO Scientific Strategic Plan (SSP) highlights that WMKO ``works best by undertaking sensitive observations of sources found by surveys or other facilities.''  In fact, the 2016 WMKO Scientific Strategic Plan recommended pursuit of ``highly multiplexed, highly sensitive spectroscopy'' as its top-priority design study.  Although largely cast as upgrades to existing instruments (e.g., adding a second DEIMOS channel), Appendix II of the SSP specifically notes recent improvements in the sophistication of fiber-based instruments that are ``improving throughput, increasing sky subtraction accuracy, and increasing the density of fibers that can be stacked along the fiber pseudo-slit. All of these trends deepen the limiting magnitude attainable with fibers, as well as the number of objects than can be surveyed.''
+
+These considerations have lead to our concept for the {\bf Fiber-Optic Broadband Optical Spectrograph, FOBOS,} timed to deploy on WMKO's Keck II Telescope in 2028, just as various panoramic deep-imaging surveys begin reaching their target depths.  FOBOS emphasizes flexible and quickly configurable focal-plane sampling with high multiplex, UV sensitivity, and a stable spectral format that supports ultra-deep integrations of $\gtrsim$50 hours, thereby building from and expanding on traditional strengths of WMKO observations.
+
+% Based on these recommendations, we propose the FOBOS instrument coupled with a suite of data-driven tools to address the spectroscopic requirements of LSST and other photometric surveys at a final cost 20 times less than a new Southern Hemisphere facility. Located in Hawaii, FOBOS can access more than 70\% of the LSST footprint, more than adequate for building powerful spectroscopic training sets.
+
+
+% Multiple observing modes are possible, including PI-led programs, survey-level campaigns, and queue-scheduled observations.  In combination, these modes will enhance overall science return by enabling human interaction while maximizing efficiency.  FOBOS's conceptual design has been driven by four ``design-reference'' science programs centered on studies of the nature of Dark Energy (\S \ref{sec:cosmology}), the formation of galaxies (\S \ref{sec:galaxies}), the physical properties of kilonovae (\S \ref{sec:kilonovae}), and the assembly history of the Andromeda Galaxy system (\S \ref{sec:localgroup}).  Each program would advance the scientific frontier anticipated at the time of FOBOS commissioning in 2028, both in terms of direct interpretation of the observations themselves and their use in machine-learning methods that can train and deliver physical inferences for the upcoming trove of photometric samples (\S \ref{sec:ML}).
+
+% The instrument will simultaneously collect spectra from 1800 fibers distributed among single apertures and/or integral-field units (IFUs) across a 20$^\prime$ field.  FOBOS provides deep sensitivity, with $\gtrsim$30\% instrument throughput from 0.31--1.0 $\mu$m, and a spectral resolution of $R \sim 3500$ delivered by three, bench-mounted 4-channel spectrographs (see Table~\ref{tab:specsummary}).  FOBOS will be a premier facility for follow-up of rare, faint, and transient sources; it will map galaxies and their environments from scales of pc to tens of Mpc; and it will excel at providing the \emph{deep-drilling} spectroscopic training sets required to extract maximum information from the upcoming wealth of wide-field photometry. Its innovative and flexible target-allocation system and multiplexed IFU modes provide unique capabilities for realizing major progress on fundamental goals in cosmology, galaxy formation, transient characterization, and Local-Group archaeology. FOBOS provides direct benefits to the U.S.\ community (beyond traditional Keck users) through community-led, public, key-science programs (\S \ref{sec:community}). Additional ``open-access'' to a proposed $\sim$100,000 fiber-hours per year (equivalent to 160 DEIMOS and 270 LRIS-B nights per year) will support PI-led programs from U.S.\ astronomers. Raw, reduced, and high-level data products (e.g., redshifts, line fluxes, continuum fits) will be publicly released for \emph{all} FOBOS observations and served via the Keck Observatory Archive on a science-ready platform (see Data Management Plan).  Finally, signaling its support of broad community engagement, WMKO has agreed to provide immediate open-access to all Keck instruments for 30 nights from 2021--2024, to be allocated by a national time allocation committee (TAC) should this proposal be successful.
+
+
+
+% High-multiplex and deep spectroscopic follow-up of upcoming panoramic deep-imaging surveys like LSST, Euclid, and WFIRST is a widely recognized and increasingly urgent necessity. No current or planned facility at a U.S.~observatory meets the sensitivity, multiplex, and rapid-response time needed to exploit these future datasets. FOBOS, the Fiber-Optic Broadband Optical Spectrograph, is a near-term fiber-based facility that addresses these spectroscopic needs by optimizing depth over area and exploiting the aperture advantage of the existing 10m Keck II Telescope. The result is an instrument with a uniquely blue-sensitive wavelength range (0.31--1.0 $\mu$m) at $R \sim 3500$, high-multiplex (1800 fibers), and a factor 1.7 greater survey speed and order-of-magnitude greater sampling density than Subaru's Prime Focus Spectrograph (PFS). In the era of panoramic deep imaging, FOBOS will excel at building the deep, spectroscopic reference data sets needed to interpret vast imaging data. At the same time, its flexible focal plane, including a mode with 25 deployable integral-field units (IFUs) across a 20 arcmin diameter field, enables an expansive range of scientific investigations. Its key programmatic areas include (1) nested stellar-parameter training sets that enable studies of the Milky Way and M31 halo sub-structure, as well as local group dwarf galaxies, (2) a comprehensive picture of galaxy formation thanks to detailed mapping of the baryonic environment at $z \sim 2$ and statistical linking of evolving populations to the present day, and (3) dramatic enhancements in cosmological constraints via precise photometric redshifts and determined redshift distributions.  In combination with Keck I instrumentation, FOBOS also provides instant access to medium-resolution spectroscopy for transient sources with full coverage from the UV to the K-band.
 
 % With its high multiplex and Keck's large aperture, FOBOS will enable significant progress in multiple science areas by
 % providing much-needed large and deep spectroscopic samples.  These unprecedented data sets will be scientific gold
@@ -133,28 +166,86 @@ High-multiplex and deep spectroscopic follow-up of upcoming panoramic deep-imagi
 % cross-correlation techniques with Stage-IV CMB observations thanks to precise calibration of photometric redshifts and
 % redshift distributions.
 
-FOBOS addresses these goals by achieving high multiplex while optimizing for sensitivity over area.  Future imaging data will routinely reach $i_{\rm AB} = 25$, yielding target densities of 42 arcmin$^{-2}$.  FOBOS achieves a single-pass on-sky sampling density of 6 arcmin$^{-2}$ on average, and close packing would allow a maximum target density of $\sim$30 arcmin$^{-2}$.  These capabilities allow FOBOS to collect large samples of very faint sources with highly efficient observing strategies. 
+% FOBOS addresses these goals by achieving high multiplex while optimizing for sensitivity over area.  Future imaging data will routinely reach $i_{\rm AB} = 25$, yielding target densities of 42 arcmin$^{-2}$.  FOBOS achieves a single-pass on-sky sampling density of 6 arcmin$^{-2}$ on average, and close packing would allow a maximum target density of $\sim$30 arcmin$^{-2}$.  These capabilities allow FOBOS to collect large samples of very faint sources with highly efficient observing strategies. 
 
-\paragraph{FOBOS's Key Science Questions:}
+% \paragraph{FOBOS's Key Science Questions:}
 
-\begin{enumerate} 
-\item What is the nature of the assembly histories of the Milky Way, M31, and Local Group dwarfs?  {\em (Section \ref{sec:LocalGroup})}
-\item What are the key processes driving the late-time evolution of galaxies from $z\sim 1$ to the present day? {\em (Section \ref{sec:galaxies})}
-\item How is the baryonic environment at $z \sim 2$--3 influenced by forming galaxies and how does it drive their formation? {\em (Section \ref{sec:galaxies})}
-\item What is the nature of Dark Energy and the growth of cosmic structure at high redshift? {\em (Section \ref{sec:cosmology})}
-\end{enumerate}
+% \begin{enumerate} 
+% \item What is the nature of the assembly histories of the Milky Way, M31, and Local Group dwarfs?  {\em (Section \ref{sec:LocalGroup})}
+% \item What are the key processes driving the late-time evolution of galaxies from $z\sim 1$ to the present day? {\em (Section \ref{sec:galaxies})}
+% \item How is the baryonic environment at $z \sim 2$--3 influenced by forming galaxies and how does it drive their formation? {\em (Section \ref{sec:galaxies})}
+% \item What is the nature of Dark Energy and the growth of cosmic structure at high redshift? {\em (Section \ref{sec:cosmology})}
+% \end{enumerate}
 
-The ability to address these questions depends both on the FOBOS instrument design and the design of possible observing programs to be carried out within each science area.  This Science Requirements Document seeks to outline possible key science programs whose goals can flow down to specific instrument requirements.
+\section{Scope}
 
+As a facility-class instrument, FOBOS will be used to pursue a wide range of scientific goals.  The purpose of this document is to encapsulate the breadth and depth of these goals in a way that flows down to the instrument-defining technical requirements.  This document enumerates and provides the justification for all instrument requirements, which are further developed and refined in the Design Reference Document (DRD; FOBOS.TOP.DOC.002; \edit{include link}).
 
+During its Conceptual Design Phase (CoDP), FOBOS science requirements have been developed following two paths: (1) We capture the core science that FOBOS {\it must} enable via a series of  ``design-reference'' programs.  These programs represent the most compelling uses of FOBOS in its first few years on sky, addressing key science questions that we expect to be particularly timely.  We refer to these as {\bf Key Programs} and discuss them in terms of observations that ``will'' be done; however, we emphasize that, as of the current release of this document (\docsysnum), the execution of these programs is not guaranteed.  (2) Additional {\bf Science Drivers} are presented that have not (yet) led to large-scale observing programs, but also represent compelling science that FOBOS {\it must} enable.
+
+Development of the Key Programs and Science Drivers emphasizes a full exploration of the instrument needs for any given science case.  However, from the outset, this was done within the context of the following gross expectations for the final instrument design:
+%
+%{\tightlists
+\begin{asparaenum}
+\item improves upon the current DEIMOS multiplex,
+\item follows a fiber-fed, modular spectrograph design,
+\item provides both single-aperture and integral-field capabilities,
+\item samples the optical-to-NIR wavelength range, and
+\item provides modest spectral resolution ($R\sim 3000-5000$).
+\end{asparaenum}
+%}
+
+% The distinction between these two development paths is as follows: Science Drivers primarily explore FOBOS's instrument capabilities for a given observation, whereas Key Programs also explore its operational capabilities for executing a given program.  For example, a Science Driver may require that the spectral range covers the IMF-sensitive Wing-Ford band in the red (\edit{ref}), whereas a Key Program may also require that FOBOS observe this feature in $N$ galaxies over $M$ dark nights to measure the change in the IMF slope as a function of stellar mass to a precision of better than $X$ dex at a redshift of $z\lesssim 0.1$.
+
+% Probably need a better name for "science" requirements.
+Requirements derived from the Key Programs and Science Drivers are divided into program requirements and science requirements:  {\bf Program requirements} lead to instrument requirements that enable program success; e.g., ``To measure a change in the slope of the initial mass function (IMF) of $X$ dex per ${\rm d}(\log\mathcal{M}_\ast)$ or larger, the equivalent width of the Wing-Ford band must be measured to better than $Y$ dex for $N$ galaxies evenly distributed over a mass range of $\mathcal{M}_1 < \mathcal{M}_\ast < \mathcal{M}_2$.''  {\bf Science requirements} lead to instrument requirements that enable a given measurement; e.g., ``The spectral range must include the Wing-Ford band (989 nm $< \lambda <$ 995 nm) for galaxies at $z \lesssim 0.1$.''  \edit{This isn't a great example because we don't actually meet that requirement.}  A useful distinction is that program requirements can flow down to one or more science requirements, but not vice versa. Program and science requirements are signified by {\bf P} (e.g., {\bf P 2.1}) and {\bf S}, respectively.
+
+This document consolidates the program and science requirements into a series of {\bf instrument requirements} and {\bf data requirements}.  Here, we distinguish between requirements that are primarily driven by the instrument hardware from those primarily driven by the software related to the data-management systems (DMS; Section \edit{..}).  \edit{for the purposes of this document, is it okay to consider requirements on the operational software to be ``instrument requirements?''}  For example, following from the example above, a relevant instrument requirement would be: ``The red spectral limit must be $\geq$ 1.1 $\mu$m.''  A relevant data requirement would be: ``Systematic errors in the equivalent width of the Wing-Ford band introduced by sky subtraction and flux calibration must not be larger than 10\% of the Poisson error due to photon shot noise.''  Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an {\bf R} and {\bf D}, respectively.
+
+Data requirements do not, as of this release, differentiate between requirements most relevant to the data-{\it reduction} pipeline (the DMS {\it Accountant}) versus those most relevant to the data-{\it analysis} pipeline (the DMS {\it Alchemist}).  Data requirements drawn from the Key Programs will provide both flavors of data requirements; however, Science Drivers may not lead to requirements for the data-analysis pipeline.  That is, although the FOBOS project aims to enable pipeline-produced high-level data products for {\it all} FOBOS data, the project-led development of the data-analysis software will be driven by the needs of the Key Programs, at least initially.
+
+Each of the instrument ({\bf R}) and data ({\bf D}) requirements point to one or more program ({\bf P}) and/or science ({\bf S}) requirements that it satisfies.  Summary tables provide a mapping from each instrument/data requirement to all associated program/science requirements (Tables \edit{x}) and vice versa (Table \edit{y}); each program/science requirement must lead to at least one instrument/data requirement.
+
+% The ability to address these questions depends both on the FOBOS instrument design and the design of possible observing programs to be carried out within each science area.  This Science Requirements Document seeks to outline possible key science programs whose goals can flow down to specific instrument requirements.
+
+\subsection{Particulars}
+
+\edit{Pulled from the MaNGA SRD but seems relevant as is.} In discussing the science requirements, we would also like to separate `precision' from `accuracy'. All of our quantitative requirements focus on measurement precision, which includes only uncertainty propagated from raw measurement uncertainties under a specific set of model assumptions. They do not include systematic uncertainty due to incorrect model assumptions. Because there could be a large number of different model assumptions and the truth may be even beyond current knowledge, it is often a nearly impossible task to assess how accurate a physical property can be measured to its true value. Nonetheless, that is the ultimate goal of this whole enterprise. By limiting the measurement uncertainty and measuring same physical property from different methodologies, we can gain important insight about the accuracy and fidelity of the measurement. Here, we only consider measurement precision in our science requirements and do not discuss accuracy.
+
+\edit{This needs to be edited.}
 Throughout this document, we adopt a consistent signal-to-noise (S/N) definition for the stellar continuum, which is the median S/N per pixel in the logarithmic wavelength grid with $\Delta \log \lambda = 10^{-4}$ across the SDSS r-band (the linear pixel size is approximately 1.4\AA). This can be directly measured from the raw fiber spectrum and we have historical BOSS data to link this S/N to surface brightness on the sky. This allows us to estimate the S/N we can obtain in our target galaxy to check if they can meet the science requirements.
 
-In discussing the science requirements, we would also like to separate `precision' from `accuracy'. All of our quantitative requirements focus on measurement precision, which includes only uncertainty propagated from raw measurement uncertainties under a specific set of model assumptions. They do not include systematic uncertainty due to incorrect model assumptions. Because there could be a large number of different model assumptions and the truth may be even beyond current knowledge, it is often a nearly impossible task to assess how accurate a physical property can be measured to its true value. Nonetheless, that is the ultimate goal of this whole enterprise. By limiting the measurement uncertainty and measuring same physical property from different methodologies, we can gain important insight about the accuracy and fidelity of the measurement. Here, we only consider measurement precision in our science requirements and do not discuss accuracy.
+\section{Outline}
 
+\edit{to be written}
 In what follows, we collect the high-level science requirements for each of the key science questions in Section~\ref{sec:key_science} and present the flow-down into underlying requirements in terms of direct observables (Section~\ref{sec:key_observables}), the program definition (Section~\ref{sec:programs}), spectro-photometric calibration (Section~\ref{sec:spectrophotometry}), guiding and PSF metrology (Section~\ref{sec:guiding}), data reduction (Section~\ref{sec:data_reduction_pipeline}), the FOBOS data products (Section~\ref{sec:data_products}).
 
 
 \newpage
+
+\chapter{Key Programs}
+
+\section{FOBOS Key Science}
+
+\edit{This section summarizes the fundamental questions FOBOS's key programs are meant to address and provides a roadmap to the rest of the chapter.}
+
+\section{Photometric-redshift training for Dark Energy surveys}
+
+\section{Tomographic mapping of the Intergalactic Medium}
+
+\section{Chemistry and dynamics of the Circumgalactic Medium at $z\sim2$}
+
+\section{Kilonovae astrophysics}
+
+\section{Host galaxies of extragalactic transients}
+
+\section{Chemodynamical structures in the stellar disks of M31 and M33}
+
+\section{Abundance patterns in the constituents of the M31 halo}
+
+\section{Program overlap and synergies}
+
+\edit{This section highlights the overlap of the different programs and shows how they can be integrated.  Think Table 2 from the MSIP and the discussion around it.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Science Drivers
@@ -175,7 +266,6 @@ Dark energy is one of the most fundamental, unsolved problems in both cosmology 
 These measures utilize angular correlations of galaxy positions, their gravitational lensing shear, and the cross-correlation between the two. Unfortunately, photometric distances (via photometric redshifts, or ``photo-$z$s'') are significantly less precise than spectroscopic redshifts (spec-$z$s), introducing significant biases.  The spectroscopic validation of photo-$z$s we propose with FOBOS is therefore critical to the success of {\it all} imaging surveys in this respect. It would not only \emph{increase the dark energy figure-of-merit in LSST by 40\%} \citep{newman15} but, importantly, provide vital confidence in cosmological results.  FOBOS is particularly powerful in this application because it has no ``redshift desert'' thanks to its unique ability to measure spectroscopic redshifts above $z > 1.5$ via rest-frame UV features.  This eliminates the need for expensive, space-based\footnote{Ground-based near-IR spectroscopy is too contaminated by sky-line emission to provide spec-$z$s at the required level of completeness \citep{newman15}.} near-IR spectroscopy. 
 
 \emph{From DESC Collaboration}: resolve the [OII] 3727 angstrom doublet (R > 4000), on a large-aperture telescope (>6m if at all possible), with modestly large field of view (>20 arcmin diameter) preferred
-
 
 \subsection{Science Requirements for Redshift Training Samples}
 
@@ -338,15 +428,15 @@ Of particular interest is the ability of future imaging surveys to increase the 
 
 \reqitem Radial velocities to $\lesssim$1 km/s.
 \reqitem[] [Fe/H] and [$\alpha$/Fe] measured to $\lesssim$0.1 dex.
-\reqitem Individual elemental abundances measured to $\lesssim$0.2 dex.
-\reqitem Stellar ages from CN absorption features to $\lesssim$ XX Gyr.
+\reqitem Individual elemental abundances \edit{which?} measured to $\lesssim$0.2 dex.
+\reqitem Stellar ages from CN absorption features to $\lesssim$ \edit{??} Gyr.
 
 \end{sciencerequirement}
 
 \begin{requirement}
-\reqitem Spectral resolution of $R>XXXX$
-\reqitem Spectral coverage from XXXX-XXXX \AA.
-\reqitem $\text{S/N}>XX$
+\reqitem Spectral resolution of $R>$ \edit{????}
+\reqitem Spectral coverage from \edit{??-??} \AA.
+\reqitem $\text{S/N}>$ \edit{??}
 
 \end{requirement}
 
@@ -355,6 +445,51 @@ Of particular interest is the ability of future imaging surveys to increase the 
 \section{Massive Stars?}
 %-----------------------------------------------------------------------
 
+\newpage
+
+
+\newpage
+
+%-----------------------------------------------------------------------
+% Time Domain
+%-----------------------------------------------------------------------
+\chapter{Science Drivers: Time Domain Astrophysics} \label{sci:timedomain}
+
+\section{Rapid Spectroscopy of Kilonova Candidates}
+
+text
+
+\subsection{Science Requirements: Kilonova Candidate Identification}
+
+\begin{sciencerequirement}
+
+\reqitem text
+\end{sciencerequirement}
+
+\section{LSST Transients}
+
+text
+
+\subsection{Science Requirements: LSST Transients}
+
+\begin{sciencerequirement}
+
+\reqitem text
+\end{sciencerequirement}
+
+\section{LSST Host Galaxies}
+
+text
+
+\subsection{Science Requirements: LSST Host Galaxies}
+
+\begin{sciencerequirement}
+
+\reqitem text
+\end{sciencerequirement}
+
+
+%-----------------------------------------------------------------------
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -448,6 +583,31 @@ What are they?
 
 \end{requirement}
 
+%-----------------------------------------------------------------------
+% Time Domain
+%-----------------------------------------------------------------------
+
+\chapter{Key Program: Time Domain}\label{prog:timdomain}
+Text
+
+
+\begin{programrequirement}
+
+\reqitem Sample size
+\reqitem Selection 
+\reqitem Instrument configuration 
+\reqitem Exposure time
+\reqitem Duration
+
+\end{programrequirement}
+
+\section{Transient Success Metric and Completeness Metrics}
+
+What are they?
+%-----------------------------------------------------------------------
+
+\newpage
+
 
 \subsection{IFU Program Science Justification}
 
@@ -538,16 +698,6 @@ Both metric have to be satisfied before a plate is considered done. With this me
 \subsection{Local Group Survey Success Metric and Completeness Metrics}
 
 What are they?
-
-\newpage
-
-%-----------------------------------------------------------------------
-% Overlap
-%-----------------------------------------------------------------------
-
-\chapter{Program Overlap and Synergies}
-
-%-----------------------------------------------------------------------
 
 \newpage
 
@@ -786,6 +936,13 @@ The software team shall maintain a ``Technical Reference Manual'' (TRM) that des
 \section{Source Code}
 
 All software used in the design, execution, and processing of FOBOS data will be version controlled and hosted on an accessible repository.  All source code will be substantially commented, thus providing an exact record of processing steps undertaken when carrying out the survey.  Software will eventually become publicly available during data releases.  Whenever possible, we will use automatic documentation-generating software (e.g., Sphinx) to provide explanatory materials along with code. 
+
+\newpage
+
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+FOBOS as a concept was originally developed by Khee-Ghan Lee (IPMU) and David Schlegel (LBNL).  We are deeply indebted to all the scientists that have contributed toward the development of science programs for FOBOS, including (but not limited to): \edit{...}
 
 \newpage
 
