@@ -1,6 +1,3 @@
-%\RequirePackage[l2tabu, orthodox]{nag}
-%! program = pdflatex
-
 \documentclass[11pt,a4paper,twoside,onecolumn,openany,final,oldfontcommands]{memoir}
 \usepackage{sty/FOBOS}  % FOBOS SDN style file
 
@@ -38,48 +35,15 @@
 \makeoddfoot{Ruled}{\docsysnum}{}{\thepage\ / \thelastpage}
 \makeevenfoot{Ruled}{\thepage\ / \thelastpage}{}{\docsysnum}
 
-%% BIB
-\usepackage{natbib}
-
-%% Additional Pacakages, not yet in sty
-%\usepackage{paralist}
-\usepackage{amsmath}
-\usepackage{amssymb}
-
 %%% Packages for TESTING
 \usepackage{lipsum}
 \listfiles
 
-% Some fancy commenting
-\definecolor{todo}{RGB}{200,0,0}
-\newcommand{\edit}[2][todo]{{\color{#1}[[{\bf #2}]]}}
-
-%% GRAPHICS
-% Each SDN can carry graphics. Place the pathname of your SDN here. It helps to keep your SDN self-contained, so that this doc is the top-level one. Any sub-dirs (subfolders for Windows users) should be referenced relative to the top level.
-% Additionally, for large (>5 MB) graphics, please resize so that they are suitable for printing (120 dpi preferred) without being too large.
-% You can have multiple (unused) graphics directories with the Originals, Resized, etc.
-%\graphicspath{
-%{./Figures/}, % base filepath is Figures
-%{./Figures/Logo/}, % Logo filepath
-%{./Figures/Resized/} % Figures used in this SDN should live here
-%}
-
 %% ALIASES
 \input{aliases}
 
-%% ABSTRACT Page values
-%\renewcommand\abstractname{Executive Summary}
-%\renewcommand\abstractnamefont{\normalfont\large\bfseries}
-%\renewcommand\abstracttextfont{\normalfont}
-
-% Change the name of the figure/table list
-\renewcommand{\listfigurename}{Figures}
-\renewcommand{\listtablename}{Tables}
-
 %%%% BEGIN DOCUMENT
 \begin{document}
-%\bibliographystyle{authordate1}
-%\bibliographystyle{plainnat}
 \bibliographystyle{sty/aasjournal}
 
 %%% FRONTMATTER

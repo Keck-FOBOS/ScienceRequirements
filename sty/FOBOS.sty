@@ -57,6 +57,10 @@
   \maxtocdepth{subsection} 
 }
 
+% Change the name of the figure/table list
+\renewcommand{\listfigurename}{Figures}
+\renewcommand{\listtablename}{Tables}
+
 %%% HEADERS & FOOTERS
 % Change footer to display page of total pages
 \makeoddfoot{Ruled}{}{}{\thepage\ / \thelastpage}
@@ -115,10 +119,17 @@
 \usepackage{textcomp}
 \usepackage{hyperref}
 
+%% BIB
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 %% CUSTOM Commands
 \newcommand{\tus}{\textunderscore}
 
+% Some fancy commenting
+\definecolor{todo}{RGB}{200,0,0}
+\newcommand{\edit}[2][todo]{{\color{#1}[[{\bf #2}]]}}
 
 %% Requirement lists
 % Thanks to:
