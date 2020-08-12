@@ -197,7 +197,26 @@ In what follows, we collect the high-level science requirements for each of the 
 
 \section{Tomographic mapping of the Intergalactic Medium}
 
+\begin{programrequirement}
+\reqitem Expand Ly$\alpha$ tomographic coverage at high source density (comparable or exceeding PFS SSP) into $1.5 < z < 2.1$ regime.
+
+\reqitem Utilize a subset of fiber budget for observing galaxies within Cosmic Web structures mapped in $Ly\alpha$.
+
+\reqitem Achieve source density commensurate with scales of massive halos, \sim 1 Mpc for the most massive galaxy clusters at $z\sim2$.
+\end{programrequirement}
+
 \section{Chemistry and dynamics of the Circumgalactic Medium at $z\sim2$}
+\begin{programrequirement}
+\reqitem Observe galaxies over a range of mass and SFR that includes likely progenitors of the Milky Way to the most massive brightest cluster galaxies today: $9.7 <$ log ($M_*/M_\odot$) $< 11.5$ [NEED REF FOR UPPER MASS LIMIT; Patel+2013a]
+
+\reqitem Measure line emission from gas diagnostic transitions to detect and distinguish cool $10^4$ K and warm-hot $10^{5-6}$ K gas phases in the CGM.
+
+\reqitem Resolve high-velocity outflows from `ambient' CGM gas at galaxy systemic velocity, $\sigma_v \sim 100$ km/s.  
+
+\reqitem Map area beyond galaxy disk and disk/halo interface, scales >10 kpc, with sufficient spatial sampling to stack weak emission signals in outer CGM if necessary to construct emission profiles revealing thermodynamic structure of gaseous halo.  
+
+\end{programrequirement}
+
 
 \section{Kilonovae astrophysics}
 
@@ -205,7 +224,66 @@ In what follows, we collect the high-level science requirements for each of the 
 
 \section{Chemodynamical structures in the stellar disks of M31 and M33}
 
+\begin{programrequirement}
+
+\reqitem Sample size: 100,000 RGB stars and 500 young star clusters in the M31 disk and 10,000 RGB stars in the M33 disk.
+
+\reqitem M31 Targets: 6 disk pointings in the PHAT region between 5-20 kpc, each visited 10 times and 2 disk pointings beyond 20 kpc, each visited once. Every visit will target a unique set of stars with $\sim$95\% completeness.
+
+\reqitem M33 Targets: 3 disk pointings, each visited twice. Every visit will target a unique set of stars with $\sim$95\% completeness.
+
+\reqitem Instrument configuration: $>$70\% MOS fibers and $<$30\% IFU fiber bundles ($\sim$5.6" diameter) in the M31 disk and 100\% MOS fibers in the M33 Disk.
+
+\reqitem Exposure time: 10 hours of integration per visit.
+
+\reqitem Duration: 18 nights per year over 5 years for a total of 90 nights (84 for the M31 disk and 6 for the M33 disk).
+
+\end{programrequirement}
+
+\begin{sciencerequirement}
+
+\reqitem Radial velocities to $\lesssim 1$ km/s.
+
+\reqitem[] [Fe/H] and [$\alpha$/Fe] measured to $\lesssim 0.1$ dex.
+
+\reqitem[] [X/Fe] measured to $\lesssim 0.2$ dex for individual iron-peak elements (e.g., \edit{which?}), $\alpha$-elements (e.g., \edit{which?}), and neutron-capture elements (e.g., \edit{which?}).
+
+\reqitem Stellar ages from CN absorption features to $\lesssim$ \edit{??} Gyr.
+
+\end{sciencerequirement}
+
+\begin{requirement}
+
+\reqitem Field of View of \edit{??}
+
+\reqitem Multiplexing of \edit{??}
+
+\reqitem Fiber density of \edit{??}
+
+\reqitem Spectral resolution of $R>$ \edit{????}
+
+\reqitem Spectral coverage from \edit{??-??} \AA.
+
+\reqitem $\text{S/N}>$ \edit{??}
+
+\end{requirement}
+
+
 \section{Abundance patterns in the constituents of the M31 halo}
+
+\begin{programrequirement}
+
+\reqitem Sample size: 9,000 RGB stars in four M31 Satellites (NGC 147, NGC 185, And II, and NGC 205).
+
+\reqitem Targets: 3 pointings in the region of NGC 147, NGC 185, and And II, each visited once. 1 pointing in NGC 205, visited twice. Every visit will target a unique set of stars with $\sim$95\% completeness.
+
+\reqitem Instrument configuration: 100\% MOS fibers.
+
+\reqitem Exposure time: 10 hours of integration per visit.
+
+\reqitem Duration: 5 nights over 5 years.
+
+\end{programrequirement}
 
 \section{Program overlap and synergies}
 
@@ -382,31 +460,27 @@ FOBOS's wide spectral range (3500--10,000~\AA) captures a large range of absorpt
 
 \section{Halo Assembly in the Milky Way and M31}
 
+Galaxy groups like the Local Group, with two L$^*$ galaxies, dominate the nearby universe \citep{kourkchi17}.  We expect galaxies in such groups to share common assembly histories, and yet, the Milky Way and Andromeda galaxies appear to have evolved in significantly divergent ways.  Differences from their star-cluster populations to their dwarf-galaxy properties remain poorly understood, limiting progress towards building a complete picture for how the Local Group formed and evolved.
+
+Of particular interest, for example, is the ability of future imaging surveys to increase the census of stellar streams and other substructure by a hundredfold.  The stars in these structures are faint, however, and easily confused with background galaxies in ground-based photometry.  With spectrocopic reference samples from FOBOS, the goal is to photometrically reconstruct the star-formation histories of disrupted satellites and compare them with dynamical models to constrain assembly histories and enclosed mass constraints \citep[e.g.,][]{2017ApJ...836..234S}.
+
+
 Studies of individual stars in the Milky Way (MW), Magellanic Clouds, Andromeda (M31), Triangulum galaxy (M33), and numerous dwarf satellites provide an exquisitely detailed look at specific examples of galaxy assembly and evolution. While Gaia provides on-sky motions and photometry for 1.7 billion stars in the MW, fewer than 10\%, 0.3\%, and 0.1\% of stars will have a full complement of astrometrics and kinematics, basic stellar parameters, and chemical abundances, respectively.  Moreover, Gaia distance errors increase quadratically with distance.  Spectroscopy with APOGEE, the Milky Way Mapper, and WEAVE provide supporting wide-field data sets but accounting for fainter stars requires FOBOS-like sensitivity \citep[see][]{dey19,sanderson19}.  By carefully exploiting the overlap in these data sets, FOBOS can link high-resolution and robust stellar information from brighter targets to stars that can only be characterized by photometry.  This would enable data-driven models capable of providing photometric estimates of stellar parameters (temperature, surface gravity, metallicity, and alpha-element abundance) for {\it all} stars in the Gaia dataset  \citep[see][]{2015ApJ...808...16N, 2018arXiv180401530T, 2018arXiv180803278T}. 
 
-Of particular interest is the ability of future imaging surveys to increase the census of stellar streams and other substructure by a hundredfold.  The stars in these structures are faint, however, and easily confused with background galaxies in ground-based photometry.  With spectrocopic reference samples from FOBOS, the goal is to photometrically reconstruct the star-formation histories of disrupted satellites and compare them with dynamical models to constrain assembly histories and enclosed mass constraints \citep[e.g.,][]{2017ApJ...836..234S}.
 
-\subsection{Science Requirements: Assembly and Evolution of Andromeda's Disk and Satellite Galaxies}
+For the Milky Way, stellar properties (e.g., age, metallicity, $\alpha$ abundance) and kinematics from large-scale spectroscopic surveys (e.g., APOGEE, GALAH, LAMOST) are now being combined with exquisite astrometric data from {\it Gaia} to provide a revolutionary view of its evolution.  For example, these data reveal a clear bimodality in $\alpha$ abundance, indicating that stars at relatively greater distances from the disk plane (i.e., ``thick-disk'' stars) were formed in environments with much shorter star-formation timescales, likely due to a merger event that truncated star formation for a time.  Isolating chemically similar groups of stars in this way to reveal their common structural and dynamical properties is now fundamental to our understanding of the Milky Way.  This ``chemical tagging'' offers greater insights than studies of stars selected by their structural or dynamical associations alone.  With FOBOS, we can apply similar methods to the study of M31 and its satellite galaxies.
 
-\begin{sciencerequirement}
+Although chemical tagging with M31 benefits from our outside view of this galaxy (compared to our inside view of the Milky Way), it also faces the challenge of obtaining precise stellar parameter measurements for very large samples.  First steps were made by SPLASH\footnote{Spectroscopic and Photometric Landscape of Andromeda’s Stellar Halo \citep[e.g.][]{splash}} which obtained $\sim$1hr Keck-DEIMOS exposures for $\sim$10,000 RGB stars in the disk, stellar streams, and halo of M31.  \citet{dorman15} used SPLASH to study the stellar age and velocity dispersion of disk stars and found that M31 features a much thicker, high-dispersion component than the Milky Way.  More recently, \citet{Escala20} explored metallicity and $\alpha$ abundance trends in 70 RGB stars ($\sim$6hr Keck-DEIMOS integrations) in the outer disk, inner halo, and Giant Stellar Stream of M31.  These trends also suggest a significant, merger-induced star-formation event in M31.  However, without more precise stellar parameters and larger samples --- beyond the limits of what one can expect to achieve with DEIMOS --- clear inferences that contrast the evolutionary histories of the Milky Way and M31 disks are out of reach.
 
-\reqitem Radial velocities to $\lesssim$1 km/s.
-\reqitem[] [Fe/H] and [$\alpha$/Fe] measured to $\lesssim$0.1 dex.
-\reqitem Individual elemental abundances \edit{which?} measured to $\lesssim$0.2 dex.
-\reqitem Stellar ages from CN absorption features to $\lesssim$ \edit{??} Gyr.
+The {\it FOBOS Andromeda Program} overcomes this challenge by building a sample that is both 10 times larger than SPLASH and $\gtrsim$0.5 mag deeper than \citet{Escala20}.\footnote{Compared to the \citet{Escala20} M31 disk sample alone, the {\it FOBOS Andromeda Program} sample would be 5000 times larger.}  With FOBOS's larger wavelength coverage and improved S/N, we will measure precise velocities ($<$ 1 km/s), [Fe/H] and [$\alpha$/Fe] to $\sim$0.1 dex, individual elemental abundances to $\lesssim$0.2 dex \citep[Fig.~\ref{fig:abundances_snr}; cf.][]{YST2017}, and stellar age from blue CN absorption features.  Complementing the upcoming wide-field ($\sim$20 kpc at M31 distances) mapping of the M31 halo with PFS and MSE,\footnote{The Maunakea Spectroscopic Explorer (MSE) is a concept being developed for a future telescope and instrument at the current Canada-France-Hawaii Telescope site.} these data will provide the first clear, spatially-resolved measurements of chemodynamical trends in M31's disk, allowing us to address two key questions for the first time: Does M31, like the Milky Way, exhibit its own [$\alpha$/Fe] bimodality?  If so, were the ancient merger histories of the two galaxies linked or largely independent?
 
-\end{sciencerequirement}
+Finally, the {\it FOBOS Andromeda Program} also includes legacy campaigns of 500 young stellar clusters in M31's disk \citep[dwarfing even Milky Way samples,][]{johnson15}, the dense cores of M31's major galaxy satellites, and 10,000 RGB stars in M33's disk.  In particular, observations of young stellar clusters capitalize on FOBOS's blue sensitivity and IFU capabilities to produce integrated-light spectra of these objects used to probe the recent evolution of the star-forming disk.  By comparing our measurements in the M31 and M33 disks, M31 young clusters, and M31 satellites with the halo population from PFS, we will construct a holistic picture of the evolution of M31 and its local environment.
 
-\begin{requirement}
-\reqitem Spectral resolution of $R>$ \edit{????}
-\reqitem Spectral coverage from \edit{??-??} \AA.
-\reqitem $\text{S/N}>$ \edit{??}
+The program is designed in two parts. (1) We would construct benchmark spectroscopic samples of 100,000 and 10,000 RGB stars in the disks of M31 and M33, respectively.  Accounting for a 60\% rejection rate \citep{dorman12} due to crowding of ground-based RGB catalogs ($i_{\rm Vega} < 22.5$), we target six M31 pointings in the PHAT\footnote{Panchromatic Hubble Andromeda Treasury \citep{phat} is a multi-cycle HST program that maps $\sim1/3$ M31's star-forming disk in 6 filters.} region between 5--20 kpc.  Each pointing is visited 10 times, and two disk pointings beyond 20 kpc are each visited once.  In M33, we target 3 pointings, each visited twice.  Each visit will target a unique set of stars --- the stellar density is high enough to efficiently target new stars for each visit with $\sim$95\% completeness --- for a total integration time of 10 hours, an order-of-magnitude longer than the SPLASH survey.  We expect $i$-band ${\rm S/N} \approx 40$ \AA$^{-1}$ and $\approx 20$ \AA$^{-1}$ at the  ``sweet-spot'' of the RGB ($i_{Vega} = 21.5$) and a magnitude fainter, respectively.  This ensures a radial-velocity precision of $<$1 km/s {\it for all targets} and precise metallicity and abundance measurements, as illustrated in Fig.~\ref{fig:abundances_snr}.
+%an internal [Fe/H] precision between 0.05 and 0.1 dex, and an internal [$\alpha$/Fe] precision of 0.1 dex for all spectra with ${\rm S/N} \geq 20$ \AA$^{-1}$. For many stars, individual iron-peak and $\alpha$ elements, as well as C and N, will also be measurable to $\lesssim 0.2$ dex. 
+This combination of sample size and precision allows us to directly compare radial trends in chemodynamical structures between M31, M33, and the MW. (2) Jointly with single-fiber observations of RGB stars, we would acquire IFU observations ($\sim$5.6\arcsec{} diameter) of $\sim$500 young star clusters in the M31 disk.  It would also dedicate 3 pointings (each visited once) for MOS observations of RGB stars in the area including NGC 147, NGC 185, and And II, and use a single pointing (visited twice) for NGC 205.  These observations target 9,000 RGB stars in the central regions of Andromeda's major satellites, yielding their dynamical masses, star-formation histories, and chemical composition.  The two components of the {\it FOBOS Andromeda Program} would require a total of 19 nights per year over 5 years. 
 
-\end{requirement}
 
-\section{Globular Clusters?}
-
-\section{Massive Stars?}
 %-----------------------------------------------------------------------
 
 \newpage
@@ -421,13 +495,16 @@ Of particular interest is the ability of future imaging surveys to increase the 
 
 \section{Rapid Spectroscopy of Kilonova Candidates}
 
-text
+\textit{copied from MSIP}
+The joint detection of electromagnetic radiation and gravitational waves from GW170817 began a new era of multimessenger astronomy.  This single binary neutron star merger and its associated kilonova has remade our understanding of multiple branches of astrophysics, from the physical nature of mergers and explosion mechanisms to the origin of the heaviest elements in the universe.  Once FOBOS goes on-sky in the late 2020s, gravitational wave detectors like LIGO, Virgo and KAGRA will routinely detect $\sim$30 binary neutron star mergers with kilonovae (KNe) annually, providing the samples needed to understand how the physical properties and nucleosynthetic yields of KNe vary with environment.  FOBOS will be crucial in obtaining rapid spectroscopy of the Lanthanide-free ``blue" component of the KN light curve, which peaks within a day post-merger at $\lambda_\mathrm{peak}\sim0.35$ $\mu$m. When deployed as the Keck II instrument, FOBOS's always-ready IFU makes it ideal for instant target acquisition and host galaxy characterization, all while simultaneously observing serendipitous targets of interest in the same field-of-view. 
+
 
 \subsection{Science Requirements: Kilonova Candidate Identification}
 
 \begin{sciencerequirement}
 
-\reqitem text
+\reqitem Magnitude limit of $g_\mathrm{AB}=24$ to identify KNe at limiting distance of $D_\mathrm{L}\sim300$ Mpc. 
+\reqitem Redshift precision of host galaxy can be $\sim10$\%
 \end{sciencerequirement}
 
 \section{LSST Transients}
@@ -637,31 +714,6 @@ Both metric have to be satisfied before a plate is considered done. With this me
 % Local Group
 %-----------------------------------------------------------------------
 \chapter{Key Program: Andromeda and the Local Group}\label{prog:localgroup}
-
-\begin{programrequirement}
-
-\reqitem Sample size (M31 Disk): 100,000 RGB stars and 500 young star clusters
-\reqitem Sample size (M33 Disk): 10,000 RGB stars
-\reqitem Sample size (M31 Satellites): 9,000 RGB stars
-
-\reqitem Selection (M31 Disk): 6 disk pointings in the PHAT region between 5-20 kpc, each visited 10 times. 2 disk pointings beyond 20 kpc, each visited once. Every visit will target a unique set of stars with $\sim$95\% completeness.
-\reqitem Selection (M33 Disk): 3 disk pointings, each visited twice. Each visit will target a unique set of stars with $\sim$95\% completeness.
-\reqitem Selection (M31 Satellites): 3 pointings in the region of NGC 147, NGC 185, and And II, each visited once. 1 pointing for NGC 205, visited twice. Each visit will target a unique set of stars with $\sim$95\% completeness.
-
-\reqitem Instrument configuration (M31 Disk): $>$70\% MOS fibers and $<$30\% IFU fiber bundles ($\sim$5.6" diameter)
-\reqitem Instrument configuration (M33 Disk): 100\% MOS fibers.
-\reqitem Instrument configuration (M31 Satellites): 100\% MOS fibers.
-
-\reqitem Exposure time: 10 hours of integration per visit.
-\reqitem Duration: 19 nights per year over 5 years for a total of 95 nights (84 for the M31 disk, 6 for the M33 disk, and 5 for M31 satellites).
-
-\end{programrequirement}
-
-\section{Local Group Survey}
-
-\subsection{Local Group Survey Success Metric and Completeness Metrics}
-
-What are they?
 
 \newpage
 
