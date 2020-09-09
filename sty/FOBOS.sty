@@ -129,7 +129,7 @@
 
 % Some fancy commenting
 \definecolor{todo}{RGB}{200,0,0}
-\newcommand{\edit}[2][todo]{{\color{#1}[[{\bf #2}]]}}
+\newcommand{\edit}[2][todo]{{\color{#1}[[\textbf{#2}]]}}
 
 %% Requirement lists
 % Thanks to:
@@ -149,7 +149,9 @@
 
 \newlist{requirement*}{enumerate}{1}
 \setlist[requirement*]{label={\bfseries \reqprefix~\reqopt.\arabic{thiscnt}}:~,
-                       ref={\bfseries \reqprefix~\reqopt.\arabic{thiscnt}}}
+                       ref={\bfseries \reqprefix~\reqopt.\arabic{thiscnt}},
+                       itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt,
+                       leftmargin=0.7in}
 \makeatletter
 \let\reqopt\relax
 \newcommand\reqitem[1][]{%
