@@ -239,6 +239,26 @@ With 1200 single fibers (per pointing) from two of FOBOS's three spectrographs a
 
 \section{Tomographic mapping of the Intergalactic Medium}
 
+The fueling and regulation of galaxy growth during the peak formation epoch ($z \sim2$--3) is critically tied to the turbulent and gas-rich ecosystem in which early galaxies evolve. The James Webb Space Telescope (JWST) and upcoming extremely large (30-m class) telescopes (ELTs) will marshal powerful infrared observations to study the stars and nebular gas at the heart of these early galaxies. But mapping the large-scale gaseous environments and filamentary networks that fuel and ultimately regulate galaxy evolution at these redshifts requires high multiplex absorption-line tomography and rest-frame UV spectral coverage.  FOBOS enables an ambitious two-prong approach to characterizing galaxy ecosystems on all scales: a detailed tomographic study of the cosmic web at $z>1.5$ combined with an ultra-deep IFU survey of emission from the circumgalactic medium (CGM) of $\sim$180 galaxies at the peak of cosmic star formation.
+
+As FOBOS comes on-sky, the PFS Strategic Survey Program on Subaru (running 2023--2028) will have completed an important first step in IGM Ly$\alpha$ tomography by making a map of structure at $2.1 < z < 2.5$ over 15 deg$^2$.  This map will be relatively coarse, however, with a sightline density of 1600 deg$^{-2}$.  While it will provide valuable statistical measures of cosmic web structures, a detailed study of the interplay between the fueling and feedback mechanisms mediated by these structures requires chemical and kinematic diagnostics that are only possible with more fine-grain resolution and higher S/N.  FOBOS, with its greater sampling density, sensitivity, and blue wavelength coverage, will provide these diagnostics via follow-up of high-value regions in the PFS IGM map, such as protoclusters and galaxy overdensities, increasing the source density over PFS by a factor of 4--10 (depending on location).  This higher density yields statistical insight at 1 Mpc separations (the scale of individual massive halos) and the ability to stack sightlines to gain further in S/N so that various heavy-element ion transitions can be studied.  FOBOS will also be able to extend tomographic reconstruction down to $z = 1.5$, where sources are brighter.
+
+FOBOS's unique UV sensitivity (\S \ref{sec:landscape}) and IFU capabilities also open completely new territory: FOBOS will deliver the first significant samples of high-$z$ galaxies with circumgalactic gas mapped \emph{in emission}. UV sensitivity opens access to high- and intermediate-ionization transitions, such as O VI ($\lambda_{\rm rest} = 1032, 1037$ \AA) and C IV ($\lambda_{\rm rest} = 1548, 1550$ \AA), which probe $10^{5-6}$ K and $10^4$ K gas, respectively.  This temperature range marks the peak in gas cooling and therefore constrains how gas rains onto galaxies to fuel star-formation, as well as tracks feedback processes that establish and regulate the CGM (Fig.~\ref{fig:cgmsample}).  While $z\sim2$ galaxy halos may be mapped in Ly$\alpha$ on a one-by-one basis with KCWI (and metal-line emission has already been studied in some extreme objects), FOBOS will map these diagnostics to greater depth and for a large sample of ``normal'' galaxies (Fig.~\ref{fig:cgmsample}).  The combination of single-fiber and multiplexed IFU observations therefore allows FOBOS to map the density and dynamical state of diffuse gas at all relevant scales from the IGM to the CGM, providing novel constraints on the next generation of cosmological simulations.
+
+% In longer term, think through science that we should be proposing now-ish to do with JWST with the idea that we can follow-up with FOBOS.
+
+% Billion galaxy survey?
+%Field selection will take advantage of quasar-quasar pairs 
+%at \note{range or exact number?} certain redshifts.
+
+\subsubsection{FOBOS Galaxy Ecosystem Program}
+
+The two observing campaigns of the {\it FOBOS Galaxy Ecosystem Program} would link the buildup of the CGM to the cosmic web (IGM): (1) The IGM tomography component would span a total of 6 deg$^2$, delivering fine-sampling and detailed follow-up of cosmic structures identified in the PFS IGM maps.  The PFS maps are expected to be publicly available in 2028, but they are not critical to a successful FOBOS program which can continue with high-priority exploration of $1.5 < z < 2.1$ (not accessible to PFS) and a blind IGM survey at higher-$z$ if the PFS survey were unsuccessful.  With a 3-hour integration time, the program targets over 1000 background Lyman-break galaxies per FOBOS pointing (60,000 total), obtaining ${\rm S/N} \sim 3.5$ at $r_{AB} \approx 24.6$, which is sufficient for building a dense network of Ly-$\alpha$ absorbers associated with targeted structures at $z = 1.5$--2.5 \citep[see][]{lee16}. An additional $\sim$600 fibers per pointing will be allocated to galaxies embedded in the cosmic web. Executing this component would require 18 nights.  (2) In a joint observing scheme with the ultra-deep exposures of the {\it FOBOS Cosmology Program}, the CGM study would use FOBOS's unique IFU multiplex capability (configuring one-third of FOBOS's fiber complement into into 15 37-fiber IFUs) to build an unprecedented sample of galaxies spanning respectively $\sim2$ and $>3$ orders of magnitude in $M_\ast$ and SFR, with maps of their CGM {\it in emission}.  Each IFU will observe an on-sky diameter of 5.6 arcsec, sampling gaseous halos in each galaxy at 5 kpc scales out to a radius of 20--25 kpc (Fig.~\ref{fig:cgmsample}).  These observations require the equivalent of 12.5 dark nights per year.
+
+%{Baseline source density goals for PFS: 1600/deg$^2$ over 15 deg$^2$.  This sightline density translates to 100 sources over the FOBOS FOV.  From the luminosity function of LBGs, going to a depth of R = 24.5 affords 400 possible $z=2.0-3.0$ sources within a single FOBOS pointing.  A 3-hr observation delivers S/N$\sim4$ per pixel in the g band.  Going to R = 24.6 means 1000 possible sources per FOV at S/N$\sim3.5$.  If we improve on source density over PFS by a factor of 4, we reduce the average sightline separation to $\sim1$ per comoving Mpc, or resolving scales of most massive individual halos!  This leaves 1400 fibers for `embedded' galaxies in the foreground. }
+
+% \note{Joe/Dan/Kyle: play-out the combination of the 2nd program above and the Cosmology program as a practical illustration of what a series of observing nights devoted to these programs might look like. }
+
 \begin{programrequirement}
 \reqitem Expand Ly$\alpha$ tomographic coverage at high source density (comparable or exceeding PFS SSP) into $1.5 < z < 2.1$ regime.
 
@@ -262,9 +282,105 @@ With 1200 single fibers (per pointing) from two of FOBOS's three spectrographs a
 
 \section{Kilonovae astrophysics}
 
+The joint detection of electromagnetic radiation and gravitational waves from GW170817 began a new era of multimessenger astronomy.  This single binary neutron star merger and its associated kilonova has remade our understanding of multiple branches of astrophysics, from the physical nature of mergers and explosion mechanisms to the origin of the heaviest elements in the universe.  Once FOBOS goes on-sky in the late 2020s, gravitational wave detectors like LIGO,\footnote{The Laser Interferometer Gravitational-Wave Observatory} Virgo and KAGRA\footnote{The Kamioka Gravitational Wave Detector, formerly the Large Scale Cryogenic Gravitational Wave Telescope (LCGT)} will routinely detect $\sim$30 binary neutron star mergers with kilonovae (KNe) annually \citep{abbott2018prospects}, providing the samples needed to understand how the physical properties and nucleosynthetic yields of KNe vary with environment.  FOBOS will be crucial in obtaining rapid spectroscopy of the Lanthanide-free ``blue" component of the KN light curve, which peaks within a day post-merger at $\lam_\mathrm{peak}\sim0.35$ $\mu$m (Fig.~\ref{fig:kilonova}). When deployed as the Keck II instrument, FOBOS's always-ready IFU makes it ideal for instant target acquisition and host galaxy characterization, all while simultaneously observing serendipitous targets of interest in the same field-of-view. 
+
+%, each with a typical localization region of $\Omega_\mathrm{90\%}<100$ deg$^2$ . 
+
+FOBOS follow-up will trigger on Rubin target-of-opportunity observations, which will search for KNe within an hour after the gravitational wave alerts are issued \citep[assuming the strategy proposed by][]{margutti2018}. For a typical 50 deg$^2$ localization region, we expect $\sim$100 KN candidates with $m_i\lesssim22.5$, the expected KN brightness at a sensitivity distance of 200 Mpc \citep{cowperthwaite2017, goldstein2019}. Identifying and triggering spectroscopic investigations of the true KN will require FOBOS's rapid and blue-sensitive follow-up capabilities.  By deploying the remaining single fibers and IFUs on separate, pre-assigned transient sources in each pointing, we will take maximum advantage of synergies with time-series data from the world-wide follow-up observations of these gravitational-wave fields. 
+
+\begin{wrapfigure}{r}{0.6\textwidth}%\small
+\includegraphics[width=0.6\textwidth]{figs/kn_fobos.pdf}
+\caption{\textit{Left:} Model kilonova spectra based on GW170817 taken 3.5 hours, 6 hours, 1 day and 2 days post-merger. \textit{Right:} Variations of ``blue" kilonovae, generated by varying the energy, mass and Lanthanide fraction of kilonova models. FOBOS's blue sensitivity is essential to discriminate between these early-time models. Models from \citet{kasen2017}.}
+\label{fig:kilonova}    
+\end{wrapfigure}
+
+Indeed, beyond KNe, Rubin Observatory will discover well over 1 million extragalactic transients annually, including thousands of currently-rare sources such as tidal-disruption events \citep{bricman2020}, superluminous supernovae \citep{villar2018} and changing look quasars. Nearly every FOBOS pointing will contain $\sim$5 LSST transient hosts.  The {\it FOBOS Time-Domain Program} will include a large-scale environmental study of such transients by allocating free fibers from other ongoing programs to those targets.  Through coordination with {\it FOBOS Cosmology} and {\it Galaxy Ecosystem Programs}, we will also target transients with FOBOS IFUs, dramatically increasing resolved spectroscopy of extragalactic hosts \citep[see a recent review by][]{anderson2015} at little additional cost. 
+
+
+% \noindent {\textsf{FOBOS Time Domain Program:}}
+
+\subsubsection{FOBOS Time-Domain Program}
+
+Via rapid follow-up of KN candidates discovered by LSST, FOBOS can undertake a systematic population study of KNe and their environments. Assuming the strategies proposed by \citet{margutti2018}, we expect $\sim4$ KNe to be detectable by LSST and FOBOS annually. For each triggered event, we would target up to $\sim50$ candidates with 10-min observations per event over two nights, nearly twice the total spectroscopic follow-up effort currently possible \citep{hosseinzadeh2019}. We would observe each candidate with FOBOS's central, fixed IFU to obtain a redshift and potential-host properties.  If our monitoring of real-time quick-look reductions identifies the KN, our strategy would immediately initiate deeper ($\sim1$ hour) observations to potentially capture ``blue" kilonovae (Fig.~\ref{fig:kilonova}).  With four KNe annually, this FOBOS program requires $2.5$ nights per year; beyond the KNe observations, many fibers would be allocated to pre-assigned transient sources.
+
+Additionally, FOBOS would observe active transients in pointings from the {\it FOBOS Cosmology} and {\it Galaxy-Ecosystem Programs}.  In the $\sim$24 pointings that overlap with LSST Deep Drilling Fields, we expect $\sim$150 total transients to be visible each year with $m_i<24$. We assign a single IFU to simultaneously observe the transients and their host galaxies (at $z<1$). FOBOS's blue sensitivity will be especially valuable for shock-driven (e.g., Type IIn supernovae) and relativistic events \citep[e.g., the atypically bright Type Ib supernova AT 2018cow;][]{margutti2019}, which peak near $\sim$0.3~$\mu$m. 
+
+
 \section{Host galaxies of extragalactic transients}
 
 \section{Chemodynamical structures in the stellar disks of M31 and M33}
+
+\begin{wrapfigure}{r}{0.58\textwidth}%\small
+\includegraphics[width=0.58\textwidth]{figs/M31_footprint_v3.jpg}
+\caption{A Subaru HSC image (lower right) superposed on a larger background image of M31 (credit: Adam Evans).  FOBOS pointings (white circles) span the PHAT area (magenta) and NGC 205.  The Subaru-PFS FOV (green circle; similar to MSE) and single-pointing WFIRST imaging footprint (blue squares) are also shown.}
+\label{fig:M31}    
+\end{wrapfigure}
+
+\subsection{Assembly and Evolution of Andromeda's Disk and Satellite Galaxies}
+\label{sec:localgroup}
+
+Galaxy groups like the Local Group, with two L$^*$ galaxies, dominate the nearby universe \citep{kourkchi17}.  We expect galaxies in such groups to share common assembly histories, and yet, the Milky Way and Andromeda galaxies appear to have evolved in significantly divergent ways.  Differences from their star-cluster populations to their dwarf-galaxy properties remain poorly understood, limiting progress towards building a complete picture for how the Local Group formed and evolved.
+
+For the Milky Way, stellar properties (e.g., age, metallicity, $\alpha$ abundance) and kinematics from large-scale spectroscopic surveys (e.g., APOGEE, GALAH, LAMOST) are now being combined with exquisite astrometric data from {\it Gaia} to provide a revolutionary view of its evolution.  For example, these data reveal a clear bimodality in $\alpha$ abundance, indicating that stars at relatively greater distances from the disk plane (i.e., ``thick-disk'' stars) were formed in environments with much shorter star-formation timescales, likely due to a merger event that truncated star formation for a time.  Isolating chemically similar groups of stars in this way to reveal their common structural and dynamical properties is now fundamental to our understanding of the Milky Way.  This ``chemical tagging'' offers greater insights than studies of stars selected by their structural or dynamical associations alone.  With FOBOS, we can apply similar methods to the study of M31 and its satellite galaxies.
+
+Although chemical tagging with M31 benefits from our outside view of this galaxy (compared to our inside view of the Milky Way), it also faces the challenge of obtaining precise stellar parameter measurements for very large samples.  First steps were made by SPLASH\footnote{Spectroscopic and Photometric Landscape of Andromeda’s Stellar Halo \citep[e.g.][]{splash}} which obtained $\sim$1hr Keck-DEIMOS exposures for $\sim$10,000 RGB stars in the disk, stellar streams, and halo of M31.  \citet{dorman15} used SPLASH to study the stellar age and velocity dispersion of disk stars and found that M31 features a much thicker, high-dispersion component than the Milky Way.  More recently, \citet{Escala20} explored metallicity and $\alpha$ abundance trends in 70 RGB stars ($\sim$6hr Keck-DEIMOS integrations) in the outer disk, inner halo, and Giant Stellar Stream of M31.  These trends also suggest a significant, merger-induced star-formation event in M31.  However, without more precise stellar parameters and larger samples --- beyond the limits of what one can expect to achieve with DEIMOS --- clear inferences that contrast the evolutionary histories of the Milky Way and M31 disks are out of reach.
+
+\begin{figure}
+\includegraphics[width=1.0\textwidth]{figs/abundances_snr_v6.png}
+\caption{Simulated observations demonstrating FOBOS's ability to perform ``chemical tagging'' in M31 and M33. \textit{Left:} Expected S/N for an $i=21.5$ RGB star in M31 observed for 10hr using FOBOS, PFS, and DEIMOS. \textit{Right:}  Forecasted abundance precision for these observations (filled circles), including both statistical uncertainty ($\sigma_{\rm stat}$; predicted by the Cram\'er-Rao Lower Bound) and a 0.1-dex systematic uncertainty \citep[$\sigma_{\rm syst}$; cf.,][]{kirby18, Xiang2019}. Elements are ordered along the ordinate by decreasing precision (limited to $\lesssim$0.3 dex) and color-coded by their primary nucleosynthetic origin. Although these forecasts are optimistic, the indicated {\it relative} precision between instruments is robust. For reference, we show abundance uncertainties reported by \citet[][purple squares]{kirby18} from DEIMOS spectra of $-1.0<\text{[Fe/H]}<-0.6$ RGB stars in MW satellites with comparable S/N to our simulations; their measurement precision is worse than our DEIMOS predictions primarily because of their lower metallicity targets.  We also show abundance uncertainties reported by \citet[][yellow squares]{Xiang2019} from LAMOST spectra of MW RGB stars, scaled to the S/N and resolution of the proposed FOBOS  observations.}
+\label{fig:abundances_snr}
+\end{figure}
+
+The {\it FOBOS Andromeda Program} overcomes this challenge by building a sample that is both 10 times larger than SPLASH and $\gtrsim$0.5 mag deeper than \citet{Escala20}.\footnote{Compared to the \citet{Escala20} M31 disk sample alone, the {\it FOBOS Andromeda Program} sample would be 5000 times larger.}  With FOBOS's larger wavelength coverage and improved S/N, we will measure precise velocities ($<$ 1 km/s), [Fe/H] and [$\alpha$/Fe] to $\sim$0.1 dex, individual elemental abundances to $\lesssim$0.2 dex \citep[Fig.~\ref{fig:abundances_snr}; cf.][]{YST2017}, and stellar age from blue CN absorption features.  Complementing the upcoming wide-field ($\sim$20 kpc at M31 distances) mapping of the M31 halo with PFS and MSE,\footnote{The Maunakea Spectroscopic Explorer (MSE) is a concept being developed for a future telescope and instrument at the current Canada-France-Hawaii Telescope site.} these data will provide the first clear, spatially-resolved measurements of chemodynamical trends in M31's disk, allowing us to address two key questions for the first time: Does M31, like the Milky Way, exhibit its own [$\alpha$/Fe] bimodality?  If so, were the ancient merger histories of the two galaxies linked or largely independent?
+
+Finally, the {\it FOBOS Andromeda Program} also includes legacy campaigns of 500 young stellar clusters in M31's disk \citep[dwarfing even Milky Way samples,][]{johnson15}, the dense cores of M31's major galaxy satellites, and 10,000 RGB stars in M33's disk.  In particular, observations of young stellar clusters capitalize on FOBOS's blue sensitivity and IFU capabilities to produce integrated-light spectra of these objects used to probe the recent evolution of the star-forming disk.  By comparing our measurements in the M31 and M33 disks, M31 young clusters, and M31 satellites with the halo population from PFS, we will construct a holistic picture of the evolution of M31 and its local environment.
+
+% In addition to providing clues to the evolution of these objects specifically,
+
+% All told, the FOBOS Andromeda Progam will allow for the first detailed comparisons of the internal structure, chemistry, and kinematics of M31 and its companions.  
+
+%the blue sensitivity of FOBOS, along with its ability to obtain many small IFU regions within each pointing, will provide detailed spectroscopic maps of $\sim$500 young star clusters, , portegies10.  These clusters probe
+
+% , including its dynamics and chemistry, as well as the conditions under which stars are formed and dispersed throughout the disk.  Although insights into the recent evolution of the M31's disk have already been possible through their photometric properties \citep[e.g.,][]{johnson16}, FOBOS will provide abundance, velocity, and mass information that is currently unavailable, allowing both confirmation of the inferences from photometry as well as large samples of spectroscopic masses and abundances to track the recent formation of stars and metals in clusters across the disk. 
+
+% Turning to M33's disk and major Andromeda satellites, similar high-density FOBOS spectroscopy will
+
+% Wide-field ($\sim$20 kpc at M31 distances) mapping of the M31 halo, using instruments like PFS and MSE,\footnote{The Maunakea Spectroscopic Explorer (MSE) is a concept being developed for a future telescope and instrument at the current Canada-France-Hawaii Telescope site.} will soon probe the chemodynamical history of its stellar substructures; however, FOBOS will provide unique capabilities particularly suited to the high-source-density M31 disk (see Fig.~\ref{fig:M31}).
+
+% , M33, and the cores of Andromeda's major satellites.  Such data enable the chemodynamical studies needed to address key questions about the structure and assembly of these objects. 
+
+% However, FOBOS's blue sensitivity, order-of-magnitude greater sampling density, and IFU modes offer  unique capabilities for obtaining a high-source-density census of M31's disk (see Fig.~\ref{fig:M31}), M33, and the cores of Andromeda's major satellites.  Such data enable the chemodynamical studies needed to address key questions about the structure and assembly of these objects. 
+
+
+%These relations will determine whether M31's thicker disk is the result of dynamical ``heating'' of stars initially formed in a cold, thin disk versus the ``settling'' of a more turbulent primordial disk into the dynamically cold structures seen today.
+
+%\note{paragraph on information garnered by observations of large satellites and young clusters in M31}
+
+%Our large sample size, more than an order of magnitude larger than currently available, will allow for the finer subdivision of the stellar populations and the more-detailed quantification of the chemodynamical structures in M31 and M33, needed for a robust comparison to similar structures in our Milky Way.  
+
+%Currently, {\it only} the Milky Way disk has been measured with this kind of precision, and it required very large surveys with substantial resources to complte, such as LAMOST  \citep{xiang2017, Xiang2019} and APOGEE \citep{hayden2015}.  With FOBOS, we can add {\it two} more disks to this detailed sample as just one example program of the science enabled.
+
+
+%\note{Yuan-Sen: Maybe a sentence or two summarizing the importance of age-velocity-dispersion relation: e.g., nature vs. nurture; upside down ISM cooling vs. secular evolution}
+
+%\note{Include brief statements in the paragraph above about the methods used to get age, metallicity, abundance?: C/N features for RGB age, combining PHAT+WFIRST photometry and FOBOS spectroscopy, abundances for individual elements}
+
+
+%\note{Yuan-Sen: the C/N features of the optical spectra are a good age indicator for RGBs. So we could get age-velocity dispersion, on top of metallicity-velocity dispersion relation.}
+
+%\note{Yuan-Sen: PHAT CMD + FOBOS spectra should give pretty good spectroscopic-photometric constraints on stars}
+
+%\note{note gains in RGB numbers by probing deeper down the sequence?} 
+
+% Proof in the pudding:
+%\note{ref; https://arxiv.org/abs/1908.09727 ?}.
+
+% \noindent{\textsf{FOBOS Andromeda Program:}}  
+
+\subsubsection{FOBOS Andromeda Program} The program is designed in two parts. (1) We would construct benchmark spectroscopic samples of 100,000 and 10,000 RGB stars in the disks of M31 and M33, respectively.  Accounting for a 60\% rejection rate \citep{dorman12} due to crowding of ground-based RGB catalogs ($i_{\rm Vega} < 22.5$), we target six M31 pointings in the PHAT\footnote{Panchromatic Hubble Andromeda Treasury \citep{phat} is a multi-cycle HST program that maps $\sim1/3$ M31's star-forming disk in 6 filters.} region between 5--20 kpc.  Each pointing is visited 10 times, and two disk pointings beyond 20 kpc are each visited once.  In M33, we target 3 pointings, each visited twice.  Each visit will target a unique set of stars --- the stellar density is high enough to efficiently target new stars for each visit with $\sim$95\% completeness --- for a total integration time of 10 hours, an order-of-magnitude longer than the SPLASH survey.  We expect $i$-band ${\rm S/N} \approx 40$ \AA$^{-1}$ and $\approx 20$ \AA$^{-1}$ at the  ``sweet-spot'' of the RGB ($i_{Vega} = 21.5$) and a magnitude fainter, respectively.  This ensures a radial-velocity precision of $<$1 km/s {\it for all targets} and precise metallicity and abundance measurements, as illustrated in Fig.~\ref{fig:abundances_snr}.
+%an internal [Fe/H] precision between 0.05 and 0.1 dex, and an internal [$\alpha$/Fe] precision of 0.1 dex for all spectra with ${\rm S/N} \geq 20$ \AA$^{-1}$. For many stars, individual iron-peak and $\alpha$ elements, as well as C and N, will also be measurable to $\lesssim 0.2$ dex. 
+This combination of sample size and precision allows us to directly compare radial trends in chemodynamical structures between M31, M33, and the MW. (2) Jointly with single-fiber observations of RGB stars, we would acquire IFU observations ($\sim$5.6\arcsec{} diameter) of $\sim$500 young star clusters in the M31 disk.  It would also dedicate 3 pointings (each visited once) for MOS observations of RGB stars in the area including NGC 147, NGC 185, and And II, and use a single pointing (visited twice) for NGC 205.  These observations target 9,000 RGB stars in the central regions of Andromeda's major satellites, yielding their dynamical masses, star-formation histories, and chemical composition.  The two components of the {\it FOBOS Andromeda Program} would require a total of 19 nights per year over 5 years. 
+
 
 \begin{programrequirement}
 
