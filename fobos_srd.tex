@@ -191,9 +191,51 @@ In what follows, we collect the high-level science requirements for each of the 
 
 \section{FOBOS Key Science}
 
-\edit{This section summarizes the fundamental questions FOBOS's key programs are meant to address and provides a roadmap to the rest of the chapter.}
+\edit{This section summarizes the fundamental questions FOBOS's key programs are meant to address and provides a roadmap to the rest of the chapter.  Below is directly from the MSIP.}
+
+FOBOS will be a facility-class instrument at Keck, emphasizing flexible and quickly configurable focal-plane sampling, UV sensitivity, and a stable spectral format that supports ultra-deep integrations of $\gtrsim$50 hours.  Multiple observing modes are possible, including PI-led programs, survey-level campaigns, and queue-scheduled observations.  In combination, these modes will enhance overall science return by enabling human interaction while maximizing efficiency.  FOBOS's conceptual design has been driven by four ``design-reference'' science programs centered on studies of the nature of Dark Energy (\S \ref{sec:cosmology}), the formation of galaxies (\S \ref{sec:galaxies}), the physical properties of kilonovae (\S \ref{sec:kilonovae}), and the assembly history of the Andromeda Galaxy system (\S \ref{sec:localgroup}).  Each program would advance the scientific frontier anticipated at the time of FOBOS commissioning in 2028, both in terms of direct interpretation of the observations themselves and their use in machine-learning methods that can train and deliver physical inferences for the upcoming trove of photometric samples (\S \ref{sec:ML}).
+
+To illustrate FOBOS's scientific potential, we present the science drivers and observing strategies for these design-reference programs.  Table \ref{tab:progreq} summarizes the details of each program and illustrates FOBOS's ability to interleave multiple programs with disparate scientific goals (\S \ref{sec:addsci}).  The final definition of FOBOS's design-reference programs, including detailed sample designs, scientific deliverables, and time requests, will be developed in the next phase through a community-wide competition organized jointly with NSF's NOIRLab (formerly NOAO) and WMKO.
 
 \section{Photometric-redshift training for Dark Energy surveys}
+
+Delineating cosmic expansion and the growth of structure in ``Stage IV'' cosmology missions like LSST, Euclid, and WFIRST requires measurements of galaxy positions and gravitational shear as a function of distance over vast cosmic volumes. For the billions of sources that will be imaged by these surveys, distances must be estimated using photometric redshifts (photo-$z$s). Inaccurate photo-$z$s can reduce the cosmological constraining power, while poorly characterized photo-$z$s can introduce significant biases in cosmological results \citep{huterer06, LSSTDESCSRD}.  Improving galaxy photo-$z$ estimates and our understanding of their uncertainties through deep, targeted spectroscopic training and calibration samples will substantially improve the cosmology results of \emph{all} of these missions and for all cosmological probes.
+
+% Among other challenges, inaccurate photo-$z$s can introduce significant errors in cosmological results \citep{huterer06}. Improving galaxy photo-$z$ estimates through deep, targeted spectroscopic training and calibration samples will substantially improve the cosmology results of \emph{all} of these missions and for all cosmological probes.
+
+LSST will provide a crucial extragalactic dataset in the late 2020s, providing deep \textit{ugrizy} optical imaging of $\sim$18,000~deg$^{2}$, while WFIRST will obtain deep near-IR imaging for $\sim$2000~deg$^{2}$, overlapping the LSST footprint. FOBOS will be well-positioned to contribute critical follow-up spectroscopy for both missions, with the ability to efficiently observe sources as far south as $-30\degree$, comprising $\sim$60\% of the current baseline LSST footprint.
+
+\begin{wrapfigure}{r}{0.5\textwidth}%\small
+\vspace{-0.2cm}
+\includegraphics[width=0.5\textwidth]{figs/fobos_cosmology_v2.pdf}
+\caption{\footnotesize Magnitude distribution of secure spec-$z$ samples in existing deep fields from, e.g., DEEP2, VVDS, VIPERS, C3R2, and zCOSMOS ({\it green}), compared with the anticipated distribution of the LSST/WFIRST weak-lensing sample derived in \citet[][{\it blue}]{hemmati18}. Ultra-deep (50hr) exposures in the FOBOS cosmology program are designed to obtain spec-$z$s for $\sim$15k faint galaxies in the hatched region, representing roughly 50\% of the weak-lensing sample of these missions and weakly constrained by current spec-$z$ samples. The FOBOS cosmology program would operate over 12 independent regions to mitigate cosmic variance, employing a careful selection to explore the full color-magnitude parameter space efficiently, as in \cite{masters15}. }
+\label{fig:cosmos_magdist}
+\end{wrapfigure}
+
+The {\it FOBOS Cosmology Program} will play a critical role by training photo-$z$s from sources with spectral features too blue or fluxes too faint for other instruments, like PFS,\footnote{Subaru's Prime Focus Spectrograph (PFS) commissioning in 2022.} but that dominate by number (Fig.~\ref{fig:cosmos_magdist}).  For example, Rubin Observatory will begin reaching the LSST target 5$\sigma$ point-source depth of $i = 26.8$~(AB) in 2029.   FOBOS spectroscopic follow-up to $i_{AB} = 25.3$ for extended sources will provide a well-matched training sample\footnote{\citet{newman15} emphasize that photo-$z$ ``calibration'' can be accomplished by cross-referencing all-sky surveys of various low-density tracers like quasars and associated absorbers, luminous red galaxies, and emission-line galaxies.} that will \emph{increase LSST's dark energy figure-of-merit by 40\%} \citep{newman15}. No other existing or planned instrument will obtain such a spectroscopic sample on this timescale.  Indeed, although Euclid and WFIRST will both perform grism spectroscopy, the relatively low sensitivity and strongly biased samples (e.g., they will be far more sensitive to galaxies with strong emission lines) mean that grism spectra from these missions are insufficient to train photo-$z$s for the full weak-lensing samples.  Additionally, because FOBOS has no ``redshift desert'' (its blue wavelength coverage allows redshift determination at $1.5\lesssim z \lesssim2.5$ via Ly$\alpha$ or nearby UV absorption features), the {\it FOBOS Cosmology Program} will reduce the need for expensive, space-based\footnote{Ground-based near-IR spectroscopy is too contaminated by night-sky emission lines to provide spec-$z$s at the required level of completeness \citep{newman15}.} near-IR spectroscopy of galaxies with $z > 1.5$.  Beyond enhancing cosmological analyses, the resulting galaxy sample would have a major impact on galaxy-evolution studies by providing the spectroscopic coverage needed to fully leverage photometry for billions of galaxies (see \S\ref{sec:ML}). 
+
+% \smallskip
+% \noindent {\textsf{FOBOS Cosmology Program:}}
+
+\subsubsection{FOBOS Cosmology Program}
+This program is designed to observe a set of twelve 0.1 deg$^2$ FOBOS pointings arranged evenly in right ascension and chosen to overlap with the LSST, Euclid, and WFIRST footprints.  At least three pointings would include LSST deep drilling fields (COSMOS, XMM-LSS, and E-CDFS).  The program satisfies the sample size, field variance, and depth requirements in \citet{newman15} by obtaining ultra-deep 50-hour integrations of $\sim$15,000 sources at $24 < i_{AB} < 25.3$, a magnitude range that covers the majority of LSST/WFIRST weak-lensing samples.  While near-Poisson performance with such extreme integration times has been demonstrated with fiber spectrographs \citep[e.g.,][]{gu17,childress17}, our team's investigation of critical design factors that enable such performance (Bundy et al., in prep) has defined FOBOS instrument requirements, including a multi-tier calibration system (\S \ref{sec:calib}).  Accounting for expected sensitivity and stability, our exposure-time calculator estimates a continuum S/N$\sim3.5$ ($i$-band) for the faintest sources at these depths, a level known to be sufficient for $>75$\% redshift success (e.g., \citealp{Newman13}, \citealp{masters19}). 
+
+With 1200 single fibers (per pointing) from two of FOBOS's three spectrographs assigned to cosmology program targets, parallel observations with IFUs fed to its 3rd spectrograph can leverage the ultra-deep exposures needed for targets in the {\it FOBOS Galaxy Ecosystem Program} (\S \ref{sec:galaxies}).  Photo-$z$ calibrators targeted by single fibers will efficiently span color-magnitude space \citep{masters15, masters19} with dynamic re-allocation of fibers to new targets as successful redshifts are obtained.  This program would request 12.5 dark nights per year.
+
+% TODO: **Move this somewhere relevant**:
+% The source density of 40 arcmin$^{-2}$ far exceeds FOBOS's
+% fiber density (6 arcmin$^{-2}$).
+  
+%\note{Dan/all: Add one or more figures to this section. Draft figure by next week. Figure possibilities:}
+%\begin{itemize}
+%    \item Expected LSST/WFIRST weak-lensing shear sample magnitude distribution.  [What exactly does this look like?]  Combine with expected survey speed for PFS, DEIMOS, FOBOS, MSE, ELT/TMT? 
+%    \item Current + projected SOM sampling (combined with previous one?)
+%    \item Improvement of DE figure of merit (WFIRST expected performance; Tim Eifler); drives a lot of the time for this program, should justify this; unique magnitude/redshift range provided by FOBOS? Kevin: Timing arguments? - LSST depths, WFIRST launch, etc.  Dan: Lacking in redshift desert, Z~1-3 (really helping with Z>1.5).
+%    \item as a function of z, where does spec vs. phot z diverge, and how will FOBOS improve that at higher z?  implication is that we're sampling the full redshift range of the survey.  Vs. PFS hinges on the depth argument
+%    
+%\end{itemize}
+
+%----------------------------------------------------------
 
 \section{Tomographic mapping of the Intergalactic Medium}
 
