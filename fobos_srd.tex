@@ -260,15 +260,37 @@ The fueling and regulation of galaxy growth during the peak formation epoch ($z 
 
 % FOBOS enables an ambitious two-prong approach to characterizing galaxy ecosystems on all scales: a detailed tomographic study of the cosmic web at $z>1.5$ combined with an ultra-deep IFU survey of emission from the circumgalactic medium (CGM) of $\sim$180 galaxies at the peak of cosmic star formation.
 
-The PFS Strategic Survey Program on Subaru (running 2023--2028) will complete an important first step in IGM Ly$\alpha$ tomography by making a map of structure at $2.1 < z < 2.5$ over 15 deg$^2$.  This map will be relatively coarse, however, with a sightline density of 1600 deg$^{-2}$.  While it will provide valuable statistical measures of cosmic web structures, a detailed study of the interplay between the fueling and feedback mechanisms mediated by these structures requires chemical and kinematic diagnostics that are only possible with more fine-grain resolution and higher S/N.
+The PFS Strategic Survey Program on Subaru (running 2023--2028) \edit{ref?} will complete an important first step in Ly$\alpha$ tomography of the intergalactic medium (IGM) by making a map of structure at $2.1 < z < 2.5$ over 15 deg$^2$.  This map will be relatively coarse, however, with a sight-line density of 1600 deg$^{-2}$.  Although this provides valuable statistical measures of cosmic-web structures, a detailed study of the interplay between the fueling and feedback mechanisms mediated by these structures requires chemical and kinematic diagnostics that are only possible with more fine-grain resolution and higher S/N.
 
-The two observing campaigns of the \textit{FOBOS Galaxy Ecosystem Program} would link the buildup of the CGM to the cosmic web (IGM): (1) The IGM tomography component would span a total of 6 deg$^2$, delivering fine-sampling and detailed follow-up of cosmic structures identified in the PFS IGM maps.  The PFS maps are expected to be publicly available in 2028, but they are not critical to a successful FOBOS program which can continue with high-priority exploration of $1.5 < z < 2.1$ (not accessible to PFS) and a blind IGM survey at higher-$z$ if the PFS survey were unsuccessful.  With a 3-hour integration time, the program targets over 1000 background Lyman-break galaxies per FOBOS pointing (60,000 total), obtaining ${\rm S/N} \sim 3.5$ at $r_{AB} \approx 24.6$, which is sufficient for building a dense network of Ly-$\alpha$ absorbers associated with targeted structures at $z = 1.5$--2.5 \citep[see][]{lee16}. An additional $\sim$600 fibers per pointing will be allocated to galaxies embedded in the cosmic web. Executing this component would require 18 nights.  
+% TODO:
+%   - Need some examples of how these data would be used.
+%   - Describe overlap with cosmology program.
 
-FOBOS, with its greater sampling density, sensitivity, and blue wavelength coverage, will provide these diagnostics via follow-up of high-value regions in the PFS IGM map, such as protoclusters and galaxy overdensities, increasing the source density over PFS by a factor of 4--10 (depending on location).  This higher density yields statistical insight at 1 Mpc separations (the scale of individual massive halos) and the ability to stack sightlines to gain further in S/N so that various heavy-element ion transitions can be studied.  FOBOS will also be able to extend tomographic reconstruction down to $z = 1.5$, where sources are brighter.
+An observing program with FOBOS can meet these needs by building a high-resolution map of the IGM via a dense network of Ly-$\alpha$ absorbers associated with targeted structures at $1.5 < z < 2.5$ \citep[see][]{lee16}.  If the PFS survey is completed and distributed in time, this program should prioritize follow-up targets between $1.5 < z < 2.1$ (not accessible to PFS, but where sources are brighter) in these fields, such as protoclusters and galaxy overdensities.  This higher density yields statistical insight at 1 Mpc separations (the scale of individual massive halos) and the ability to stack sightlines to gain further in S/N so that various heavy-element ion transitions can be studied.  A FOBOS program to acquire these data would need to meet the following requirements:
+
+\begin{programrequirement}
+\reqitem For sufficient statistics, targets should be acquired in a set of 12 fields of $\sim$0.5 deg$^2$ each.
+\reqitem For sufficient spatial resolution of the reconstructed IGM tomography (\ref{prog:igm:dens}), each field should include $\sim$5000 targets between $1.5 < z < 2.5$. 
+\reqitem Each field should also contain $\sim$3000 galaxies embedded in the cosmic web for comparison of the intergalactic and interstellar media.
+\end{programrequirement}
+\begin{sciencerequirement}
+\reqitem Achieve source density commensurate with scales of massive halos; i.e., $\sim$1 Mpc for the most massive galaxy clusters at $z\sim 2$. \label{prog:igm:dens}
+\reqitem To detect a minimum \ion{H}{1} column density of X with a statistical error of no more than 0.x dex, FOBOS spectroscopy must obtain an ${\rm S/N} \sim 3.5$ at $r_{\rm AB} \approx 24.6$. 
+\end{sciencerequirement}
+
+%{Baseline source density goals for PFS: 1600/deg$^2$ over 15 deg$^2$.  This sightline density translates to 100 sources over the FOBOS FOV.  From the luminosity function of LBGs, going to a depth of R = 24.5 affords 400 possible $z=2.0-3.0$ sources within a single FOBOS pointing.  A 3-hr observation delivers S/N$\sim4$ per pixel in the g band.  Going to R = 24.6 means 1000 possible sources per FOV at S/N$\sim3.5$.  If we improve on source density over PFS by a factor of 4, we reduce the average sightline separation to $\sim1$ per comoving Mpc, or resolving scales of most massive individual halos!  This leaves 1400 fibers for `embedded' galaxies in the foreground. }
+
+% \note{Joe/Dan/Kyle: play-out the combination of the 2nd program above and the Cosmology program as a practical illustration of what a series of observing nights devoted to these programs might look like. }
 
 
+\section{Chemistry and dynamics of the Circumgalactic Medium at $z\sim2$}
 
-FOBOS's unique UV sensitivity (\S \ref{sec:landscape}) and IFU capabilities also open completely new territory: FOBOS will deliver the first significant samples of high-$z$ galaxies with circumgalactic gas mapped \emph{in emission}. UV sensitivity opens access to high- and intermediate-ionization transitions, such as O VI ($\lambda_{\rm rest} = 1032, 1037$ \AA) and C IV ($\lambda_{\rm rest} = 1548, 1550$ \AA), which probe $10^{5-6}$ K and $10^4$ K gas, respectively.  This temperature range marks the peak in gas cooling and therefore constrains how gas rains onto galaxies to fuel star-formation, as well as tracks feedback processes that establish and regulate the CGM (Fig.~\ref{fig:cgmsample}).  While $z\sim2$ galaxy halos may be mapped in Ly$\alpha$ on a one-by-one basis with KCWI (and metal-line emission has already been studied in some extreme objects), FOBOS will map these diagnostics to greater depth and for a large sample of ``normal'' galaxies (Fig.~\ref{fig:cgmsample}).  The combination of single-fiber and multiplexed IFU observations therefore allows FOBOS to map the density and dynamical state of diffuse gas at all relevant scales from the IGM to the CGM, providing novel constraints on the next generation of cosmological simulations.
+
+High- and intermediate-ionization transitions, such as \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA) and \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA), probe $10^{5-6}$ K and $10^4$ K gas, respectively.  This temperature range marks the peak in gas cooling and therefore constrains how gas rains onto galaxies to fuel star-formation, as well as tracks feedback processes that establish and regulate the circumgalactic medium (CGM).  Observations of this gas is usually detected in \textit{absorption} 
+
+Although $z\sim2$ galaxy halos may be mapped in Ly$\alpha$ on a one-by-one basis with KCWI (and metal-line emission has already been studied in some extreme objects), FOBOS will map these diagnostics to greater depth and for a large sample of ``normal'' galaxies (Fig.~\ref{fig:cgmsample}).  The combination of single-fiber and multiplexed IFU observations therefore allows FOBOS to map the density and dynamical state of diffuse gas at all relevant scales from the IGM to the CGM, providing novel constraints on the next generation of cosmological simulations.
+
+FOBOS's unique UV sensitivity and IFU capabilities also open completely new territory: FOBOS will deliver the first significant samples of high-$z$ galaxies with circumgalactic gas mapped \textit{in emission}. UV sensitivity opens access to 
 
 %\begin{wrapfigure}{r}{0.6\textwidth}\small
 %\vspace{-0.2cm}
@@ -285,23 +307,9 @@ FOBOS's unique UV sensitivity (\S \ref{sec:landscape}) and IFU capabilities also
 %Field selection will take advantage of quasar-quasar pairs 
 %at \note{range or exact number?} certain redshifts.
 
-\subsubsection{FOBOS Galaxy Ecosystem Program}
+In a joint observing scheme with the ultra-deep exposures of the \textit{FOBOS Cosmology Program}, the CGM study would use FOBOS's unique IFU multiplex capability (configuring one-third of FOBOS's fiber complement into into 15 37-fiber IFUs) to build an unprecedented sample of galaxies spanning respectively $\sim2$ and $>3$ orders of magnitude in $M_\ast$ and SFR, with maps of their CGM \textit{in emission}.  Each IFU will observe an on-sky diameter of 5.6 arcsec, sampling gaseous halos in each galaxy at 5 kpc scales out to a radius of 20--25 kpc (Fig.~\ref{fig:cgmsample}).  These observations require the equivalent of 12.5 dark nights per year.
 
-The two observing campaigns of the \textit{FOBOS Galaxy Ecosystem Program} would link the buildup of the CGM to the cosmic web (IGM): (1) The IGM tomography component would span a total of 6 deg$^2$, delivering fine-sampling and detailed follow-up of cosmic structures identified in the PFS IGM maps.  The PFS maps are expected to be publicly available in 2028, but they are not critical to a successful FOBOS program which can continue with high-priority exploration of $1.5 < z < 2.1$ (not accessible to PFS) and a blind IGM survey at higher-$z$ if the PFS survey were unsuccessful.  With a 3-hour integration time, the program targets over 1000 background Lyman-break galaxies per FOBOS pointing (60,000 total), obtaining ${\rm S/N} \sim 3.5$ at $r_{AB} \approx 24.6$, which is sufficient for building a dense network of Ly-$\alpha$ absorbers associated with targeted structures at $z = 1.5$--2.5 \citep[see][]{lee16}. An additional $\sim$600 fibers per pointing will be allocated to galaxies embedded in the cosmic web. Executing this component would require 18 nights.  (2) In a joint observing scheme with the ultra-deep exposures of the \textit{FOBOS Cosmology Program}, the CGM study would use FOBOS's unique IFU multiplex capability (configuring one-third of FOBOS's fiber complement into into 15 37-fiber IFUs) to build an unprecedented sample of galaxies spanning respectively $\sim2$ and $>3$ orders of magnitude in $M_\ast$ and SFR, with maps of their CGM \textit{in emission}.  Each IFU will observe an on-sky diameter of 5.6 arcsec, sampling gaseous halos in each galaxy at 5 kpc scales out to a radius of 20--25 kpc (Fig.~\ref{fig:cgmsample}).  These observations require the equivalent of 12.5 dark nights per year.
 
-%{Baseline source density goals for PFS: 1600/deg$^2$ over 15 deg$^2$.  This sightline density translates to 100 sources over the FOBOS FOV.  From the luminosity function of LBGs, going to a depth of R = 24.5 affords 400 possible $z=2.0-3.0$ sources within a single FOBOS pointing.  A 3-hr observation delivers S/N$\sim4$ per pixel in the g band.  Going to R = 24.6 means 1000 possible sources per FOV at S/N$\sim3.5$.  If we improve on source density over PFS by a factor of 4, we reduce the average sightline separation to $\sim1$ per comoving Mpc, or resolving scales of most massive individual halos!  This leaves 1400 fibers for `embedded' galaxies in the foreground. }
-
-% \note{Joe/Dan/Kyle: play-out the combination of the 2nd program above and the Cosmology program as a practical illustration of what a series of observing nights devoted to these programs might look like. }
-
-\begin{programrequirement}
-\reqitem Expand Ly$\alpha$ tomographic coverage at high source density (comparable or exceeding PFS SSP) into $1.5 < z < 2.1$ regime.
-
-\reqitem Utilize a subset of fiber budget for observing galaxies within Cosmic Web structures mapped in $Ly\alpha$.
-
-\reqitem Achieve source density commensurate with scales of massive halos, $\sim$1 Mpc for the most massive galaxy clusters at $z\sim 2$.
-\end{programrequirement}
-
-\section{Chemistry and dynamics of the Circumgalactic Medium at $z\sim2$}
 \begin{programrequirement}
 \reqitem Observe galaxies over a range of mass and SFR that includes likely progenitors of the Milky Way to the most massive brightest cluster galaxies today: $9.7 <$ log ($M_*/M_\odot$) $< 11.5$ [NEED REF FOR UPPER MASS LIMIT; Patel+2013a]
 

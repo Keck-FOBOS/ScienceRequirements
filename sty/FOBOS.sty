@@ -20,11 +20,13 @@
 
 %%% FONT CHOICES
 \usepackage[utf8]{inputenc}
-\usepackage[sc,osf]{mathpazo} % math & rm (Math and roman)
+%\usepackage[sc,osf]{mathpazo} % math & rm (Math and roman)
 \linespread{1.0345} % With 11 pt the baselineskip is 14.0692 pt.
 % And with textheight = 636.60028 pt gives 45.25 lines per page.
 %\usepackage[scaled]{helvet} % ss (sans)
-\usepackage{helvet}
+\usepackage[scaled=1]{helvet}
+\usepackage[helvet]{sfmath}
+%\everymath={\sf}
 \renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 %\fontfamily{lmss}\selectfont
@@ -196,8 +198,6 @@
   {\setcounter{procnt}{\arabic{thiscnt}}%
    \end{requirement*}}
 
-
-
 % Pulled from
 %
 % https://github.com/AASJournals/AASTeX60/blob/master/cls/aastex63.cls
@@ -205,6 +205,23 @@
 % on 8 July 2020.
 %
 % Changed all "renewcommand" calls to "newcommand".
+
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+\newcommand\ion[2]{#1$\;${\rmfamily\RN{#2}}\relax}%
+
+%\newcommand\ion[2]{#1$\;${%
+%\ifx\@currsize\normalsize\small \else
+%\ifx\@currsize\small\footnotesize \else
+%\ifx\@currsize\footnotesize\scriptsize \else
+%\ifx\@currsize\scriptsize\tiny \else
+%\ifx\@currsize\large\normalsize \else
+%\ifx\@currsize\Large\large
+%\fi\fi\fi\fi\fi\fi
+%\rmfamily\RN{#2}}\relax}%
+
 \makeatletter
 \let\jnl@style=\rmfamily 
 \def\ref@jnl#1{{\jnl@style#1}}% 
