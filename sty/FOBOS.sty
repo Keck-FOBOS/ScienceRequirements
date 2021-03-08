@@ -212,16 +212,6 @@
 
 \newcommand\ion[2]{#1$\;${\rmfamily\RN{#2}}\relax}%
 
-%\newcommand\ion[2]{#1$\;${%
-%\ifx\@currsize\normalsize\small \else
-%\ifx\@currsize\small\footnotesize \else
-%\ifx\@currsize\footnotesize\scriptsize \else
-%\ifx\@currsize\scriptsize\tiny \else
-%\ifx\@currsize\large\normalsize \else
-%\ifx\@currsize\Large\large
-%\fi\fi\fi\fi\fi\fi
-%\rmfamily\RN{#2}}\relax}%
-
 \makeatletter
 \let\jnl@style=\rmfamily 
 \def\ref@jnl#1{{\jnl@style#1}}% 
