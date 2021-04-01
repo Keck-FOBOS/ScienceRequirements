@@ -110,25 +110,47 @@ Supporting spectroscopic follow-up of large-scale survey missions is already in 
 
 These considerations have lead to our concept for the \textbf{Fiber-Optic Broadband Optical Spectrograph, FOBOS,} timed to deploy on WMKO's Keck II Telescope in 2028, just as various panoramic deep-imaging surveys begin reaching their target depths.  FOBOS emphasizes flexible and quickly configurable focal-plane sampling with high multiplex, UV sensitivity, and a stable spectral format that supports ultra-deep integrations of $\gtrsim$50 hours, thereby building from and expanding on traditional strengths of WMKO observations.
 
-\section{Document Scope}
+\section{Derivation of ``Requirements'' in this Document}
 
-As a facility-class instrument, FOBOS will be used to pursue a wide range of scientific goals.  The purpose of this document is to encapsulate the breadth and depth of these goals in a way that flows down to the instrument-defining technical requirements.  This document enumerates and provides the justification for all instrument requirements, which are further developed and refined in the Design Reference Document (DRD; FOBOS.TOP.DOC.002).
+As a facility-class instrument, FOBOS will be used to pursue a wide range of scientific goals.  The purpose of this document is to encapsulate the breadth and depth of these goals in a way that flows down to the instrument-defining technical requirements.  This document enumerates and provides the justification for all high-level instrument requirements.  These are further developed at deeper levels of detail in associated design documents for each subsystem.
 
-During its Conceptual Design Phase (CoDP), FOBOS science requirements have been developed following two paths: (1) We capture the core science that FOBOS \textit{must} enable via a series of ``design-reference'' programs.  These programs represent the most compelling uses of FOBOS in its first few years on sky, addressing key science questions that we expect to be particularly timely.  We refer to these as \textbf{Key Programs} (Chapter \ref{chap:key}) and discuss them in terms of observations that ``will'' be done; however, we emphasize that, as of the current release of this document (\docsysnum), the execution of these programs is not guaranteed.  \edit{section now removed, need to edit this} (2) \textbf{Additional Science Drivers} (Chapter \ref{chap:addsd}) are presented that have not (yet) led to large-scale observing programs, but also represent compelling science that FOBOS \textit{must} enable.
+During its Conceptual Design Phase (CoDP), FOBOS science requirements have been developed by defining a set of \textbf{Key Programs} (Chapter \ref{chap:key}) that capture the core science that FOBOS \textit{must} enable.  The FOBOS Science Team has developed these programs with the view that they represent the most compelling FOBOS science within its first 5 years on-sky.  These programs are for reference only.  A competitive proposal process will determine the final makeup of approved, large-scale programs ahead of FOBOS commissioning. 
 
-Development of the Key Programs and Science Drivers emphasizes a full exploration of the instrument needs for any given science case.  However, from the outset, this was done within the context of the following gross expectations for the final instrument design:
+% \edit{section now removed, need to edit this} (2) \textbf{Additional Science Drivers} (Chapter \ref{chap:addsd}) are presented that have not (yet) led to large-scale observing programs, but also represent compelling science that FOBOS \textit{must} enable.
+
+While we developed the Key Programs and associated requirements in order to explore the full range of required FOBOS capabilities, we constrained this exercise with a set of baseline assumptions.  FOBOS should:
 
 \begin{asparaenum}
-\item improves upon the current DEIMOS multiplex,
-\item follows a fiber-fed, modular spectrograph design,
-\item provides both single-aperture and integral-field capabilities,
-\item samples the optical-to-NIR wavelength range, and
-\item provides modest spectral resolution ($R\sim 3000-5000$).
+\item Dramatically improve on the current DEIMOS multiplex of $\sim$100 targets,
+\item Adopt a fiber-fed, modular spectrograph design (in order to do so),
+\item Provide both single-aperture and integral-field capabilities,
+\item Cover the near-UV to 1 $\mu$m wavelength range, and
+\item Provide a spectral resolution of $R\sim 3000-5000$.
 \end{asparaenum}
+\medskip
 
-Requirements derived from the Key Programs and Science Drivers are divided into program requirements and science requirements: \textbf{Program requirements} lead to instrument requirements that enable program success; e.g., ``To measure a change in the slope of the initial mass function (IMF) of $X$ dex per ${\rm d}(\log\mathcal{M}_\ast)$ or larger, the equivalent width of the Wing-Ford band must be measured to better than $Y$ dex for $N$ galaxies evenly distributed over a mass range of $\mathcal{M}_1 < \mathcal{M}_\ast < \mathcal{M}_2$.''  \textbf{Science requirements} lead to instrument requirements that enable a given measurement; e.g., ``The spectral range must include the Wing-Ford band (989 nm $< \lambda <$ 995 nm) for galaxies at $z \lesssim 0.1$.''  A useful distinction is that program requirements can flow down to one or more science requirements, but not vice versa. Program and science requirements are signified by \textbf{P} (e.g., \ref{prog:photoz:sample}) and \textbf{S}, respectively.
+It goes without saying that FOBOS should enable transformational science at a minimal total cost that is competitive with other modern instruments of a similar scale. With this context, we define four types of requirements in this document.  At the highest level:
 
-This document consolidates the program and science requirements into a series of \textbf{instrument requirements} and \textbf{data requirements}.  Here, we distinguish between requirements that are primarily driven by the instrument hardware from those primarily driven by the software related to the data-management systems (DMS; Chapter \ref{chap:DMS}).  Following from the example above, a relevant instrument requirement would be: ``The red spectral limit must be $\geq$ 1.1 $\mu$m.''  A relevant data requirement would be: ``Systematic errors in the equivalent width of the Wing-Ford band introduced by sky subtraction and flux calibration must not be larger than 10\% of the Poisson error due to photon shot noise.''  Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an \textbf{R} and \textbf{D}, respectively.
+\begin{itemize}
+\item \textbf{Program Requirements (P)} define the final measurement fidelity required to make a given Key Program successful. For example, ``To measure a change in the slope of the initial mass function (IMF) of $X$ dex per ${\rm d}(\log\mathcal{M}_\ast)$ or larger, the equivalent width of the Wing-Ford band must be measured to better than $Y$ dex for $N$ galaxies evenly distributed over a mass range of $\mathcal{M}_1 < \mathcal{M}_\ast < \mathcal{M}_2$.''  
+
+\item \textbf{Science Requirements (S)} define the instantaneous ability of FOBOS needed to satisfy a program requirement.  For example, ``The spectral range must include the Wing-Ford band (989 nm $< \lambda <$ 995 nm) for galaxies at $z \lesssim 0.1$.''  
+\end{itemize}
+
+Program Requirements (P) can flow to both Science Requirements (S) and Instrument (R) or Data (D) requirements.  These instrument and data requirements translate science goals into technical specifications.
+
+% A useful distinction is that program requirements can flow down to one or more science requirements, but not vice versa. Program and science requirements are signified by \textbf{P} (e.g., \ref{prog:photoz:sample}) and \textbf{S}, respectively.
+
+\begin{itemize}
+\item \textbf{Instrument Requirements (R)} define technical capabilities, for example, ``The red spectral limit must be $\geq$ 1.1 $\mu$m.'' 
+
+\item \textbf{Data Requirements (D)} place limits on software systems that manage the reduction, processing, and storage of data, the data-management systems (DMS; Chapter \ref{chap:DMS}), e.g., ``Across program fields observed over many nights, the reduction pipeline shall not introduce scatter greater than 10\% of Poisson compared to a single-visit manual reduction.'' 
+\end{itemize}
+
+
+% This document consolidates the program and science requirements into a series of \textbf{instrument requirements} and \textbf{data requirements}.  Here, we distinguish between requirements that are primarily driven by the instrument hardware from those primarily driven by the software related to the data-management systems (DMS; Chapter \ref{chap:DMS}).  Following from the example above, a relevant instrument requirement would be: ``The red spectral limit must be $\geq$ 1.1 $\mu$m.''  A relevant data requirement would be: ``Systematic errors in the equivalent width of the Wing-Ford band introduced by sky subtraction and flux calibration must not be larger than 10\% of the Poisson error due to photon shot noise.''  
+
+Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an \textbf{R} and \textbf{D}, respectively.
 
 Data requirements do not, as of this release, differentiate between requirements most relevant to the data-\textit{reduction} pipeline (the DMS \textit{Accountant}) versus those most relevant to the data-\textit{analysis} pipeline (the DMS \textit{Alchemist}).  Data requirements drawn from the Key Programs will provide both flavors of data requirements; however, Science Drivers may not lead to requirements for the data-analysis pipeline.  That is, although the FOBOS project aims to enable pipeline-produced high-level data products for \textit{all} FOBOS data, the project-led development of the data-analysis software will be driven by the needs of the Key Programs, at least initially.
 
