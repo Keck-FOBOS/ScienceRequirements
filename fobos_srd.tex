@@ -2,7 +2,7 @@
 \usepackage{sty/FOBOS}  % FOBOS SDN style file
 \usepackage[hang,flushmargin]{footmisc}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Things you need to edit:
 %   - Document name, numbering, and date; edit the newcommands below.
@@ -114,12 +114,13 @@ These considerations have lead to our concept for the \textbf{Fiber-Optic Broadb
 
 As a facility-class instrument, FOBOS will be used to pursue a wide range of scientific goals.  The purpose of this document is to encapsulate the breadth and depth of these goals in a way that flows down to the instrument-defining technical requirements.  This document enumerates and provides the justification for all high-level instrument requirements.  These are further developed at deeper levels of detail in associated design documents for each subsystem.
 
-During its Conceptual Design Phase (CoDP), FOBOS science requirements have been developed by defining a set of \textbf{Key Programs} (Chapter \ref{chap:key}) that capture the core science that FOBOS \textit{must} enable.  The FOBOS Science Team has developed these programs with the view that they represent the most compelling FOBOS science within its first 5 years on-sky.  These programs are for reference only.  A competitive proposal process will determine the final makeup of approved, large-scale programs ahead of FOBOS commissioning. 
+During its Conceptual Design Phase (CoDP), FOBOS science requirements have been developed by defining a set of \textbf{Design-Reference Programs} (Chapter \ref{chap:key}) that capture the core science that FOBOS \textit{must} enable.  The FOBOS Science Team has developed these programs with the view that they represent the most compelling FOBOS science within its first 5 years on-sky.  These programs are for reference only.  A competitive proposal process will determine the final makeup of approved, large-scale programs ahead of FOBOS commissioning. 
 
 % \edit{section now removed, need to edit this} (2) \textbf{Additional Science Drivers} (Chapter \ref{chap:addsd}) are presented that have not (yet) led to large-scale observing programs, but also represent compelling science that FOBOS \textit{must} enable.
 
-While we developed the Key Programs and associated requirements in order to explore the full range of required FOBOS capabilities, we constrained this exercise with a set of baseline assumptions.  FOBOS should:
+While we developed the Design-Reference Programs and associated requirements in order to explore the full range of required FOBOS capabilities, we constrained this exercise with a set of baseline assumptions.  FOBOS should:
 
+\medskip
 \begin{asparaenum}
 \item Dramatically improve on the current DEIMOS multiplex of $\sim$100 targets,
 \item Adopt a fiber-fed, modular spectrograph design (in order to do so),
@@ -132,29 +133,31 @@ While we developed the Key Programs and associated requirements in order to expl
 \noindent It goes without saying that FOBOS should enable transformational science at a minimal total cost that is competitive with other modern instruments of a similar scale. With this context, we define four types of requirements in this document.  At the highest level:
 
 \begin{itemize}
-\item \textbf{Program Requirements (P)} define the final measurement fidelity required to make a given Key Program successful. For example, ``To measure a change in the slope of the initial mass function (IMF) of $X$ dex per ${\rm d}(\log\mathcal{M}_\ast)$ or larger, the equivalent width of the Wing-Ford band must be measured to better than $Y$ dex for $N$ galaxies evenly distributed over a mass range of $\mathcal{M}_1 < \mathcal{M}_\ast < \mathcal{M}_2$.''  
+\item \textbf{Program Requirements (P)} define the final measurement fidelity, derived after all observations, that is required to make a given Key Program successful. For example, ``To measure a change in the slope of the initial mass function (IMF) of $X$ dex per ${\rm d}(\log\mathcal{M}_\ast)$ or larger, the equivalent width of the Wing-Ford band must be measured to better than $Y$ dex for $N$ galaxies evenly distributed over a mass range of $\mathcal{M}_1 < \mathcal{M}_\ast < \mathcal{M}_2$.''  
 
-\item \textbf{Science Requirements (S)} define the instantaneous ability of FOBOS needed to satisfy a program requirement.  For example, ``The spectral range must include the Wing-Ford band (989 nm $< \lambda <$ 995 nm) for galaxies at $z \lesssim 0.1$.''  
+\item \textbf{Science Requirements (S)} define the \emph{instantaneous} ability of FOBOS to obtain observations that satisfy a program requirement.  For example, ``The spectral range must include the Wing-Ford band (989 nm $< \lambda <$ 995 nm) for galaxies at $z \lesssim 0.1$.''  
 \end{itemize}
 
-\noindent Program Requirements (P) can flow to both Science Requirements (S) and Instrument (R) or Data (D) requirements.  These instrument and data requirements translate science goals into technical specifications.
+\noindent Program Requirements (P) can flow to both Science Requirements (S) and Instrument (R) or Data (D) requirements.  Science Requirements (S) also flow to Instrument and Data Requirements, but Science Requirements do not flow to Program Requirements.  
+
+\noindent Instrument and Data Requirements translate science goals into technical specifications:
 
 % A useful distinction is that program requirements can flow down to one or more science requirements, but not vice versa. Program and science requirements are signified by \textbf{P} (e.g., \ref{prog:photoz:sample}) and \textbf{S}, respectively.
 
 \begin{itemize}
 \item \textbf{Instrument Requirements (R)} define technical capabilities, for example, ``The red spectral limit must be $\geq$ 1.1 $\mu$m.'' 
 
-\item \textbf{Data Requirements (D)} place limits on software systems that manage the reduction, processing, and storage of data, the data-management systems (DMS; Chapter \ref{chap:DMS}), e.g., ``Across program fields observed over many nights, the reduction pipeline shall not introduce scatter greater than 10\% of Poisson compared to a single-visit manual reduction.'' 
+\item \textbf{Data Requirements (D)} place requirements on software systems that manage the reduction, processing, and storage of data, the data-management systems (DMS), e.g., ``Across program fields observed over many nights, the reduction pipeline shall not introduce scatter greater than 10\% of Poisson compared to a single-visit manual reduction.'' 
 \end{itemize}
 
 
 % This document consolidates the program and science requirements into a series of \textbf{instrument requirements} and \textbf{data requirements}.  Here, we distinguish between requirements that are primarily driven by the instrument hardware from those primarily driven by the software related to the data-management systems (DMS; Chapter \ref{chap:DMS}).  Following from the example above, a relevant instrument requirement would be: ``The red spectral limit must be $\geq$ 1.1 $\mu$m.''  A relevant data requirement would be: ``Systematic errors in the equivalent width of the Wing-Ford band introduced by sky subtraction and flux calibration must not be larger than 10\% of the Poisson error due to photon shot noise.''  
 
-\noindent Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an \textbf{R} and \textbf{D}, respectively.
+% \noindent Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an \textbf{R} and \textbf{D}, respectively.
 
-Data requirements do not, as of this release, differentiate between requirements most relevant to the data-\textit{reduction} pipeline (the DMS \textit{Accountant}) versus those most relevant to the data-\textit{analysis} pipeline (the DMS \textit{Alchemist}).  Data requirements drawn from the Key Programs will provide both flavors of data requirements; however, Science Drivers may not lead to requirements for the data-analysis pipeline.  That is, although the FOBOS project aims to enable pipeline-produced high-level data products for \textit{all} FOBOS data, the project-led development of the data-analysis software will be driven by the needs of the Key Programs, at least initially.
+In this SRD version, Data Requirements do not differentiate between requirements for the data-\textit{reduction} pipeline (the DMS \textit{Accountant}) versus the data-\textit{analysis} pipeline (the DMS \textit{Alchemist}).  In general, while FOBOS aims to deliver high-level data products for \textit{all} FOBOS data, the FOBOS pipeline effort will be driven by the Design-Reference Program Requirements.
 
-Each of the instrument (\textbf{R}) and data (\textbf{D}) requirements point to one or more program (\textbf{P}) and/or science (\textbf{S}) requirements that it satisfies.  Summary tables provide a mapping from each instrument/data requirement to all associated program/science requirements (Table \edit{x}) and vice versa (Table \edit{y}); each program/science requirement must lead to at least one instrument/data requirement.
+Summary tables provide a mapping from each instrument/data requirement to all associated program/science requirements (Table \edit{x}) and vice versa (Table \edit{y}); each program/science requirement must lead to at least one instrument/data requirement.
 
 \section{Guiding Principles and Assumptions}
 
@@ -162,22 +165,19 @@ In discussing the science requirements, we distinguish between measurement ``pre
 
 \section{Document Outline}
 
-\edit{edit this given outline changes...}
-The Science Requirements Document is organized as follows:  Each of the key programs are motivated and presented in Chapter \ref{chap:key}.  The chapter is organized into one section per primary science program goal.  Many programs share a common discipline, and multiple programs are more efficiently executed simultaneously.  We close Chapter \ref{chap:key} by discussing possible observational synergies between programs. Chapter \ref{chap:addsd} present additional science drivers and relevant science requirements for pursuits that have not yet been developed into full-scale key programs.
+The Science Requirements Document is organized as follows:  Each of the Design-Reference Programs are motivated and presented in Chapter \ref{chap:key}.  The chapter is organized into one section per primary science program goal.  Many programs share a common discipline, and multiple programs are more efficiently executed simultaneously.  We close Chapter \ref{chap:key} by discussing possible observational synergies between programs. 
 
 % TODO: We need a chapter devoted to machine-learning applications.
 
-In Chapter \ref{chap:instr}, we first consolidate the program and science requirements from Chapter \ref{chap:key} into a few overarching technical requirements for, e.g., spatial sampling (Section \ref{sec:sampling}) and spectrophotometry (\ref{sec:spectrophotometry}). The Chapter ends with a section that provides the consolidated tables with instrument requirements pointing to their motivating program and science requirements. Chapter \ref{chap:DMS} mirrors Chapter \ref{chap:instr} but focuses on the data requirements and a discussion of the data management systems needed to meet these requirements.
+In Chapter \ref{chap:instr}, we first consolidate the program and science requirements from Chapter \ref{chap:key} into a few high-level technical requirements for, e.g., spatial sampling (Section \ref{sec:sampling}) and spectrophotometry (\ref{sec:spectrophotometry}). The Chapter ends with a section that provides the consolidated tables with instrument requirements pointing to their motivating program and science requirements. Chapter \ref{chap:DMS} mirrors Chapter \ref{chap:instr} but focuses on the data requirements and a discussion of the data management systems needed to meet these requirements.
 
-% TODO: Does the documentation chapter belong in this document?
-Finally, Chapter \ref{chap:doc} discusses the documentation plans for FOBOS development.
+% TODO: Move documentation chapter content to the PEP 
+% Finally, Chapter \ref{chap:doc} discusses the documentation plans for FOBOS development.
 
 \newpage
 
-\chapter{Key Programs}
+\chapter{Design-Reference Programs}
 \label{chap:key}
-
-\edit{change the title of this to "design-reference" programs?}
 
 % Requirement redundancy in the science programs
 %   - weigh this against overwhelming the reader
@@ -592,7 +592,7 @@ PSF metrology across the field is crucial for optimal data cube extraction. With
 
 \item [TOP.REQ.A01] Field of view (FoV) shall be 17\arcmin{} diameter with a goal of the full unvignetted 20\arcmin{} diameter.  A wider FoV increases the efficiency of targeting sources with lower on-sky densities, thus expanding FOBOS's science breadth.
 
-\item [TOP.REQ.A02] Number of single fibers shall be at least 1800.  Over a 20\arcmin{} field, this number yields an average target density of 6 arcmin$^{-2}$ which matches the desired target density of our key programs.  Note that the on-sky density of sources brighter than i$_{AB}$ $\sim$25 is $\sim$40 arcmin$^{-2}$.
+\item [TOP.REQ.A02] Number of single fibers shall be at least 1800.  Over a 20\arcmin{} field, this number yields an average target density of 6 arcmin$^{-2}$ which matches the desired target density of our Design-Reference Programs.  Note that the on-sky density of sources brighter than i$_{AB}$ $\sim$25 is $\sim$40 arcmin$^{-2}$.
 
 \item [TOP.REQ.A03] The Single-fiber on-sky aperture shall be between 0.7--1.2\arcsec{}.
 
