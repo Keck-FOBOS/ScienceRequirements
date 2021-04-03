@@ -129,7 +129,7 @@ While we developed the Key Programs and associated requirements in order to expl
 \end{asparaenum}
 \medskip
 
-It goes without saying that FOBOS should enable transformational science at a minimal total cost that is competitive with other modern instruments of a similar scale. With this context, we define four types of requirements in this document.  At the highest level:
+\noindent It goes without saying that FOBOS should enable transformational science at a minimal total cost that is competitive with other modern instruments of a similar scale. With this context, we define four types of requirements in this document.  At the highest level:
 
 \begin{itemize}
 \item \textbf{Program Requirements (P)} define the final measurement fidelity required to make a given Key Program successful. For example, ``To measure a change in the slope of the initial mass function (IMF) of $X$ dex per ${\rm d}(\log\mathcal{M}_\ast)$ or larger, the equivalent width of the Wing-Ford band must be measured to better than $Y$ dex for $N$ galaxies evenly distributed over a mass range of $\mathcal{M}_1 < \mathcal{M}_\ast < \mathcal{M}_2$.''  
@@ -137,7 +137,7 @@ It goes without saying that FOBOS should enable transformational science at a mi
 \item \textbf{Science Requirements (S)} define the instantaneous ability of FOBOS needed to satisfy a program requirement.  For example, ``The spectral range must include the Wing-Ford band (989 nm $< \lambda <$ 995 nm) for galaxies at $z \lesssim 0.1$.''  
 \end{itemize}
 
-Program Requirements (P) can flow to both Science Requirements (S) and Instrument (R) or Data (D) requirements.  These instrument and data requirements translate science goals into technical specifications.
+\noindent Program Requirements (P) can flow to both Science Requirements (S) and Instrument (R) or Data (D) requirements.  These instrument and data requirements translate science goals into technical specifications.
 
 % A useful distinction is that program requirements can flow down to one or more science requirements, but not vice versa. Program and science requirements are signified by \textbf{P} (e.g., \ref{prog:photoz:sample}) and \textbf{S}, respectively.
 
@@ -150,7 +150,7 @@ Program Requirements (P) can flow to both Science Requirements (S) and Instrumen
 
 % This document consolidates the program and science requirements into a series of \textbf{instrument requirements} and \textbf{data requirements}.  Here, we distinguish between requirements that are primarily driven by the instrument hardware from those primarily driven by the software related to the data-management systems (DMS; Chapter \ref{chap:DMS}).  Following from the example above, a relevant instrument requirement would be: ``The red spectral limit must be $\geq$ 1.1 $\mu$m.''  A relevant data requirement would be: ``Systematic errors in the equivalent width of the Wing-Ford band introduced by sky subtraction and flux calibration must not be larger than 10\% of the Poisson error due to photon shot noise.''  
 
-Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an \textbf{R} and \textbf{D}, respectively.
+\noindent Importantly, there is an obvious interplay between the hardware and software requirements that will evolve as the limitations of each are explored. Instrument and data requirements are signified by an \textbf{R} and \textbf{D}, respectively.
 
 Data requirements do not, as of this release, differentiate between requirements most relevant to the data-\textit{reduction} pipeline (the DMS \textit{Accountant}) versus those most relevant to the data-\textit{analysis} pipeline (the DMS \textit{Alchemist}).  Data requirements drawn from the Key Programs will provide both flavors of data requirements; however, Science Drivers may not lead to requirements for the data-analysis pipeline.  That is, although the FOBOS project aims to enable pipeline-produced high-level data products for \textit{all} FOBOS data, the project-led development of the data-analysis software will be driven by the needs of the Key Programs, at least initially.
 
