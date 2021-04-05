@@ -241,6 +241,7 @@ FOBOS will provide uniquely powerful spectroscopy capabilities for photo-$z$ tra
 \reqitem To efficiently build the sample, the program must be able to reconfigure individual fibers in a field to new targets either as targets acquire sufficient S/N for redshift measurements or targets are found to not meet requirement \ref{prog:photoz:snperhr}.
 \end{programrequirement}
 
+\medskip
 \begin{sciencerequirement}
 \reqitem At least 75\% of FOBOS spectra for galaxies at $z<2.5$ with a continuum S/N of 2 per angstrom must result in accurate spectroscopic redshifts. \label{prog:photoz:zcomplete}
 \reqitem For spectra satisfying \ref{prog:photoz:zcomplete}, statistical errors in the spectroscopic redshifts of continuum-only sources must be no larger than $\sigma_z/z \sim 10^{-3}$ \edit{check this}.
@@ -290,7 +291,7 @@ The PFS Strategic Survey Program on Subaru (running 2023--2027) \citep{Nagamine:
 %   - Need some examples of how these data would be used.
 %   - Describe overlap with cosmology program.
 
-An observing program with FOBOS can meet these needs by building a high-resolution map of the IGM via a dense network of Ly-$\alpha$ absorbers associated with targeted structures at $1.5 < z < 2.5$ \citep[see][]{lee16}.  If the PFS survey is completed and distributed in time, this program should prioritize follow-up targets between $1.5 < z < 2.1$ (not accessible to PFS, but where sources are brighter) in these fields, such as protoclusters and galaxy overdensities.  This higher density yields statistical insight at 1 Mpc separations (the scale of individual massive halos) and the ability to stack sightlines to gain further in S/N so that various heavy-element ion transitions can be studied.  A FOBOS program to acquire these data would need to meet the following requirements:
+An observing program with FOBOS can meet these needs by building a high-resolution map of the IGM via a dense network of Ly-$\alpha$ absorbers associated with targeted structures at $1.6 < z < 2.5$ \citep[see][]{lee16}.  If the PFS survey is completed and distributed in time, this program should prioritize follow-up targets between $1.6 < z < 2.1$ (not accessible to PFS, but where sources are brighter) in these fields, such as protoclusters and galaxy overdensities.  This higher density yields statistical insight at 1 Mpc separations (the scale of individual massive halos) and the ability to stack sightlines to gain further in S/N so that various heavy-element ion transitions can be studied.  The FOBOS IGM program to acquire these data would require 25 clear, dark nights would need to meet the following requirements:
 
 
 \noindent \textbf{FOBOS IGM Program Requirements:}
@@ -298,13 +299,21 @@ An observing program with FOBOS can meet these needs by building a high-resoluti
 \begin{programrequirement}
 \reqitem The total area shall be greater than 6 deg$^2$ to survey sufficient volume for detection of rare, proto-cluster structures which will evolve into $z=0$ halos with 10$^{14}$ \msun{}.  This total area will be divided into 12 sub-fields for ease of scheduling.  Each sub-field shall be at least $\sim$0.5 deg$^2$ in order to span the largest structures \citep[see][]{lee16}.
 
-\reqitem For sufficient spatial resolution of the reconstructed IGM tomography (\ref{prog:igm:dens}), each field should include $\sim$5000 targets between $1.5 < z < 2.5$. 
+\reqitem For sufficient spatial resolution of the reconstructed IGM tomography (\ref{prog:igm:dens}), each field should include $\sim$5000 targets between $1.6 < z < 2.5$. 
 \reqitem Each field should also contain $\sim$3000 galaxies embedded in the cosmic web for comparison of the intergalactic and interstellar media.
+
+\reqitem To detect a minimum \ion{H}{1} column density of $10^{13}$ \edit{check this} with a statistical error of no more than 0.1 dex (25\%)\edit{check this}, 3-hour integrations must reach a ${\rm S/N} \sim 3.5$ at $r_{\rm AB} \approx 24.6$ \edit{check this against ETC}. 
+
 \end{programrequirement}
 
+\medskip
 \begin{sciencerequirement}
-\reqitem Achieve source density commensurate with scales of massive halos; i.e., $\sim$1 Mpc for the most massive galaxy clusters at $z\sim 2$. \label{prog:igm:dens}
-\reqitem To detect a minimum \ion{H}{1} column density of $10^{13}$ \edit{check this} with a statistical error of no more than 0.1 dex (25\%)\edit{check this}, FOBOS spectroscopy must obtain ${\rm S/N} \sim 3.5$ at $r_{\rm AB} \approx 24.6$ \edit{check this against etc}. 
+\reqitem The FOBOS single-aperture sampling density shall deliver efficient ($>70$\% completeness), single-visit target allocation for on-sky source densities of $>$4 arcmin$^{-2}$.  This is commensurate with scales of massive halos; i.e., $\sim$1 Mpc for the most massive galaxy clusters at $z\sim 2$. \label{prog:igm:dens}
+
+% K. Bundy (2021-04-05): The 4 per arcmin^2 comes from 5000 sight-lines plus 3000 embedded galaxies per 0.5 deg^2.  The 70\% is a WAG.
+
+\reqitem FOBOS shall be able to detect Ly$\alpha$ (1216 \AA{}) at a redshift of $z=1.6$.  
+
 \end{sciencerequirement}
 
 %{Baseline source density goals for PFS: 1600/deg$^2$ over 15 deg$^2$.  This sightline density translates to 100 sources over the FOBOS FOV.  From the luminosity function of LBGs, going to a depth of R = 24.5 affords 400 possible $z=2.0-3.0$ sources within a single FOBOS pointing.  A 3-hr observation delivers S/N$\sim4$ per pixel in the g band.  Going to R = 24.6 means 1000 possible sources per FOV at S/N$\sim3.5$.  If we improve on source density over PFS by a factor of 4, we reduce the average sightline separation to $\sim1$ per comoving Mpc, or resolving scales of most massive individual halos!  This leaves 1400 fibers for `embedded' galaxies in the foreground. }
