@@ -186,6 +186,8 @@ FOBOS is a facility-class instrument at Keck, emphasizing flexible and quickly c
 
 While designed to support a broad range of science applications, the FOBOS concept is driven by a series of ``Design-Reference'' Programs centered on studies of the nature of Dark Energy and Dark Matter, the formation of galaxies, the physical properties of kilonovae and other well-localized transients, and the assembly history of the Andromeda Galaxy and its environment.  Each program would advance the scientific frontier anticipated at the time of FOBOS commissioning, both in terms of direct interpretation of the observations themselves and their use in machine-learning methods that can train and deliver physical inferences for the upcoming trove of photometric samples.  This chapter presents the scientific motivation, execution details, program requirements, and success metrics for each program.
 
+\noindent \textbf{Allocated Program Observing Time.}  To set requirements on capabilities like multiplex and sensitivity, we must often require that design-reference programs be completed with a given allocation of observing time, specified here as clear-weather nights (no weather factor) unless otherwise specified.  Following the history of past large-program campaigns at WMKO, we adopt a maximum program allocation of 130 nights over 5 years (about 15\% of total available dark time).  A five-year timescale is common among astronomical surveys and reflects the speed of scientific progress in the field and the timescales of graduate students and postdocs.  Keck is highly over-subscribed, with a large and diverse user pool carrying out an array of PI-led programs, so if they have any hope of being realized, most of the design-reference programs below should complete in \emph{far less} than 130 nights, with 5-10 nights anticipated per-year over a 5-year timespan.  
+
 % To illustrate FOBOS's scientific potential, we present the science drivers and observing strategies for these design-reference programs.  Table \ref{tab:progreq} summarizes the details of each program and illustrates FOBOS's ability to interleave multiple programs with disparate scientific goals (\S \ref{sec:addsci}).  The final definition of FOBOS's design-reference programs, including detailed sample designs, scientific deliverables, and time requests, will be developed in the next phase through a community-wide competition organized jointly with NSF's NOIRLab and WMKO.
 
 \section{Dark Energy: Photometric Redshift Training}
@@ -212,8 +214,9 @@ FOBOS will provide uniquely powerful spectroscopy capabilities for photo-$z$ tra
 
  Additionally, because FOBOS has no ``redshift desert'' (its blue wavelength coverage allows redshift determination at $1.5\lesssim z \lesssim2.5$ via Ly$\alpha$ or nearby UV absorption features), FOBOS observations will reduce the need for expensive, space-based\footnote{Ground-based near-IR spectroscopy is too contaminated by night-sky emission lines to provide spec-$z$s at the required level of completeness \citep{newman15}.} near-IR spectroscopy of galaxies with $z > 1.5$.  
 
- Beyond enhancing cosmological analyses, the resulting galaxy sample would have a major impact on galaxy-evolution studies by providing the spectroscopic coverage needed to fully leverage photometry for billions of galaxies. % (see \S\ref{sec:ML}). 
+ Beyond enhancing cosmological analyses, the resulting galaxy sample would have a major impact on galaxy-evolution studies by providing the spectroscopic coverage needed to fully leverage photometry for billions of galaxies.  % (see \S\ref{sec:ML}). 
 
+ The FOBOS Dark Energy Program would require 62.5 dark nights over five years.
 % \edit{Can Dan M. update this with some of the work he did in the lead-up to the MsRI proposal?  I.e., SOM results and expected "no error" photo-z precision?  Also, add plot from Rachel and Husni?}
 
 \noindent \textbf{FOBOS Dark Energy Program Requirements:}
@@ -321,28 +324,32 @@ An observing program with FOBOS can meet these needs by building a high-resoluti
 % \note{Joe/Dan/Kyle: play-out the combination of the 2nd program above and the Cosmology program as a practical illustration of what a series of observing nights devoted to these programs might look like. }
 
 
-\section{Chemistry and dynamics of the Circumgalactic Medium at $z\sim2$}
+\section{CGM: Chemistry and Dynamics of the Circumgalactic Medium at $z\sim2$}
 
 High- and intermediate-ionization transitions, such as \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA) and \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA), probe $10^{5-6}$ K and $10^4$ K gas, respectively.  This temperature range marks the peak in gas cooling and therefore constrains how gas rains onto galaxies to fuel star-formation, as well as tracks feedback processes that establish and regulate the circumgalactic medium (CGM).  Observations of this gas has largely hinged on detection via \textit{absorption} measurements against a background source \edit{refs}.  The ability of these observations to probe the chemodynamical state of the CGM is therefore limited by the number of viable targets through each halo, and stacking of sightlines through many halos is generally required to provide a statistical view of their properties.  If the CGM is instead observed in \textit{emission}, each galaxy halo can be studied individually.
 
 Current Keck instrumentation, namely KCWI, enables the mapping of Ly$\alpha$ emission for individual galaxy halos at $z\sim2$, and metal-line emission has already been studied in some extreme objects. However, significant progress in the field requires deeper observations of a significant sample ($\sim$100 objects) of relatively ``normal'' galaxies (Fig.~\ref{fig:cgmsample}).  Such a sample allows us to explore correlations between host-galaxy and local CGM properties that will provide key observational constraints of cosmological hydrodynamical simulations \edit{refs}.
 
-The requirements of an observational program that meets these needs are:
+
+\noindent \textbf{FOBOS CGM Program Requirements:}
 
 \begin{programrequirement}
-\reqitem Observe at least 100 individual galaxy halos over a range of host mass and SFR, selecting from Milky-Way-like progenitor galaxies to the most massive brightest-cluster-galaxies today: $9.7 <$ log ($M_*/M_\odot$) $< 11.5$ and spanning quiescent to SFR $\sim 1000$ yr$^{-1}$ \edit{need ref for upper mass limit; Patel+2013a}. \label{prog:cgm:sample}
-\reqitem Must be able to obtain ultra-deep observations of each target by observing for \edit{$\gtrsim 50$} hr on an individual target.
+\reqitem Spatially-resolved spectroscopy for least 100 individual galaxy halos over a range of host mass and SFR, selecting from Milky-Way-like progenitor galaxies to the most massive brightest-cluster-galaxies today: $9.7 <$ log ($M_*/M_\odot$) $< 11.5$ and spanning quiescent to SFR $\sim 1000$ yr$^{-1}$ \edit{need ref for upper mass limit; Patel+2013a}. \label{prog:cgm:sample}
+
+\reqitem Sufficient S/N to detect and characterize emission line flux at a minimum level of \edit{XX} 10$^{-17}$ erg s$^{-1}$ cm$^{-2}$ arcsec$^{-2}$ with a maximum integration time of 50 hours.
+
 \reqitem The target density of viable targets is expected to be \edit{XX} per arcmin$^2$.  Given the exposure-time requirements, multiplexing must be at least 10 objects observed per field to efficiently build the required sample (\ref{prog:cgm:sample}).
 \end{programrequirement}
 
 % ; i.e. $\lambda_{\rm obs} \lesssim 3100$ \AA
-
+\medskip
 \begin{sciencerequirement}
-\reqitem Measure line emission from gas diagnostic transitions to detect and distinguish cool $10^4$ K and warm-hot $10^{5-6}$ K gas phases in the CGM. \edit{Give specific lines and wavelengths.}
+\reqitem Measure line emission from gas diagnostic transitions including \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA) and \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA) to detect and distinguish cool $10^4$ K and warm-hot $10^{5-6}$ K gas phases in the CGM at $z = 2$. \edit{Give other lines and wavelengths?}
+
 \reqitem Observations must produce contiguous maps of the regions beyond galaxy disk and disk/halo interface, requiring a field-of-view of $\gtrsim$10 kpc (co-moving).
 \reqitem Spatial sampling must be sufficient to enable stacking of weak emission in the outer CGM.
 % if necessary to construct emission profiles revealing thermodynamic structure of gaseous halo.  
-\reqitem Must have a spectral range that observes \ion{O}{6} at $z\gtrsim2$.
+
 \reqitem Resolve high-velocity outflows from ``ambient'' CGM gas at galaxy systemic velocity, $\sigma_v \sim 100$ \kms.  
 \reqitem Spectral resolution must be able to measure line centroids to better than 10 \kms\ and Doppler broadening of line widths to better than $\sigma \sim 100$ \kms. 
 \end{sciencerequirement}
