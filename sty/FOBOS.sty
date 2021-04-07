@@ -154,12 +154,17 @@
                        ref={\bfseries \reqprefix~\reqopt.\arabic{thiscnt}},
                        itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt,
                        leftmargin=0.7in}
+%\setlist[requirement*]{label={\bfseries \reqprefix~\arabic{thiscnt}}:~,
+%                       ref={\bfseries \reqprefix~\arabic{thiscnt}},
+%                       itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt,
+%                       leftmargin=0.7in}
 \makeatletter
 \let\reqopt\relax
 \newcommand\reqitem[1][]{%
   \refstepcounter{thiscnt}%
   \if\relax\detokenize{#1}\relax
-    \def\reqopt{\thechapter}%
+%    \def\reqopt{\thechapter}%
+    \def\reqopt{\arabic{section}}%
   \else
     \def\reqopt{#1}%
   \fi
