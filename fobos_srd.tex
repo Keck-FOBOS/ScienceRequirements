@@ -391,16 +391,24 @@ Rubin Observatory target-of-opportunity (ToO) observations will search for KNe w
 
 Building spectroscopy of many KNe can be an expensive endeavor, both because LSST only provides KNe \textit{candidates} that must be spectroscopically vetted and because of their low on-sky density.  It is worth noting, therefore, that a highly multiplexed instrument is beneficial in this case because the KNe spectroscopy can be obtained jointly with other programs; however, this capability is not strictly a requirement of this specific program.
 
-A program to vet KNe candidates and ultimately build a sample of high-quality KNe spectra at multiple evolution phases requires:
+The 12.5 night Kilonovoe Program will vet KNe candidates and ultimately build a sample of high-quality KNe spectra at multiple evolution phases.  
+
+
+\noindent \textbf{FOBOS Kilonovae Program Requirements:}
 
 \begin{programrequirement}
-\reqitem Assuming the strategies proposed by \citet{margutti2018}, we expect $\sim4$ KNe to be detectable by LSST and Keck annually. For each triggered event, we must observe $\gtrsim50$ candidates with short ($\sim$10 min), low-resolution ($R\sim1000$) spectroscopy.  This is nearly twice the total spectroscopic follow-up effort currently possible \citep{hosseinzadeh2019}.
+\reqitem Adopting the forecast in \citet{margutti2018}, we expect $\sim4$ bona-fide KNe to be detectable by LSST and Keck annually. Over the duration of the program, FOBOS will observe $\gtrsim50$ LSST-triggered candidates in the accessible LSST footprint with short ($\sim$10 min), low-resolution ($R\sim1000$) spectroscopy.  This is nearly twice the total spectroscopic follow-up effort currently possible \citep{hosseinzadeh2019}.
+
+\reqitem It should be possible to interrupt any FOBOS program (ToO) and switch to a new field and set of targets within 1 hour of an event trigger.  Efficient target allocation of unused fiber-apertures at the new field location should make use of pre-defined target catalogs, with priority assigned to background targets from the interrupted program.  A software mechanism should allow the ToO observers and the regularly scheduled observers to coordinate the optimal fiber assignment, if desired.
+
 \reqitem Observations should acquire spectroscopy of both the KNe and the host galaxy, ideally simultaneously within an integral-field unit.
+
 \reqitem For confirmed KNe, the program should immediately transition to deeper ($\sim$1 hr) observations to potentially capture ``blue'' KNe (Fig.~\ref{fig:kilonova}).
 \end{programrequirement}
 
 %We would observe each candidate with FOBOS's central, fixed IFU to obtain a redshift and potential-host properties.  If our monitoring of real-time quick-look reductions identifies the KN, our strategy would immediately initiate deeper ($\sim1$ hour) observations to potentially capture ``blue" kilonovae   With four KNe annually, this FOBOS program requires $2.5$ nights per year; beyond the KNe observations, many fibers would be allocated to pre-assigned transient sources.
 
+\medskip
 \begin{sciencerequirement}
 \reqitem Candidate vetting spectra must achieve S/N$\sim$3 at a magnitude limit of $g_\mathrm{AB}=24$ to identify KNe at limiting distance of $D_\mathrm{L}\sim300$ Mpc. 
 \reqitem Redshift uncertainties of the host galaxy must be $\sigma_z/z \lesssim0.1$.
