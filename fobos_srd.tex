@@ -393,15 +393,16 @@ Building spectroscopy of many KNe can be an expensive endeavor, both because LSS
 
 The 12.5 night Kilonovoe Program will vet KNe candidates and ultimately build a sample of high-quality KNe spectra at multiple evolution phases.  
 
-
+\medskip
 \noindent \textbf{FOBOS Kilonovae Program Requirements:}
 
 \begin{programrequirement}
-\reqitem Adopting the forecast in \citet{margutti2018}, we expect $\sim4$ bona-fide KNe to be detectable by LSST and Keck annually. Over the duration of the program, FOBOS will observe $\gtrsim50$ LSST-triggered candidates in the accessible LSST footprint with short ($\sim$10 min), low-resolution ($R\sim1000$) spectroscopy.  This is nearly twice the total spectroscopic follow-up effort currently possible \citep{hosseinzadeh2019}.
+\reqitem Adopting the forecast in \citet{margutti2018}, we expect $\sim4$ bona-fide $z < 1$ KNe to be detectable by LSST and Keck annually. Over the duration of the program, FOBOS will observe $\gtrsim50$ LSST-triggered KNe candidates in the accessible LSST footprint with short ($\sim$10 min), low-resolution ($R\sim1000$) spectroscopy.  This is nearly twice the total spectroscopic follow-up effort currently possible \citep{hosseinzadeh2019}.
 
 \reqitem It should be possible to interrupt any FOBOS program (ToO) and switch to a new field and set of targets within 1 hour of an event trigger.  Efficient target allocation of unused fiber-apertures at the new field location should make use of pre-defined target catalogs, with priority assigned to background targets from the interrupted program.  A software mechanism should allow the ToO observers and the regularly scheduled observers to coordinate the optimal fiber assignment, if desired.
 
-\reqitem Observations should acquire spectroscopy of both the KNe and the host galaxy, ideally simultaneously within an integral-field unit.
+
+\reqitem Quick-look reductions requiring no more than 2 minutes of runtime should allow for identification of KNe with $m_i < 22.5$ AB.  The goal is 90\% completeness based on 10-minute spectroscopic integrations in average FOBOS conditions. 
 
 \reqitem For confirmed KNe, the program should immediately transition to deeper ($\sim$1 hr) observations to potentially capture ``blue'' KNe (Fig.~\ref{fig:kilonova}).
 \end{programrequirement}
@@ -410,24 +411,38 @@ The 12.5 night Kilonovoe Program will vet KNe candidates and ultimately build a 
 
 \medskip
 \begin{sciencerequirement}
-\reqitem Candidate vetting spectra must achieve S/N$\sim$3 at a magnitude limit of $g_\mathrm{AB}=24$ to identify KNe at limiting distance of $D_\mathrm{L}\sim300$ Mpc. 
-\reqitem Redshift uncertainties of the host galaxy must be $\sigma_z/z \lesssim0.1$.
+\reqitem Observations should acquire spectroscopy of both the KNe and the host galaxy with an always-deployed integral-field unit (IFU) with an angular diameter greater than 3 arcsec.  This size mitigates modest localization errors.  The resulting datacubes from this IFU should provide spatial sampling that allows independent spectra to be extracted for at least 5 separate regions of a typical $L_*$ host galaxy at $z \approx 0.7$.
+
+\reqitem Candidate vetting spectra must achieve S/N$\sim$3 at a magnitude limit of $g_\mathrm{AB}=24$ to identify KNe at limiting distance of $D_\mathrm{L}\sim300$ Mpc.  \edit{translate into actual KNe brightness of 22.5?}
+
+\reqitem Redshift uncertainties of the host galaxy must be $\sigma_z/z \lesssim0.1$. \edit{this seems absurdly large -- just use a photo-z.  Restate or drop?}
 \end{sciencerequirement}
 
-\section{Characterization of extragalactic LSST transients and their host galaxies}
+\section{Time-Domain Characterization of Extragalactic LSST Transients and Host Galaxies}
 
 %Each DDF is roughly 9 sq deg
 
 Beyond KNe, Rubin Observatory will discover well over 1 million extragalactic transients annually, including thousands of currently rare sources such as tidal-disruption events \citep{bricman2020}, superluminous supernovae \citep{villar2018} and changing look quasars.  The on-sky densities are such that we expect $\sim$5 LSST transient hosts per 20\arcmin\ field-of-view.  Within the LSST Deep Drilling Fields observed by FOBOS for the {\it FOBOS Cosmology} and {\it Galaxy-Ecosystem Programs}, we expect $\sim$150 total transients to be visible each year with $m_i<24$. For a highly multiplexed instrument with dynamic target allocation, a high-impact, low-cost strategy would be to follow-up \textit{every} LSST transient and transient host within any given Keck pointing. Currently, roughly 1,000 supernovae have spectroscopic observations each year, although essentially all are observed at $m_i<21$. By combining both single-aperture and IFU observations of transients, we would dramatically increase the database of transient spectroscopy for low-luminosity events.  In particular, IFU observations of this regularity would dramatically increase the resolved spectroscopy of extragalactic hosts \citep[see a recent review by][]{anderson2015} at little additional cost. A series of requirements follow for observations of these targets:
 
+
+\medskip
+\noindent \textbf{FOBOS Transients Program Requirements:}
+
+
 \begin{programrequirement}
-\reqitem Approximately 5-10 single-spectrum apertures should be held in reserve for serendipitous follow-up of LSST transient objects and their hosts for \textit{every} observing field acquired by Keck.
-\reqitem A single IFU with a minimum field-of-view of 5\arcsec\ \edit{check} should be available to allow for modest localization errors.
-\reqitem Target assignment must be responsive to on-the-fly triggering of newly discovered transients.
+\reqitem This program would reserve 5--10 single-aperture fibers in specified FOBOS pointings within the LSST footprint that are to be observed by other FOBOS programs.  
+
+\reqitem It should be possible to assign or adjust the on-sky targets for these reserved fibers in as little as 15 minutes before acquiring a new field configuration.
+
 \end{programrequirement}
 
+\medskip
 \begin{sciencerequirement}
-\reqitem Sensitivity to $\lambda \lesssim 0.3$~$\mu$m is  especially valuable for shock-driven (e.g., Type IIn supernovae) and relativistic events \citep[e.g., the atypically bright Type Ib supernova AT 2018cow;][]{margutti2019}.
+\reqitem A central IFU with a minimum field-of-view of 3\arcsec\ should be continuously deployed in all FOBOS instrument configurations.
+
+\reqitem UV sensitivity to the atmospheric limit (310 nm) as rest-frame $\lambda \lesssim 0.3$~nm is required for studying shock-driven (e.g., Type IIn supernovae) and relativistic events \citep[e.g., the atypically bright Type Ib supernova AT 2018cow;][]{margutti2019}.
+
+\reqitem The widest possible simultaneous wavelength range to study a broad range of host galaxy redshifts and spectral features associated with transient phenomena.  
 \end{sciencerequirement}
 
 % By deploying the remaining single fibers and IFUs on separate, pre-assigned transient sources in each pointing, we will take maximum advantage of synergies with time-series data from the world-wide follow-up observations of these gravitational-wave fields. 
