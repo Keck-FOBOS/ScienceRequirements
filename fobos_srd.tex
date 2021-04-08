@@ -23,7 +23,7 @@
 
 % Pre-release versions are 0A - ZZ; Release versions should be 01-99
 \newcommand{\docversion}{0A}
-\newcommand{\docreleaseDate}{2020-09-17}  % Please use ISO-8601 YYYY-MM-DD format.
+\newcommand{\docreleaseDate}{\today}  % Please use ISO-8601 YYYY-MM-DD format.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -494,11 +494,13 @@ For the Milky Way, stellar properties (e.g., age, metallicity, $\alpha$ abundanc
 
 The FOBOS Andromeda program requires large samples ($\gtrsim 10^5$) of resolved stars in the disk of M31 in order to map the velocity dispersion of populations of different ages and metallicities.  Detailed quantitative comparisons to simulations will diagnose M31's interaction and merger history.  Although chemical tagging with M31 benefits from our outside view (compared to our inside view of the Milky Way), it also faces the challenge of obtaining precise stellar parameter measurements for very large samples.  First steps were made by SPLASH,\footnote{Spectroscopic and Photometric Landscape of Andromeda’s Stellar Halo \citep[e.g.][]{splash}} which obtained $\sim$1hr Keck-DEIMOS exposures for $\sim$10,000 RGB stars in the disk, stellar streams, and halo of M31.  \citet{dorman15} used SPLASH to study the stellar age and velocity dispersion of disk stars and found that M31 features a much thicker, high-dispersion component compared to the Milky Way.  More recently, \citet{escala20} explored metallicity and $\alpha$ abundance trends in 70 RGB stars ($\sim$6hr Keck-DEIMOS integrations) in the outer disk, inner halo, and Giant Stellar Stream of M31.  These trends also suggest a significant, merger-induced star-formation event in M31.  However, without more precise stellar parameters and larger samples --- beyond the limits of what one can expect to achieve with DEIMOS --- we can only determine general trends in the overall populations.  FOBOS will deliver an order-of-magnitude increase in sample size with excellent precision in stellar parameter and velocity measurements.  The goal is to make clear distinctions between populations with different metallicity and spatial distributions that contrast the evolutionary histories of the Milky Way and M31 disks.  We will address two key questions for the first time: Does M31, like the Milky Way, exhibit its own [$\alpha$/Fe] bimodality?  If so, were the ancient merger histories of the two galaxies linked or largely independent? 
 
+
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{figs/abundances_snr_v6.png}
 \caption[Simulated M31 RGB spectra and abundance forecasts]{Simulated observations demonstrating FOBOS's ability to perform ``chemical tagging'' in M31 and M33. \textit{Left:} Expected S/N for an $i=21.5$ RGB star in M31 observed for 10hr using FOBOS, PFS, and DEIMOS. \textit{Right:}  Forecasted abundance precision for these observations (filled circles), including both statistical uncertainty ($\sigma_{\rm stat}$; predicted by the Cram\'er-Rao Lower Bound) and a 0.1-dex systematic uncertainty \citep[$\sigma_{\rm syst}$; cf.,][]{kirby18, xiang2019}. Elements are ordered along the ordinate by decreasing precision (limited to $\lesssim$0.3 dex) and color-coded by their primary nucleosynthetic origin. Although these forecasts are optimistic, the indicated \textit{relative} precision between instruments is robust. For reference, we show abundance uncertainties reported by \citet[][purple squares]{kirby18} from DEIMOS spectra of $-1.0<\text{[Fe/H]}<-0.6$ RGB stars in MW satellites with comparable S/N to our simulations; their measurement precision is worse than our DEIMOS predictions primarily because of their lower metallicity targets.  We also show abundance uncertainties reported by \citet[][yellow squares]{xiang2019} from LAMOST spectra of MW RGB stars, scaled to the S/N and resolution of the proposed FOBOS  observations.}
 \label{fig:abundances_snr}
 \end{figure}
+
 
 \edit{Somewhere emphasize the value of the blue wavelength response.}
 
@@ -518,6 +520,7 @@ The FOBOS Andromeda program requires large samples ($\gtrsim 10^5$) of resolved 
 \hspace*{0.5cm} Clear nights: 86 \\
 \hspace*{0.5cm} Program Duration: 5 years
 }
+
 
 \begin{programrequirement}
 \reqitem To create 5 bins in age, abundance, and velocity pattern, the stellar sample should be $\sim 10^5$ stars in the M31 disk and $\sim 10^4$ stars in the M33 disk. \label{prog:lgdisks:sample} \edit{does the pre-amble adequately motivate observing the satellites?}.  
@@ -549,11 +552,13 @@ The FOBOS Andromeda program requires large samples ($\gtrsim 10^5$) of resolved 
 
 \reqitem An on-sky target density greater than 5 arcmin$^{-2}$ to efficiently observe extremely high-density source distributions (60 arcmin$^{-2}$ is surpassed in the M31 disk).
 
-\reqitem The velocity precision of each star observed should be $\lesssim 5$ \kms \NS{Do M31 satellite stars require a different precision?}.
+\reqitem The velocity precision of each star observed should be $\lesssim 5$ \kms 
+
 \reqitem In M31 and M33, the abundance precision must be $<$0.15 dex for both [Fe/H] and [$\alpha$/Fe]; additional abundances for individual elements produced via Type Ia SNe (e.g., Cr, Ti, Ni), core-collapse SNe (e.g., Mg, Ca, Si), and various proposed neutron-capture channels (e.g., Nd, Y, Ba) should be measured to $<$0.25 dex \citep[Fig.~\ref{fig:abundances_snr}; cf.][]{Sandford20}. \label{prog:lgdisks:precision}
 \reqitem In M31 satellites, the abundance precision must be $<$0.25 dex for both [Fe/H] and [$\alpha$/Fe].
 \reqitem Stellar age precision for M31 and M33 disk stars must $<$0.1 dex as inferred via, e.g., use of the blue CN absorption features \citep[e.g.][]{Martig16,Ting19}.  %This typically requires S/N $\approx$ 30 per pixel at $R=1800$.
 \label{prog:age:precision}
+
 \reqitem To achieve the required measurement precision (\ref{prog:lgdisks:precision}, \ref{prog:age:precision}), we must reach an $i$-band ${\rm S/N} \approx 40$ \AA$^{-1}$ and $\approx 20$ \AA$^{-1}$ at the  ``sweet-spot'' of the RGB ($i_{Vega} = 21.5$) and a magnitude fainter, respectively, in $\sim$10 hours.  This assumes a resolution of $R\sim3000$ and a wavelength coverage from 0.3 -- 1$\mu$m.
 \end{sciencerequirement}
 
