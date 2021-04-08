@@ -705,6 +705,35 @@ Ease of access (things not only available as fits files), populate a database th
 
 Machine learning application for operational part.
 
+\section{Upgrade Paths: GLAO and Added Fiber Feeds}
+
+We highlight here several important upgrade paths for FOBOS, including the general concept that FOBOS can serve as a ``platform'' for other fiber-based instruments in the near-IR or at higher spectral resolution and even enable simultaneous multi-instrument observations (``polyplex'').  Enabling these upgrade paths will necessitate additional technical requirements that may impact the FOBOS design.  As of the 2021 CoDR, we choose not include these requirements formally.  Instead, we will begin to sketch them here so that they may be considered for further development in future design phases.
+
+\subsection{Ground-Layer Adaptive Optics}
+
+New actuator technology shows great promise for enabling a more
+robust and less expensive Keck adaptive secondary design (Keck-ASM). See work by Hinz and collaborators.  A regular GLAO mode at Keck with a $\sim$10 arcmin corrected field may be easier to realize by 2030 than was previously thought.
+
+From a technical standpoint, an adaptive secondary would provide a more elegant solution to the problem of extending the back-focal distance to fit FOBOS's horizontal focal plane.  The secondary mirror figure with the ASM translated forward to the ``FOBOS position'' could be reconfigured to provide optimal image quality. This figuring could also be done in concert with the ADC design for further improvements.  An ASM necessarily involves retrofitting the Keck II top-end which would address potential risks in the shifting the existing secondary mirror with the currently deployed motion systems.
+
+Scientifically, observations in the red FOBOS channels would benefit dramatically from GLAO corrections, which would be expected to deliver 0.3\arcsec{} FWHM at 700 nm, although with a decreasing correction at bluer wavelengths.  The improved spatial resolution would open new scientific territory for multi-IFU resolved spectroscopy, especially for galaxies at $z \sim 1$.  It would also enable enhanced single-aperture observations in crowded regions such as the M31 bulge and improve sensitivity (by reducing the sky background) if smaller apertures could be deployed when targeting compact objects.
+
+A number of considerations and requirements would be needed to enable GLAO with FOBOS:
+
+\begin{itemize}
+\item \textbf{Wave Front Sensors.} Approximately 4 pick-off mirrors or focal-plane wave front sensors (WFS) would be required to close the GLAO loop.  See EELT-MOSAIC for one solution to this problem.  While concepts exist for focal plane WFS they have not been deployed.  The laser guide star (LGS) focal plane is significantly offset from the nominal focal plane; as a result, a large portion of the science focal plane is obscured by each laser spot.  This may be acceptable in GLAO mode if only the central few arcmin are corrected so that LGS spots can be positioned in the perimeter.  But the obscuring elements should be removable for non-GLAO observations.  It may also be possible to achieve GLAO without LGS if sufficient numbers of natural guide star WFS could be obtained, perhaps with a photonics based focal plane WFS.
+
+\item \textbf{ADC Performance.} The delivered image quality requirements on the ADC at $\lambda > 600$ nm will be much tighter in order to prevent degradation of the GLAO-corrected 0.3\arcsec{} FWHM.  However, the tighter requirements are wavelength dependent and would only apply to the central portions of the field where the nominal ADC design performs best.  The ADC action (residual atmospheric dispersion) may also face tighter requirements if smaller single-fiber apertures are desired to limit sky contamination on compact sources.  However, the more limited wavelength range over which GLAO provides a correction would make tighter ADC residual requirements easier to meet.  Note that atmospheric dispersion residuals can be corrected when using IFU observations.
+
+\item \textbf{Fiber sampling.} New fore-optics designs will be required to decrease the effective angular diameter sampled by fibers in single-apertures or within IFUs.  A spatial sampling less than the GLAO FWHM of 0.3\arcsec{} would be desired.  In principal this can be accomplished with smaller-pitch lenslet arrays that simply underfill fibers that are otherwise identical (same core/cladding diameters) to the native FOBOS instrument.  Finer spatial sampling would be achieved but without any gains in spectral resolution so that the spectrograph architecture would remain fixed.  The performance of this approach needs to be understood and tested. 
+\subsection{Near-IR Instrumentation}
+
+This will point to the FOBOS-IR white paper we wrote.
+
+
+\end{itemize}
+
+
 \newpage
 
 
