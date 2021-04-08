@@ -487,11 +487,14 @@ We have therefore developed an 84-night FOBOS program to obtain spatially-resolv
 \begin{programrequirement}
 \reqitem To create 5 bins in age, abundance, and velocity pattern, the stellar sample should be $\sim 10^5$ stars in the M31 disk and $\sim 10^4$ stars in the M33 disk. \label{prog:lgdisks:sample} \edit{does the pre-amble adequately motivate observing the satellites?}.  
 
+\reqitem Six M31 disk fields at radii between 5--20 kpc with two additional fields beyond 20 kpc should be drawn from the PHAT\footnote{Panchromatic Hubble Andromeda Treasury \citep{phat} is a multi-cycle HST program that maps $\sim1/3$ M31's star-forming disk in 6 filters.} HST footprint.  
+
+\reqitem The total number of M31 FOBOS-visits is 64 with 10-hour integrations required per visit.  Given rejections due to crowding \citep{dorman12} of RGBs at ($i_{\rm Vega} < 22.5$), a science-fiber multiplex of at least 1600 per pointing is required to build the M31 disk sample of $\sim 10^5$ stars.
+
 % K. Bundy (2021-04-07): Commenting these out because they don't impact FOBOS instrument design.
 % \reqitem All stars should be observed over a region with high resolution photometry for targeting fidelity.
 % \reqitem Target selection should account for precursor/coincident surveys planned with Subaru PFS and the Maunakea Spectroscopic Explorer (MSE).
 
-\reqitem Anticipating a 60\% rejection rate \citep{dorman12} due to crowding of ground-based RGB catalogs ($i_{\rm Vega} < 22.5$), observations should target six M31 disk pointings in the PHAT\footnote{Panchromatic Hubble Andromeda Treasury \citep{phat} is a multi-cycle HST program that maps $\sim1/3$ M31's star-forming disk in 6 filters.} region between 5--20 kpc.  Viable targets are sufficient to build the necessary sample (\ref{prog:lgdisks:sample}) after 10 visits to each M31 field, with two additional fields beyond 20 kpc visited twice.
 
 \reqitem To build the necessary M33 disk sample (\ref{prog:lgdisks:sample}), we require 3 fields each visited twice.
 \reqitem To build the necessary M31 satellite sample (\ref{prog:m31halo:sample}), we require 3 fields in the region including NGC 147, NGC 185, and And II, each visited once, and 1 pointing in NGC 205, visited twice.  
@@ -506,6 +509,11 @@ We have therefore developed an 84-night FOBOS program to obtain spatially-resolv
 
 \medskip
 \begin{sciencerequirement}
+
+\reqitem A field diameter of 20\arcmin\ is required to span the width of the M31 disk, and the core of M33 and other Andromeda satellite galaxies.  Note much larger fields of view are not beneficial.
+
+\reqitem An on-sky target density greater than 5 arcmin$^{-2}$ to efficiently observe extremely high-density source distributions (60 arcmin$^{-2}$ is surpassed in the M31 disk).
+
 \reqitem The velocity precision of each star observed should be $\lesssim 5$ \kms \NS{Do M31 satellite stars require a different precision?}.
 \reqitem In M31 and M33, The abundance precision must be $\sim 0.1$ dex for both [Fe/H] and [$\alpha$/Fe]; additional abundances for individual elements produced via Type Ia SNe (e.g., Cr, Ti, Ni), core-collapse SNe (e.g., Mg, Ca, Si), and various proposed neutron-capture channels (e.g., Nd, Y, Ba) should be measured to $\sim$0.2 dex \citep[Fig.~\ref{fig:abundances_snr}; cf.][]{Sandford20}. \label{prog:lgdisks:precision}
 \reqitem In M31 satellites, the abundance precision must be $\lesssim 0.2$ dex for both [Fe/H] and [$\alpha$/Fe].
