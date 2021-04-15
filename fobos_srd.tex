@@ -318,22 +318,22 @@ An observing program with FOBOS can meet these needs by building a high-resoluti
 
 
 \begin{programrequirement}
-\reqitem The total area shall be greater than 6 deg$^2$ to survey sufficient volume for detection of rare, proto-cluster structures which will evolve into $z=0$ halos with 10$^{14}$ \msun{}.  This total area will be divided into 12 sub-fields for ease of scheduling.  Each sub-field shall be at least $\sim$0.5 deg$^2$ in order to span the largest structures \citep[10 Mpc; see][]{lee16}.
+\reqitem The total survey area should be greater than 6 deg$^2$ to survey sufficient volume to detect multiple rare, proto-cluster structures which will evolve into $z=0$ halos with 10$^{14}$ \msun{}.  This total area will be divided into 12 sub-fields for ease of scheduling.  Each sub-field should be at least $\sim$0.5 deg$^2$ in order to span large-scale structures \citep[10 Mpc; see][]{lee16}.  Based on the halo mass function from \citet{Lukic:2007_highZhaloMassFunc}, we anticipate detecting 3 protoclusters with $M_{\rm halo} > 10^{14}$ \msun{} per FOBOS pointing.
 
-\reqitem For sufficient spatial resolution of the reconstructed IGM tomography (\ref{prog:igm:dens}), each field should include $\sim$5000 targets between $1.6 < z < 2.5$. 
+\reqitem For sufficient spatial resolution in the reconstructed IGM tomography (\ref{prog:igm:dens}), each field should include $\sim$5000 targets between $1.6 < z < 2.5$. 
 \reqitem Each field should also contain $\sim$3000 galaxies embedded in the cosmic web for comparison of the intergalactic and interstellar media.
 
-\reqitem To detect a minimum \ion{H}{1} column density of $10^{13}$ \edit{JB: I don't think this could be realistic esp. with S/N spec. Need to track down where this came from. Wait okay, this checks out.} with a statistical error of no more than 0.1 dex (25\%)\edit{S/N=3.5 delivers $10^{13}$ at 3-$\sigma$}, 3-hour integrations must reach a ${\rm S/N} \sim 3.5$ at $r_{\rm AB} \approx 24.6$ \edit{still need to check this against ETC}. 
+\reqitem To detect a minimum \ion{H}{1} column density of $10^{13}$ cm$^{-2}$ with a statistical error of no more than 0.1 dex (25\%)\edit{S/N=3.5 delivers $10^{13}$ at 3-$\sigma$}, 3-hour integrations must reach a ${\rm S/N} \sim 3.5$ at $r_{\rm AB} \approx 24.6$ \edit{still need to check this against ETC}. 
 
 \end{programrequirement}
 
 \medskip
 \begin{sciencerequirement}
-\reqitem The FOBOS single-aperture sampling density shall deliver efficient ($>70$\% completeness), single-visit target allocation for on-sky source densities of $>$4 arcmin$^{-2}$.  This is commensurate with scales of massive halos; i.e., $\sim$1 Mpc for the most massive galaxy clusters at $z\sim 2$. \label{prog:igm:dens}
+\reqitem The FOBOS single-aperture sampling density shall deliver efficient ($>70$\% completeness), single-visit target allocation for on-sky source densities of $>$4 arcmin$^{-2}$.  This is commensurate with sampling the scales of massive halos, i.e., $\sim$1 Mpc for massive galaxy clusters at $z\sim 2$, with 3 sightlines. \label{prog:igm:dens}
 
 % K. Bundy (2021-04-05): The 4 per arcmin^2 comes from 5000 sight-lines plus 3000 embedded galaxies per 0.5 deg^2.  The 70\% is a WAG.
 
-\reqitem FOBOS shall be able to detect Ly$\alpha$ (1216 \AA{}) at a redshift of $z=1.6$.  
+\reqitem FOBOS shall cover the observed wavelength of Ly$\alpha$ (1216 \AA{}) at a redshift of $z=1.6$.  
 
 \end{sciencerequirement}
 
@@ -344,9 +344,9 @@ An observing program with FOBOS can meet these needs by building a high-resoluti
 
 \section{CGM: Chemistry and Dynamics of the Circumgalactic Medium at $z\sim2$}
 
-High- and intermediate-ionization transitions, such as \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA) and \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA), probe $10^{5-6}$ K and $10^4$ K gas, respectively.  This temperature range marks the peak in gas cooling and therefore constrains how gas rains onto galaxies to fuel star-formation, as well as tracks feedback processes that establish and regulate the circumgalactic medium (CGM).  Observations of this gas has largely hinged on detection via \textit{absorption} measurements against a background source \edit{refs}.  The ability of these observations to probe the chemodynamical state of the CGM is therefore limited by the number of viable targets through each halo, and stacking of sightlines through many halos is generally required to provide a statistical view of their properties.  If the CGM is instead observed in \textit{emission}, each galaxy halo can be studied individually.
+High- and intermediate-ionization transitions, such as \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA) and \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA), probe $10^{5-6}$ K and $10^4$ K gas, respectively.  This temperature range marks the peak in gas cooling and therefore constrains how gas rains onto galaxies to fuel star-formation, as well as tracks feedback processes that establish and regulate the circumgalactic medium (CGM).  Observations of this gas has largely hinged on detection via \textit{absorption} measurements against a background source \citep{Bahcall:1969qy,tumlinson17}.  The ability of these observations to probe the chemodynamical state of the CGM is therefore limited by the number of viable targets through each halo, and stacking of sightlines through many halos is generally required to provide a statistical view of their properties.  If the CGM is instead observed in \textit{emission}, each galaxy halo can be studied individually.
 
-Current Keck instrumentation, namely KCWI, enables the mapping of Ly$\alpha$ emission for individual galaxy halos at $z\sim2$, and metal-line emission has already been studied in some extreme objects. However, significant progress in the field requires deeper observations of a significant sample ($\sim$100 objects) of relatively ``normal'' galaxies (Fig.~\ref{fig:cgmsample}).  Such a sample allows us to explore correlations between host-galaxy and local CGM properties that will provide key observational constraints of cosmological hydrodynamical simulations \edit{refs}.
+Current Keck instrumentation, namely KCWI, enables the mapping of Ly$\alpha$ emission for individual galaxy halos at $z\sim2$, and metal-line emission has already been studied in some extreme objects. However, significant progress in the field requires deeper observations of a significant sample ($\sim$100 objects) of relatively ``normal'' galaxies (Fig.~\ref{fig:cgmsample}).  Such a sample will allow us to explore correlations between host-galaxy and local CGM properties and will provide key observational constraints for cosmological hydrodynamical simulations \citep{Nelson:2019_outflows,Oppenheimer:2018aa}.  In fact, existing predictions of CGM emission remain virtually untested, particularly with respect to relationships to galaxy mass and SFR.  Thus, sampling a wide range of this parameter space is critical to progress on the theoretical front to even adequately connect gas physical conditions to emission properties.  Based on the state-of-the-art predictions from a high-resolution galaxy-CGM simulation \citep{Corlies:2018aa}, we have set our minimum detection limit for emission lines according to the bright tail of the flux distribution in a fairly low-SFR, low-mass galaxy (green star in Figure \ref{fig:cgmsample}).  We expect our limit to sample down to the peak of the flux distribution for `main-sequence' and above galaxies, enabling kinematic analysis of individual spaxels.  Detections and line ratios may be obtained for less-massive, low-SFR galaxies and the outer, fainter CGM regions through spatially binning spaxels.
 
 
 \subsection{FOBOS CGM Program Definition \& Requirements}
@@ -363,20 +363,20 @@ Current Keck instrumentation, namely KCWI, enables the mapping of Ly$\alpha$ emi
 
 
 \begin{programrequirement}
-\reqitem Spatially-resolved spectroscopy for least 90 individual galaxy halos over a range of host mass and SFR, selecting from Milky-Way-like progenitor galaxies to the most massive brightest-cluster-galaxies today: $9.7 <$ log ($M_*/M_\odot$) $< 11.5$ and spanning quiescent to SFR $\sim 1000$ yr$^{-1}$ \edit{need ref for upper mass limit; Patel+2013a}. \label{prog:cgm:sample}
+\reqitem Spatially-resolved spectroscopy for least 90 individual galaxy halos over a range of host mass and SFR, selecting from Milky-Way-like progenitor galaxies to the most massive brightest-cluster-galaxies today: $9.7 <$ log ($M_*/M_\odot$) $< 11.5$ and spanning quiescent to SFR $\sim 1000$ yr$^{-1}$ \citep{Papovich:2015_progenitorMasses,Conroy:2007_buildUpMassive}. \label{prog:cgm:sample}
 
-\reqitem Sufficient S/N to detect and characterize emission line flux at a minimum level of \edit{XX} 10$^{-17}$ erg s$^{-1}$ cm$^{-2}$ arcsec$^{-2}$ with a maximum integration time of 50 hours.
+\reqitem For the detection of OVI and CIV at z = 2, we require S/N$\sim$ 3 for emission-line fluxes of 10$^{-19}$ erg s$^{-1}$ cm$^{-2}$ arcsec$^{-2}$ after an integration time of 50 hours.
 
-\reqitem The target density of viable targets is expected to be \edit{XX} per arcmin$^2$.  Given the exposure-time requirements, multiplexing must be at least 10 objects observed per field to efficiently build the required sample (\ref{prog:cgm:sample}).
+\reqitem The target density of viable targets is expected to be 21 per 0.1 deg$^2$ field-of-view.  Given the exposure-time requirements, multiplexing must be at least 10 objects observed per field to efficiently build the required sample (\ref{prog:cgm:sample}).
 \end{programrequirement}
 
 % ; i.e. $\lambda_{\rm obs} \lesssim 3100$ \AA
 \medskip
 \begin{sciencerequirement}
-\reqitem Measure line emission from gas diagnostic transitions including \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA) and \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA) to detect and distinguish cool $10^4$ K and warm-hot $10^{5-6}$ K gas phases in the CGM at $z = 2$. \edit{Give other lines and wavelengths?}
+\reqitem Measure line emission from gas diagnostic transitions including \ion{H}{1} Ly$\alpha$ ($\lambda_{\rm rest} = 1215$ \AA),  \ion{O}{6} ($\lambda_{\rm rest} = 1032, 1037$ \AA), \ion{C}{4} ($\lambda_{\rm rest} = 1548, 1550$ \AA), \ion{C}{3} ($\lambda_{\rm rest} = 1908$ \AA), and \ion{Mg}{2} ($\lambda_{\rm rest} = 2796, 2802$ \AA) to detect and distinguish cool $10^4$ K and warm-hot $10^{5-6}$ K gas phases in the CGM at $z = 2$. 
 
-\reqitem Observations must produce contiguous maps of the regions beyond galaxy disk and disk/halo interface, requiring a field-of-view of $\gtrsim$10 kpc (co-moving).
-\reqitem Spatial sampling must be sufficient to enable stacking of weak emission in the outer CGM.
+\reqitem Observations must produce contiguous maps of the regions beyond galaxy disk and disk/halo interface, requiring a field-of-view of $\gtrsim$40 kpc (proper).
+\reqitem Spatial sampling must be sufficient to enable stacking of weak emission $>15$~kpc out into the CGM ($1.75$ arcsec at $z=2$).
 % if necessary to construct emission profiles revealing thermodynamic structure of gaseous halo.  
 
 \reqitem Resolve high-velocity outflows from ``ambient'' CGM gas at galaxy systemic velocity, $\sigma_v \sim 100$ \kms.  
@@ -433,6 +433,7 @@ The 12.5 night Kilonovoe Program will vet KNe candidates and ultimately build a 
 
 
 \begin{programrequirement}
+% This doesn't really read like a requirement
 \reqitem Adopting the forecast in \citet{margutti2018}, we expect $\sim4$ bona-fide $z < 1$ KNe to be detectable by LSST and Keck annually. Over the duration of the program, FOBOS will observe $\gtrsim50$ LSST-triggered KNe candidates in the accessible LSST footprint with short ($\sim$10 min), low-resolution ($R\sim1000$) spectroscopy.  This is nearly twice the total spectroscopic follow-up effort currently possible \citep{hosseinzadeh2019}.
 
 \reqitem It should be possible to interrupt any FOBOS program (ToO) and switch to a new field and set of targets within 1 hour of an event trigger.  Efficient target allocation of unused fiber-apertures at the new field location should make use of pre-defined target catalogs, with priority assigned to background targets from the interrupted program.  A software mechanism should allow the ToO observers and the regularly scheduled observers to coordinate the optimal fiber assignment, if desired.
