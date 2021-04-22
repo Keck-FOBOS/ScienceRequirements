@@ -72,6 +72,8 @@
 %% empty , plain , headings , ruled , Ruled , companion
 \pagestyle{Ruled}
 
+%% Do not reset the footnote counter for new chapters
+\counterwithout{footnote}{chapter}
 
 %%% CHAPTERS
 %% Predefined options are
@@ -120,6 +122,9 @@
 \usepackage[usenames]{color}
 \usepackage{textcomp}
 \usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage[hang,flushmargin]{footmisc}
 
 % Date
 \usepackage[yyyymmdd]{datetime}
